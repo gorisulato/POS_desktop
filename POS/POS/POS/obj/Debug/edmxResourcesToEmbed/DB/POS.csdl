@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Point_Of_SalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Point_Of_SalesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="P_Colour" EntityType="Point_Of_SalesModel.P_Colour" />
+    <EntitySet Name="TSalesDetails" EntityType="Point_Of_SalesModel.TSalesDetail" />
+    <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
+    <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
+    <EntitySet Name="PPaymentTypes" EntityType="Point_Of_SalesModel.PPaymentType" />
+    <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
+    <EntitySet Name="TRoles" EntityType="Point_Of_SalesModel.TRole" />
+    <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
+    <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
+    <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
+    <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
+    <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
+    <EntitySet Name="TReceiveingStocks" EntityType="Point_Of_SalesModel.TReceiveingStock" />
+  </EntityContainer>
+  <EntityType Name="P_Colour">
+    <Key>
+      <PropertyRef Name="clor_id" />
+    </Key>
+    <Property Name="clor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TSalesDetail">
+    <Key>
+      <PropertyRef Name="Sales_Detail_id" />
+    </Key>
+    <Property Name="Sales_Detail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sales_Number" Type="Int32" Nullable="false" />
+    <Property Name="Items" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Discount" Type="Double" />
+    <Property Name="Tax" Type="Double" />
+    <Property Name="Subtotal" Type="Double" />
+  </EntityType>
+  <EntityType Name="TInventory">
+    <Key>
+      <PropertyRef Name="Items_Id" />
+    </Key>
+    <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Colour" Type="Int32" />
+    <Property Name="Size" Type="Double" />
+    <Property Name="Unit_Price" Type="Double" />
+    <Property Name="Stock" Type="Int32" />
+    <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PCustomer">
+    <Key>
+      <PropertyRef Name="id_Customer" />
+    </Key>
+    <Property Name="id_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MemberCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Alamat" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TempatLahir" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TanggalLahir" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PointReward" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PPaymentType">
+    <Key>
+      <PropertyRef Name="id_paymenttype" />
+    </Key>
+    <Property Name="id_paymenttype" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TSale">
+    <Key>
+      <PropertyRef Name="TSales_id" />
+    </Key>
+    <Property Name="TSales_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sales_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Customer" Type="Int32" />
+    <Property Name="Discount" Type="Double" />
+    <Property Name="TotalSales" Type="Double" Nullable="false" />
+    <Property Name="SalesDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StatusSales" Type="Int32" Nullable="false" />
+    <Property Name="PaymentType" Type="Int32" Nullable="false" />
+    <Property Name="PaymentAmount" Type="Double" />
+    <Property Name="Change" Type="Double" />
+  </EntityType>
+  <EntityType Name="TRole">
+    <Key>
+      <PropertyRef Name="Role_id" />
+    </Key>
+    <Property Name="Role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="is_Admin" Type="Boolean" Nullable="false" />
+    <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROle_Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TUser">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_active" Type="Boolean" Nullable="false" />
+    <Property Name="Role_id" Type="Int32" Nullable="false" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PSupplier">
+    <Key>
+      <PropertyRef Name="Supplier_id" />
+    </Key>
+    <Property Name="Supplier_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="supplier_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="supplier_address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email_address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contact_Person" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_person_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contact_person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TPurchaseOrder">
+    <Key>
+      <PropertyRef Name="PO_id" />
+    </Key>
+    <Property Name="PO_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PO_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PO_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PSupplierId" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TPurchaseOrderDetail">
+    <Key>
+      <PropertyRef Name="PODetailId" />
+    </Key>
+    <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
+    <Property Name="Items" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TReceiveingDetail">
+    <Key>
+      <PropertyRef Name="TReceiveingDetailId" />
+    </Key>
+    <Property Name="TReceiveingDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TReceiveingStock" Type="Int32" Nullable="false" />
+    <Property Name="items" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TReceiveingStock">
+    <Key>
+      <PropertyRef Name="TReceiveID" />
+    </Key>
+    <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
+    <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

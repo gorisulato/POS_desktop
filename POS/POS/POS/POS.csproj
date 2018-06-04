@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BEF2212-2428-4499-8F12-BE4F2D58A48D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS</RootNamespace>
+    <AssemblyName>POS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AltoControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AltoControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SimpleDataGridViewPaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SimpleDataGridViewPaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Transitions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Transitions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\PCustomer.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\POS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\POS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\POS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PPaymentType.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PSupplier.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\P_Colour.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TInventory.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TPurchaseOrder.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TPurchaseOrderDetail.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TReceiveingDetail.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TReceiveingStock.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TRole.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TSale.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TSalesDetail.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TUser.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder.Designer.cs">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SettingDbForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SettingDbForm.Designer.cs">
+      <DependentUpon>SettingDbForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FLOV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FLOV.Designer.cs">
+      <DependentUpon>FLOV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\FormADDSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\FormADDSales.Designer.cs">
+      <DependentUpon>FormADDSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\SalesModel.cs" />
+    <Compile Include="ThemeStyle.cs" />
+    <Compile Include="UtilityClass.cs" />
+    <EmbeddedResource Include="Purchasing\PurchaseOrder.resx">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\SettingDbForm.resx">
+      <DependentUpon>SettingDbForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FLOV.resx">
+      <DependentUpon>FLOV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\FormADDSales.resx">
+      <DependentUpon>FormADDSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="DB\POS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>POS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\POS.edmx.diagram">
+      <DependentUpon>POS.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DB\POS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POS.edmx</DependentUpon>
+      <LastGenOutput>POS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\POS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POS.edmx</DependentUpon>
+      <LastGenOutput>POS.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Truck_50px.png" />
+    <None Include="Resources\Ticket Purchase_48px.png" />
+    <None Include="Resources\Market Square_50px.png" />
+    <None Include="Resources\Add Shopping Cart_48px.png" />
+    <None Include="Resources\unexpand.png" />
+    <None Include="Resources\Fund Accounting_48px.png" />
+    <None Include="Resources\Untitled-2.png" />
+    <None Include="Resources\Untitled-1.png" />
+    <None Include="Resources\logoPOS.jpg" />
+    <None Include="Resources\Logout Rounded Left_50px.png" />
+    <None Include="Resources\Test_50px.png" />
+    <None Include="Resources\Save_64px.png" />
+    <None Include="Resources\Exit_64px.png" />
+    <None Include="Resources\Minimize Window_64px.png" />
+    <None Include="Resources\Close Window_50px.png" />
+    <None Include="Resources\Key_48px_white.png" />
+    <None Include="Resources\Key_48px.png" />
+    <None Include="Resources\Security Lock_100px_aqua.png" />
+    <None Include="Resources\Security Lock_100px_teal.png" />
+    <None Include="Resources\login2.jpg" />
+    <None Include="Resources\Security Lock_100px2.png" />
+    <None Include="Resources\Security Lock_100px.png" />
+    <None Include="Resources\login.jpg" />
+    <None Include="Resources\Lock_96px.png" />
+    <None Include="Resources\bck2.jpg" />
+    <None Include="Resources\bck1.jpg" />
+    <None Include="Resources\bckground.jpg" />
+    <None Include="Resources\index.jpg" />
+    <None Include="Resources\bg_support_form.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\cahuita-costa-rica-20102015-overcast.jpg" />
+    <None Include="Resources\scrollable-background-image.png" />
+    <None Include="Resources\working-hour-white.png" />
+    <None Include="Resources\working-hour-grey.png" />
+    <None Include="Resources\warning %281%29.png" />
+    <None Include="Resources\Walking_24px.png" />
+    <None Include="Resources\waiters-white.png" />
+    <None Include="Resources\waiters-grey.png" />
+    <None Include="Resources\Vacuum_Cleaner_100px.png" />
+    <None Include="Resources\user-white.png" />
+    <None Include="Resources\user-grey.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\Trash_100px.png" />
+    <None Include="Resources\table-white.png" />
+    <None Include="Resources\table-grey.png" />
+    <None Include="Resources\System Admin.png" />
+    <None Include="Resources\supplier.png" />
+    <None Include="Resources\Stop_100px.png" />
+    <None Include="Resources\Stocks_100px.png" />
+    <None Include="Resources\source-book-white.png" />
+    <None Include="Resources\source-book-grey.png" />
+    <None Include="Resources\Sign Out_100px.png" />
+    <None Include="Resources\setting-white.png" />
+    <None Include="Resources\Settings-grey.png" />
+    <None Include="Resources\Settings_100px.png" />
+    <None Include="Resources\Setting.png" />
+    <None Include="Resources\Search-white.png" />
+    <None Include="Resources\Search-grey.png" />
+    <None Include="Resources\Search_100px.png" />
+    <None Include="Resources\save-white.png" />
+    <None Include="Resources\save-grey.png" />
+    <None Include="Resources\salesman-white.png" />
+    <None Include="Resources\salesman-grey.png" />
+    <None Include="Resources\room-white.png" />
+    <None Include="Resources\room-grey.png" />
+    <None Include="Resources\room-category-white.png" />
+    <None Include="Resources\room-category-grey.png" />
+    <None Include="Resources\room.png" />
+    <None Include="Resources\role-white.png" />
+    <None Include="Resources\role-grey.png" />
+    <None Include="Resources\role-access-white.png" />
+    <None Include="Resources\role-access-grey.png" />
+    <None Include="Resources\Rewind.png" />
+    <None Include="Resources\revenue-white.png" />
+    <None Include="Resources\revenue-grey.png" />
+    <None Include="Resources\resume-white.png" />
+    <None Include="Resources\resume-grey.png" />
+    <None Include="Resources\Resume_100px.png" />
+    <None Include="Resources\reset-white.png" />
+    <None Include="Resources\reset-grey.png" />
+    <None Include="Resources\Reset_100px.png" />
+    <None Include="Resources\reservation-white.png" />
+    <None Include="Resources\reservation-grey.png" />
+    <None Include="Resources\Registry Editor_100px.png" />
+    <None Include="Resources\reactivation-reservation-white.png" />
+    <None Include="Resources\reactivation-reservation-grey.png" />
+    <None Include="Resources\quick-checkin-white.png" />
+    <None Include="Resources\quick-checkin-grey.png" />
+    <None Include="Resources\Print_100px.png" />
+    <None Include="Resources\prev-white.png" />
+    <None Include="Resources\prev-grey.png" />
+    <None Include="Resources\Positive.png" />
+    <None Include="Resources\point-of-sales-white.png" />
+    <None Include="Resources\point-of-sales-grey.png" />
+    <None Include="Resources\phone-operator-white.png" />
+    <None Include="Resources\phone-operator-grey.png" />
+    <None Include="Resources\payment-type-white.png" />
+    <None Include="Resources\payment-type-grey.png" />
+    <None Include="Resources\payment-card-white.png" />
+    <None Include="Resources\payment-card-grey.png" />
+    <None Include="Resources\password-white.png" />
+    <None Include="Resources\password-grey.png" />
+    <None Include="Resources\over-credit-white.png" />
+    <None Include="Resources\over-credit-grey.png" />
+    <None Include="Resources\Online Support_100px.png" />
+    <None Include="Resources\OK-white.png" />
+    <None Include="Resources\Ok-grey.png" />
+    <None Include="Resources\Notification-white.png" />
+    <None Include="Resources\Notification-grey.png" />
+    <None Include="Resources\Notification_100px.png" />
+    <None Include="Resources\Notification.png" />
+    <None Include="Resources\next-white.png" />
+    <None Include="Resources\next-grey.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\New_Product_White.png" />
+    <None Include="Resources\New Product_Gray.png" />
+    <None Include="Resources\modul-white.png" />
+    <None Include="Resources\modul-grey.png" />
+    <None Include="Resources\Micro SD_100px.png" />
+    <None Include="Resources\Menu-white.png" />
+    <None Include="Resources\menu-group-white.png" />
+    <None Include="Resources\menu-group-grey.png" />
+    <None Include="Resources\Menu-grey.png" />
+    <None Include="Resources\Menu_100px.png" />
+    <None Include="Resources\menu_24.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\Master File Setup.png" />
+    <None Include="Resources\manual-checkout-white.png" />
+    <None Include="Resources\manual-checkout-grey.png" />
+    <None Include="Resources\Management_100px.png" />
+    <None Include="Resources\Male_User_100px.png" />
+    <None Include="Resources\main-contact-white.png" />
+    <None Include="Resources\main-contact-grey.png" />
+    <None Include="Resources\LOV-white.png" />
+    <None Include="Resources\LOV-grey.png" />
+    <None Include="Resources\logout-white.png" />
+    <None Include="Resources\logout-grey.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\logo-hartech-biru.png" />
+    <None Include="Resources\Logo-hartech2x.png" />
+    <None Include="Resources\Logo-hartech.png" />
+    <None Include="Resources\logo-full-blue.png" />
+    <None Include="Resources\login-white.png" />
+    <None Include="Resources\login-grey.png" />
+    <None Include="Resources\login-BG-2.jpg" />
+    <None Include="Resources\login-BG.jpg" />
+    <None Include="Resources\Log-activity-white.png" />
+    <None Include="Resources\log-activity-grey.png" />
+    <None Include="Resources\Lock 2_100px.png" />
+    <None Include="Resources\Layers_100px.png" />
+    <None Include="Resources\last-white.png" />
+    <None Include="Resources\last-grey.png" />
+    <None Include="Resources\Last.png" />
+    <None Include="Resources\Language-white.png" />
+    <None Include="Resources\language-grey.png" />
+    <None Include="Resources\kiri.png" />
+    <None Include="Resources\kanan.png" />
+    <None Include="Resources\individual-checkout-white.png" />
+    <None Include="Resources\individual-checkout-grey.png" />
+    <None Include="Resources\individual-checkin-white.png" />
+    <None Include="Resources\individual-checkin-grey.png" />
+    <None Include="Resources\icons8-reservation-50.png" />
+    <None Include="Resources\icons8-reception-50.png" />
+    <None Include="Resources\icons8-geography-16.png" />
+    <None Include="Resources\icons8-database-administrator-50.png" />
+    <None Include="Resources\icons8-dashboard-50.png" />
+    <None Include="Resources\House-keeping-white.png" />
+    <None Include="Resources\house-keeping-grey.png" />
+    <None Include="Resources\history-white.png" />
+    <None Include="Resources\history-list-white.png" />
+    <None Include="Resources\history-list-grey.png" />
+    <None Include="Resources\history-grey.png" />
+    <None Include="Resources\guest-type-white.png" />
+    <None Include="Resources\guest-type-grey.png" />
+    <None Include="Resources\guest-stay-white.png" />
+    <None Include="Resources\guest-stay-grey.png" />
+    <None Include="Resources\guest-statistic-white.png" />
+    <None Include="Resources\guest-statistic-grey.png" />
+    <None Include="Resources\guest-message-white.png" />
+    <None Include="Resources\guest-message-grey.png" />
+    <None Include="Resources\guest-list-white.png" />
+    <None Include="Resources\guest-list-grey.png" />
+    <None Include="Resources\guest-card-white.png" />
+    <None Include="Resources\guest-card-grey.png" />
+    <None Include="Resources\Group_100px.png" />
+    <None Include="Resources\Group_24px.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\Geography_100px.png" />
+    <None Include="Resources\front-office-white.png" />
+    <None Include="Resources\front-office-grey.png" />
+    <None Include="Resources\Front_Desk_100px.png" />
+    <None Include="Resources\Forward_White.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\first-white.png" />
+    <None Include="Resources\first-grey.png" />
+    <None Include="Resources\finance-white.png" />
+    <None Include="Resources\finance-grey.png" />
+    <None Include="Resources\features-white.png" />
+    <None Include="Resources\features-grey.png" />
+    <None Include="Resources\Expand.png" />
+    <None Include="Resources\Expand Arrow_100px.png" />
+    <None Include="Resources\edit-white.png" />
+    <None Include="Resources\Edit-grey.png" />
+    <None Include="Resources\Edit_100px.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\Double_Right.png" />
+    <None Include="Resources\Double_Left.png" />
+    <None Include="Resources\discount-white.png" />
+    <None Include="Resources\discount-grey.png" />
+    <None Include="Resources\Department-white.png" />
+    <None Include="Resources\Department-grey.png" />
+    <None Include="Resources\denah.jpg" />
+    <None Include="Resources\delete-white.png" />
+    <None Include="Resources\delete-grey.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\DEFAULT-IMAGE1.png" />
+    <None Include="Resources\DEFAULT-IMAGE.png" />
+    <None Include="Resources\Dashboard-white.png" />
+    <None Include="Resources\dashboard-grey.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\currency-rate-white.png" />
+    <None Include="Resources\currency-rate-grey.png" />
+    <None Include="Resources\Currency.png" />
+    <None Include="Resources\cross_grey_16.png" />
+    <None Include="Resources\coupon-white.png" />
+    <None Include="Resources\coupon-grey.png" />
+    <None Include="Resources\Coins_100px.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Clock-white.png" />
+    <None Include="Resources\Clock-grey.png" />
+    <None Include="Resources\Clock_100px.png" />
+    <None Include="Resources\chevron-white.png" />
+    <None Include="Resources\chevron-grey.png" />
+    <None Include="Resources\checkout-white.png" />
+    <None Include="Resources\checkout-grey.png" />
+    <None Include="Resources\checkout.png" />
+    <None Include="Resources\checkin-white.png" />
+    <None Include="Resources\checkin-grey.png" />
+    <None Include="Resources\checkin.png" />
+    <None Include="Resources\check_grey_16.png" />
+    <None Include="Resources\Cash Counter_100px.png" />
+    <None Include="Resources\Cancel-white.png" />
+    <None Include="Resources\Cancel-grey.png" />
+    <None Include="Resources\Cancel_100px.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\Calendar-white.png" />
+    <None Include="Resources\Calendar-grey.png" />
+    <None Include="Resources\Calendar_100px.png" />
+    <None Include="Resources\Bulleted List.png" />
+    <None Include="Resources\birthday-list-white.png" />
+    <None Include="Resources\birthday-list-grey.png" />
+    <None Include="Resources\bill-white.png" />
+    <None Include="Resources\bill-grey.png" />
+    <None Include="Resources\back-office-white.png" />
+    <None Include="Resources\back-office-grey.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\Back %282%29.png" />
+    <None Include="Resources\available-room-white.png" />
+    <None Include="Resources\available-room-grey.png" />
+    <None Include="Resources\auto-checkout-white.png" />
+    <None Include="Resources\auto-checkout-grey.png" />
+    <None Include="Resources\article-white.png" />
+    <None Include="Resources\article-grey.png" />
+    <None Include="Resources\arrow_left.png" />
+    <None Include="Resources\allotment-white.png" />
+    <None Include="Resources\allotment-grey.png" />
+    <None Include="Resources\Add-white.png" />
+    <None Include="Resources\Add-grey.png" />
+    <None Include="Resources\Add_100px.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\accounting-white.png" />
+    <None Include="Resources\accounting-grey.png" />
+    <None Include="Resources\ABF-white.png" />
+    <None Include="Resources\ABF-grey.png" />
+    <None Include="Resources\search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Point_Of_SalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="P_Colour">
+    <Key>
+      <PropertyRef Name="clor_id" />
+    </Key>
+    <Property Name="clor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PCustomer">
+    <Key>
+      <PropertyRef Name="id_Customer" />
+    </Key>
+    <Property Name="id_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MemberCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Alamat" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TempatLahir" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TanggalLahir" Type="datetime" Nullable="false" />
+    <Property Name="PointReward" Type="int" />
+  </EntityType>
+  <EntityType Name="PPaymentType">
+    <Key>
+      <PropertyRef Name="id_paymenttype" />
+    </Key>
+    <Property Name="id_paymenttype" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PSupplier">
+    <Key>
+      <PropertyRef Name="Supplier_id" />
+    </Key>
+    <Property Name="Supplier_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="supplier_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="supplier_address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email_address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact_Person" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contact_person_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="contact_person_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TInventory">
+    <Key>
+      <PropertyRef Name="Items_Id" />
+    </Key>
+    <Property Name="Items_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Items_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Colour" Type="int" />
+    <Property Name="Size" Type="float" />
+    <Property Name="Unit_Price" Type="float" />
+    <Property Name="Stock" Type="int" />
+    <Property Name="Items_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TPurchaseOrder">
+    <Key>
+      <PropertyRef Name="PO_id" />
+    </Key>
+    <Property Name="PO_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PO_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PO_date" Type="datetime" Nullable="false" />
+    <Property Name="PSupplierId" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TPurchaseOrderDetail">
+    <Key>
+      <PropertyRef Name="PODetailId" />
+    </Key>
+    <Property Name="PODetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrder" Type="int" Nullable="false" />
+    <Property Name="Items" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TReceiveingDetail">
+    <Key>
+      <PropertyRef Name="TReceiveingDetailId" />
+    </Key>
+    <Property Name="TReceiveingDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TReceiveingStock" Type="int" Nullable="false" />
+    <Property Name="items" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TReceiveingStock">
+    <Key>
+      <PropertyRef Name="TReceiveID" />
+    </Key>
+    <Property Name="TReceiveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrder" Type="int" Nullable="false" />
+    <Property Name="ReceiveDate" Type="datetime" Nullable="false" />
+    <Property Name="ReceiveNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TRole">
+    <Key>
+      <PropertyRef Name="Role_id" />
+    </Key>
+    <Property Name="Role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="is_Admin" Type="bit" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROle_Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TSales">
+    <Key>
+      <PropertyRef Name="TSales_id" />
+    </Key>
+    <Property Name="TSales_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sales_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer" Type="int" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="TotalSales" Type="float" Nullable="false" />
+    <Property Name="SalesDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="StatusSales" Type="int" Nullable="false" />
+    <Property Name="PaymentType" Type="int" Nullable="false" />
+    <Property Name="PaymentAmount" Type="float" />
+    <Property Name="Change" Type="float" />
+  </EntityType>
+  <EntityType Name="TSalesDetail">
+    <Key>
+      <PropertyRef Name="Sales_Detail_id" />
+    </Key>
+    <Property Name="Sales_Detail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sales_Number" Type="int" Nullable="false" />
+    <Property Name="Items" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="Tax" Type="float" />
+    <Property Name="Subtotal" Type="float" />
+  </EntityType>
+  <EntityType Name="TUser">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="Role_id" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="Point_Of_SalesModelStoreContainer">
+    <EntitySet Name="P_Colour" EntityType="Self.P_Colour" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PCustomer" EntityType="Self.PCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PPaymentType" EntityType="Self.PPaymentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PSupplier" EntityType="Self.PSupplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TInventory" EntityType="Self.TInventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TPurchaseOrder" EntityType="Self.TPurchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TPurchaseOrderDetail" EntityType="Self.TPurchaseOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TReceiveingDetail" EntityType="Self.TReceiveingDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TReceiveingStock" EntityType="Self.TReceiveingStock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRole" EntityType="Self.TRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TSales" EntityType="Self.TSales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TSalesDetail" EntityType="Self.TSalesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TUser" EntityType="Self.TUser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

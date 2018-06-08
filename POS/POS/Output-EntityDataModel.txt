@@ -1,0 +1,6 @@
+﻿Generated model file: POS.edmx.
+Loading metadata from the database took 00:00:00.7113209.
+Generating the model took 00:00:01.5350731.
+Generated model file: POS.edmx.
+Loading metadata from the database took 00:00:00.6422051.
+Generating the model took 00:00:01.4000215.

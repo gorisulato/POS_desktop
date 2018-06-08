@@ -95,6 +95,7 @@
           <Property Name="is_deleted" Type="bit" Nullable="false" />
           <Property Name="deleted_by" Type="int" />
           <Property Name="deleted_date" Type="datetime" />
+          <Property Name="differenceqty" Type="int" />
         </EntityType>
         <EntityType Name="TReceiveingDetail">
           <Key>
@@ -113,6 +114,7 @@
           <Property Name="is_deleted" Type="bit" Nullable="false" />
           <Property Name="deleted_by" Type="int" />
           <Property Name="deleted_date" Type="datetime" />
+          <Property Name="ReceiveQty" Type="int" />
         </EntityType>
         <EntityType Name="TReceiveingStock">
           <Key>
@@ -129,6 +131,7 @@
           <Property Name="is_deleted" Type="bit" Nullable="false" />
           <Property Name="deleted_by" Type="int" />
           <Property Name="deleted_date" Type="datetime" />
+          <Property Name="PsupplierId" Type="int" />
         </EntityType>
         <EntityType Name="TRole">
           <Key>
@@ -215,9 +218,9 @@
           <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
           <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
           <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
-          <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
-          <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
           <EntitySet Name="TReceiveingStocks" EntityType="Point_Of_SalesModel.TReceiveingStock" />
+          <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
+          <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
         </EntityContainer>
         <EntityType Name="P_Colour">
           <Key>
@@ -349,14 +352,14 @@
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="TPurchaseOrderDetail">
+        <EntityType Name="TReceiveingStock">
           <Key>
-            <PropertyRef Name="PODetailId" />
+            <PropertyRef Name="TReceiveID" />
           </Key>
-          <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
-          <Property Name="Items" Type="Int32" Nullable="false" />
-          <Property Name="Qty" Type="Int32" />
+          <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="created_by" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modified_by" Type="Int32" />
@@ -364,6 +367,7 @@
           <Property Name="is_deleted" Type="Boolean" Nullable="false" />
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="PsupplierId" Type="Int32" />
         </EntityType>
         <EntityType Name="TReceiveingDetail">
           <Key>
@@ -382,15 +386,16 @@
           <Property Name="is_deleted" Type="Boolean" Nullable="false" />
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="ReceiveQty" Type="Int32" />
         </EntityType>
-        <EntityType Name="TReceiveingStock">
+        <EntityType Name="TPurchaseOrderDetail">
           <Key>
-            <PropertyRef Name="TReceiveID" />
+            <PropertyRef Name="PODetailId" />
           </Key>
-          <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
-          <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Items" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" />
           <Property Name="created_by" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modified_by" Type="Int32" />
@@ -398,6 +403,7 @@
           <Property Name="is_deleted" Type="Boolean" Nullable="false" />
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="differenceqty" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -545,9 +551,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TPurchaseOrderDetails">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TPurchaseOrderDetail">
-              <MappingFragment StoreEntitySet="TPurchaseOrderDetail">
+          <EntitySetMapping Name="TReceiveingStocks">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TReceiveingStock">
+              <MappingFragment StoreEntitySet="TReceiveingStock">
+                <ScalarProperty Name="PsupplierId" ColumnName="PsupplierId" />
                 <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
                 <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
                 <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
@@ -555,16 +562,17 @@
                 <ScalarProperty Name="modified_by" ColumnName="modified_by" />
                 <ScalarProperty Name="created_date" ColumnName="created_date" />
                 <ScalarProperty Name="created_by" ColumnName="created_by" />
-                <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="Items" ColumnName="Items" />
+                <ScalarProperty Name="ReceiveNumber" ColumnName="ReceiveNumber" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
                 <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-                <ScalarProperty Name="PODetailId" ColumnName="PODetailId" />
+                <ScalarProperty Name="TReceiveID" ColumnName="TReceiveID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TReceiveingDetails">
             <EntityTypeMapping TypeName="Point_Of_SalesModel.TReceiveingDetail">
               <MappingFragment StoreEntitySet="TReceiveingDetail">
+                <ScalarProperty Name="ReceiveQty" ColumnName="ReceiveQty" />
                 <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
                 <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
                 <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
@@ -581,9 +589,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TReceiveingStocks">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TReceiveingStock">
-              <MappingFragment StoreEntitySet="TReceiveingStock">
+          <EntitySetMapping Name="TPurchaseOrderDetails">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TPurchaseOrderDetail">
+              <MappingFragment StoreEntitySet="TPurchaseOrderDetail">
+                <ScalarProperty Name="differenceqty" ColumnName="differenceqty" />
                 <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
                 <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
                 <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
@@ -591,10 +600,10 @@
                 <ScalarProperty Name="modified_by" ColumnName="modified_by" />
                 <ScalarProperty Name="created_date" ColumnName="created_date" />
                 <ScalarProperty Name="created_by" ColumnName="created_by" />
-                <ScalarProperty Name="ReceiveNumber" ColumnName="ReceiveNumber" />
-                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Items" ColumnName="Items" />
                 <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-                <ScalarProperty Name="TReceiveID" ColumnName="TReceiveID" />
+                <ScalarProperty Name="PODetailId" ColumnName="PODetailId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

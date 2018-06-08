@@ -1,4 +1,5 @@
 ﻿using POS.Purchasing;
+using POS.Receiving;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace POS.SystemAdmin
 {
     public partial class FormHome : Form
     {
+        private bool ALT_F4 = false;
         public FormHome()
         {
             InitializeComponent();
@@ -184,6 +186,17 @@ namespace POS.SystemAdmin
                 t.run();
                 btn_expandpembelian.Image = Properties.Resources.unexpand;
             }
+        }
+
+        private void FormHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+        }
+
+        private void btn_receive_Click(object sender, EventArgs e)
+        {
+            ReceivingList rc = new ReceivingList();
+            rc.Show(this);
         }
     }
 }

@@ -133,11 +133,29 @@
     <Compile Include="DB\TUser.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Purchasing\FormAddPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\FormAddPO.Designer.cs">
+      <DependentUpon>FormAddPO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchasing\PurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Purchasing\PurchaseOrder.Designer.cs">
       <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receiving\FormAddReceiveing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receiving\FormAddReceiveing.Designer.cs">
+      <DependentUpon>FormAddReceiveing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receiving\ReceivingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receiving\ReceivingList.Designer.cs">
+      <DependentUpon>ReceivingList.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\FormHome.cs">
       <SubType>Form</SubType>
@@ -180,8 +198,17 @@
     <Compile Include="Sales\SalesModel.cs" />
     <Compile Include="ThemeStyle.cs" />
     <Compile Include="UtilityClass.cs" />
+    <EmbeddedResource Include="Purchasing\FormAddPO.resx">
+      <DependentUpon>FormAddPO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Purchasing\PurchaseOrder.resx">
       <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receiving\FormAddReceiveing.resx">
+      <DependentUpon>FormAddReceiveing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receiving\ReceivingList.resx">
+      <DependentUpon>ReceivingList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdmin\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
@@ -244,6 +271,7 @@
       <DependentUpon>POS.edmx</DependentUpon>
       <LastGenOutput>POS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Edit_50px.png" />
     <None Include="Resources\Truck_50px.png" />
     <None Include="Resources\Ticket Purchase_48px.png" />
     <None Include="Resources\Market Square_50px.png" />

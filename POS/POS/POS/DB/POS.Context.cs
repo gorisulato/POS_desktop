@@ -39,8 +39,8 @@ namespace POS.DB
         public virtual DbSet<TUser> TUsers { get; set; }
         public virtual DbSet<PSupplier> PSuppliers { get; set; }
         public virtual DbSet<TPurchaseOrder> TPurchaseOrders { get; set; }
-        public virtual DbSet<TPurchaseOrderDetail> TPurchaseOrderDetails { get; set; }
-        public virtual DbSet<TReceiveingDetail> TReceiveingDetails { get; set; }
         public virtual DbSet<TReceiveingStock> TReceiveingStocks { get; set; }
+        public virtual DbSet<TReceiveingDetail> TReceiveingDetails { get; set; }
+        public virtual DbSet<TPurchaseOrderDetail> TPurchaseOrderDetails { get; set; }
     }
 }

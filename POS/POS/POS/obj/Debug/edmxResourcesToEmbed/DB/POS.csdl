@@ -11,9 +11,9 @@
     <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
     <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
     <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
-    <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
-    <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
     <EntitySet Name="TReceiveingStocks" EntityType="Point_Of_SalesModel.TReceiveingStock" />
+    <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
+    <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
   </EntityContainer>
   <EntityType Name="P_Colour">
     <Key>
@@ -145,14 +145,14 @@
     <Property Name="deleted_by" Type="Int32" />
     <Property Name="deleted_date" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityType Name="TPurchaseOrderDetail">
+  <EntityType Name="TReceiveingStock">
     <Key>
-      <PropertyRef Name="PODetailId" />
+      <PropertyRef Name="TReceiveID" />
     </Key>
-    <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
-    <Property Name="Items" Type="Int32" Nullable="false" />
-    <Property Name="Qty" Type="Int32" />
+    <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="created_by" Type="Int32" Nullable="false" />
     <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="modified_by" Type="Int32" />
@@ -160,6 +160,7 @@
     <Property Name="is_deleted" Type="Boolean" Nullable="false" />
     <Property Name="deleted_by" Type="Int32" />
     <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="PsupplierId" Type="Int32" />
   </EntityType>
   <EntityType Name="TReceiveingDetail">
     <Key>
@@ -178,15 +179,16 @@
     <Property Name="is_deleted" Type="Boolean" Nullable="false" />
     <Property Name="deleted_by" Type="Int32" />
     <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="ReceiveQty" Type="Int32" />
   </EntityType>
-  <EntityType Name="TReceiveingStock">
+  <EntityType Name="TPurchaseOrderDetail">
     <Key>
-      <PropertyRef Name="TReceiveID" />
+      <PropertyRef Name="PODetailId" />
     </Key>
-    <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
-    <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Items" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" />
     <Property Name="created_by" Type="Int32" Nullable="false" />
     <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="modified_by" Type="Int32" />
@@ -194,5 +196,6 @@
     <Property Name="is_deleted" Type="Boolean" Nullable="false" />
     <Property Name="deleted_by" Type="Int32" />
     <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="differenceqty" Type="Int32" />
   </EntityType>
 </Schema>

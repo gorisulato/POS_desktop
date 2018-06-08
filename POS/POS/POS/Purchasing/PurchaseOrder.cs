@@ -14,13 +14,14 @@ namespace POS.Purchasing
 {
     public partial class PurchaseOrder : Form
     {
+        int row_main_selected = 0;
         public delegate void DoEvent();
         public event DoEvent RefreshDgv;
         int total_records = 0;
         int offset_data = 0;
         UtilityClass Util = new UtilityClass();
         POS_Entities Point_Of_SalesEntities;// = new hartama_hotelEntities();
-        string indexDatagrid = "";
+        int indexDatagrid = 0;
         int stat = 0;
         string calling;
         int StartPaginationShow = 1;
@@ -38,7 +39,7 @@ namespace POS.Purchasing
         private void PurchaseOrder_Load(object sender, EventArgs e)
         {
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
-           
+            dg_Po.MultiSelect = false;
             Load_Po();
         }
         private void CountRecords()
@@ -46,7 +47,7 @@ namespace POS.Purchasing
             
             if (stat == 0)
             {
-                total_records = Point_Of_SalesEntities.TPurchaseOrders.Count();
+                total_records = Point_Of_SalesEntities.TPurchaseOrders.Where(x=>x.is_deleted==false).Count();
             }
             else
             {
@@ -87,7 +88,7 @@ namespace POS.Purchasing
             {
                 total_pages = Math.Ceiling(total_records / Convert.ToDecimal(25));
               txt_pagination.Text = String.Format("Showing {0} To {1} Of {2} Total Records", total_records != 0 ? 1 : 0, 25 > total_records ? total_records.ToString() : "25", total_records);
-                txtpageinfo.Text = "Page :" + " " + String.Format("{0} / {1}", StartPaginationShow, total_pages);
+                txtpageinfo.Text = "Page :" + " " + String.Format("{0} / {1}", StartPaginationShow, total_pages <= 0 ? 1 : total_pages);
             }
             else
             {
@@ -95,13 +96,13 @@ namespace POS.Purchasing
                 {
                     total_pages = Math.Ceiling(total_records / Convert.ToDecimal(25));
                   txt_pagination.Text = String.Format("Showing {0} To {1} Of {2} Total Records", offset_data + 1, 25 * StartPaginationShow, total_records);
-                    txtpageinfo.Text = "Page :" + " " + String.Format("{0} / {1}", StartPaginationShow, total_pages);
+                    txtpageinfo.Text = "Page :" + " " + String.Format("{0} / {1}", StartPaginationShow, total_pages <= 0 ? 1 : total_pages);
                 }
                 else
                 {
                     total_pages = Math.Ceiling(total_records / Convert.ToDecimal(25));
                    txt_pagination.Text = String.Format("Showing {0} To {1} Of {2} Total Records", offset_data + 1, total_records, total_records);
-                    txtpageinfo.Text = "Page :"+" "+String.Format("{0} / {1}", StartPaginationShow, total_pages);
+                    txtpageinfo.Text = "Page :"+" "+String.Format("{0} / {1}", StartPaginationShow, total_pages <= 0 ? 1 : total_pages);
                 }
 
             }
@@ -168,6 +169,7 @@ namespace POS.Purchasing
                     dt.Columns.Add("Supplier Name", typeof(string));
                     dt.Columns.Add("Supplier Address", typeof(string));
                     dt.Columns.Add("Contact Person", typeof(string));
+                    dt.Columns.Add("Status", typeof(string));
 
 
 
@@ -192,8 +194,8 @@ namespace POS.Purchasing
                             Util.dtreader[2].ToString(),
                             Util.dtreader[3].ToString(),
                             Util.dtreader[4].ToString(),
-                            Util.dtreader[5].ToString()
-
+                            Util.dtreader[5].ToString(),
+                            Util.dtreader[6].ToString()
 
 
                             );
@@ -218,6 +220,46 @@ namespace POS.Purchasing
         {
             this.Hide();
             this.RefreshDgv();
+        }
+
+        private void btn_add_po_Click(object sender, EventArgs e)
+        {
+            FormAddPO add = new FormAddPO("add");
+            add.RefreshDgv += new FormAddPO.DoEvent(Load_Po);
+            //dataGridView1.Columns[0].Visible = false;
+            add.ShowDialog();
+        }
+
+        private void dg_Po_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dg_Po.SelectedRows)
+            {
+                indexDatagrid = Convert.ToInt32(row.Cells[0].Value.ToString());
+            }
+        }
+
+        private void dg_Po_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    row_main_selected = e.RowIndex;
+                    dg_Po.Rows[e.RowIndex].Selected = true;
+                    contextMenuStrip1.Show(dg_Po, e.Location);
+                    contextMenuStrip1.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            FormAddPO add = new FormAddPO("edit", indexDatagrid);
+            add.RefreshDgv += new FormAddPO.DoEvent(Load_Po);
+            //dataGridView1.Columns[0].Visible = false;
+            add.ShowDialog();
+
         }
 
         public void setenablebtnpage()

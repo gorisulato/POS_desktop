@@ -23,6 +23,7 @@ namespace POS.SystemAdmin
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             txt_password._TextBox.PasswordChar = '*';
             var _sessions = Properties.Settings.Default;
             if (_sessions.password != "" || _sessions._username != "")
@@ -39,8 +40,16 @@ namespace POS.SystemAdmin
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+
+            Login_Action();
+          
+        }
+
+        private void Login_Action()
+        {
             try
             {
+       
                 string Username = txt_username.text;
                 string Password = txt_password.text;
                 Point_Of_SalesEntities = new POS_Entities(util.CheckDatabaseConnection());
@@ -79,10 +88,9 @@ namespace POS.SystemAdmin
 
                     //register session
                     var _sessions = Properties.Settings.Default;
-
                     _sessions._username = dataUser.User.Username;
                     _sessions._userID = dataUser.User.Role_id;
-                    _sessions.password = txt_password.text;
+                    _sessions.password = txt_password.text.Replace(Environment.NewLine, "");
                     _sessions._userRole = dataUser.User.Role_id;
                     _sessions._userRolename = dataUser.Role.Role_Name;
                     if (cb_remember.Checked == true)
@@ -101,10 +109,7 @@ namespace POS.SystemAdmin
 
                 MessageBox.Show("Koneksi gagal silahkan periksa konfigurasi koneksi database. Silahkan Periksa seting koneksi database anda", "Error Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-          
         }
-
         private void btn_editdb_Click(object sender, EventArgs e)
         {
             SettingDbForm sdb = new SettingDbForm();
@@ -119,6 +124,55 @@ namespace POS.SystemAdmin
                 Application.Exit();
             }
            
+        }
+
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            txt_username.text = txt_username.text.Replace(Environment.NewLine, "");
+            txt_password.text = txt_password.text.Replace(Environment.NewLine, "");
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+                Login_Action();
+               
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                SettingDbForm sd = new SettingDbForm();
+                sd.ShowDialog();
+            }
+
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dr = MessageBox.Show("Anda Yakin Keluar dari aplikasi?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+           
+        }
+
+        private void txt_username_KeyDown(object sender, EventArgs e)
+        {
+
+            txt_username.Text = txt_username.Text.Replace(Environment.NewLine, "");
+            txt_password.Text = txt_password.Text.Replace(Environment.NewLine, "");
+         
+        }
+
+        private void txt_password_KeyDown(object sender, EventArgs e)
+        {
+            txt_username.Text = txt_username.Text.Replace(Environment.NewLine, "");
+            txt_password.Text = txt_password.Text.Replace(Environment.NewLine, "");
         }
     }
 }

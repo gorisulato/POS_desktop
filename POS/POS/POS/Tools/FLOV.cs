@@ -27,6 +27,7 @@ namespace POS
         string where;
         string code;
         string id;
+        string Custom = "";
         bool ismultiple;
         string[] dependency;
         string columnwhere = null;
@@ -48,36 +49,10 @@ namespace POS
             get { return room_number; }
             set { room_number = value; }
         }
-        public FLOV(Form F, string TN, Bunifu.Framework.UI.BunifuMaterialTextbox TShow, Bunifu.Framework.UI.BunifuMetroTextbox Tid, string OD, string[] col)
+      
+        public FLOV(Form F, string TN, AltoControls.AltoTextBox TShow, Bunifu.Framework.UI.BunifuMetroTextbox Tid, string OD, string[] col,string cs,string custom)
         {
-            TableName = TN;
-            OrderBy = OD;
-            FormCall = F;
-            TextboxShow = TShow;
-            TextboxID = Tid;
-            column = col;
-            InitializeComponent();
-        }
-        public FLOV(Form F, string sql, string sqlcount, string TShow, int Tid)
-        {
-            SQL = sql;
-            SQLCount = sqlcount;
-            FormCall = F;
-            Room_Number = TShow;
-            reservation_id = Tid;
-            InitializeComponent();
-        }
-        public FLOV(Form F, string sql, string sqlcount, AltoControls.AltoTextBox TShow, Bunifu.Framework.UI.BunifuMetroTextbox Tid)
-        {
-            SQL = sql;
-            SQLCount = sqlcount;
-            FormCall = F;
-            TextboxShow2 = TShow;
-            TextboxID = Tid;
-            InitializeComponent();
-        }
-        public FLOV(Form F, string TN, AltoControls.AltoTextBox TShow, Bunifu.Framework.UI.BunifuMetroTextbox Tid, string OD, string[] col,string cs)
-        {
+            Custom = custom;
             columnsearch = cs;
             TableName = TN;
             OrderBy = OD;
@@ -87,20 +62,16 @@ namespace POS
             column = col;
             InitializeComponent();
         }
-        public FLOV(Form F, string TN, AltoControls.AltoTextBox TShow, Bunifu.Framework.UI.BunifuMetroTextbox Tid, string OD, string[] col, string column_where, string operat, string value, bool multiple, int qty, string column_search = null)
+        public FLOV(Form F, string TN, AltoControls.AltoTextBox TShow, Bunifu.Framework.UI.BunifuMetroTextbox Tid, string OD, string[] col, string cs)
         {
+            
+            columnsearch = cs;
             TableName = TN;
             OrderBy = OD;
             FormCall = F;
             TextboxShow2 = TShow;
             TextboxID = Tid;
             column = col;
-            columnwhere = column_where;
-            @operator = operat;
-            valuewhere = value;
-            ismultiple = multiple;
-            roomqty = qty;
-            columnsearch = column_search;
             InitializeComponent();
         }
 
@@ -126,6 +97,15 @@ namespace POS
         {
             if (Util.OpenConnection())
             {
+                if (Custom != "")
+                {
+                    where = " where PSupplierId= "+Custom+" And ";
+                    where = where + columnwhere + " " + @operator + " " + valuewhere + " ";
+                }
+                else
+                {
+                    where = " where ";
+                }
                 //TLOV.RequestQueryData += TLOV_RequestQueryData;
                 if (columnwhere != null)
                 {
@@ -134,12 +114,12 @@ namespace POS
                 }
                 else
                 {
-                    where = " ";
+                    where = where;
                 }
 
                 if (columnsearch != null)
                 {
-                    where = " where "  + columnsearch + " like '%" + altoTextBox1.Text + "%'";
+                    where = where + columnsearch + " like '%" + altoTextBox1.Text + "%'";
                 }
                 if (SQL != null)
                 {
@@ -207,7 +187,15 @@ namespace POS
             }
 
 
-
+            if (Custom != "")
+            {
+                where = " where PSupplierId= " + Custom + " And ";
+                where = where + columnwhere + " " + @operator + " " + valuewhere + " ";
+            }
+            else
+            {
+                where = " where ";
+            }
 
             if (columnwhere != null)
             {
@@ -216,12 +204,12 @@ namespace POS
             }
             else
             {
-                where = " ";
+                where = where;
             }
 
             if (columnsearch != null)
             {
-                where =  " where " + columnsearch + " like '%" + altoTextBox1.Text + "%'";
+                where =  where + columnsearch + " like '%" + altoTextBox1.Text + "%'";
             }
 
             if (Util.OpenConnection())

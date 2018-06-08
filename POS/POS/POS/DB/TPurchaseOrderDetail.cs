@@ -25,5 +25,6 @@ namespace POS.DB
         public bool is_deleted { get; set; }
         public Nullable<int> deleted_by { get; set; }
         public Nullable<System.DateTime> deleted_date { get; set; }
+        public Nullable<int> differenceqty { get; set; }
     }
 }

@@ -93,6 +93,7 @@
             this.txt_password.Size = new System.Drawing.Size(270, 40);
             this.txt_password.TabIndex = 26;
             this.txt_password.text = "Password";
+            this.txt_password.KeyDown += new System.EventHandler(this.txt_password_KeyDown);
             // 
             // txt_username
             // 
@@ -106,6 +107,7 @@
             this.txt_username.Size = new System.Drawing.Size(270, 40);
             this.txt_username.TabIndex = 25;
             this.txt_username.text = "Username";
+            this.txt_username.KeyDown += new System.EventHandler(this.txt_username_KeyDown);
             // 
             // btn_login
             // 
@@ -171,7 +173,7 @@
             this.btn_editdb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_editdb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_editdb.BorderRadius = 0;
-            this.btn_editdb.ButtonText = "Setting Koneksi";
+            this.btn_editdb.ButtonText = "(F2)Setting Koneksi";
             this.btn_editdb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_editdb.DisabledColor = System.Drawing.Color.Gray;
             this.btn_editdb.Iconcolor = System.Drawing.Color.Transparent;
@@ -192,9 +194,9 @@
             this.btn_editdb.OnHovercolor = System.Drawing.Color.Teal;
             this.btn_editdb.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_editdb.selected = false;
-            this.btn_editdb.Size = new System.Drawing.Size(106, 48);
+            this.btn_editdb.Size = new System.Drawing.Size(122, 48);
             this.btn_editdb.TabIndex = 30;
-            this.btn_editdb.Text = "Setting Koneksi";
+            this.btn_editdb.Text = "(F2)Setting Koneksi";
             this.btn_editdb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_editdb.Textcolor = System.Drawing.Color.White;
             this.btn_editdb.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,7 +223,7 @@
             this.btn_exit.IconVisible = true;
             this.btn_exit.IconZoom = 70D;
             this.btn_exit.IsTab = false;
-            this.btn_exit.Location = new System.Drawing.Point(236, 280);
+            this.btn_exit.Location = new System.Drawing.Point(252, 280);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exit.OnHovercolor = System.Drawing.Color.Teal;
@@ -267,7 +269,9 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.Load += new System.EventHandler(this.FormLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

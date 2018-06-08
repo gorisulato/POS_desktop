@@ -50,7 +50,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_expandsubmenusales = new Bunifu.Framework.UI.BunifuImageButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_notif = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_logout = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_minimize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -70,6 +72,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandsubmenusales)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_notif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
@@ -326,10 +329,16 @@
             this.btn_expandsubmenusales.Zoom = 10;
             this.btn_expandsubmenusales.Click += new System.EventHandler(this.btn_expandsubmenusales_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::POS.Properties.Resources.upper;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btn_notif);
             this.panel1.Controls.Add(this.btn_logout);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btn_minimize);
@@ -339,6 +348,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1350, 59);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_notif
+            // 
+            this.btn_notif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_notif.Image = global::POS.Properties.Resources.Notification_white;
+            this.btn_notif.ImageActive = null;
+            this.btn_notif.Location = new System.Drawing.Point(1108, 6);
+            this.btn_notif.Name = "btn_notif";
+            this.btn_notif.Size = new System.Drawing.Size(53, 39);
+            this.btn_notif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_notif.TabIndex = 4;
+            this.btn_notif.TabStop = false;
+            this.btn_notif.Zoom = 10;
+            this.btn_notif.Click += new System.EventHandler(this.btn_notif_Click);
             // 
             // btn_logout
             // 
@@ -424,6 +447,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandsubmenusales)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_notif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
@@ -459,5 +483,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Bunifu.Framework.UI.BunifuImageButton btn_expandpembelian;
+        private System.Windows.Forms.Timer timer1;
+        private Bunifu.Framework.UI.BunifuImageButton btn_notif;
     }
 }

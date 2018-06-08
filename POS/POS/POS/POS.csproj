@@ -169,6 +169,12 @@
     <Compile Include="SystemAdmin\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemAdmin\Notification Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Notification Form.Designer.cs">
+      <DependentUpon>Notification Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemAdmin\SettingDbForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdmin\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\Notification Form.resx">
+      <DependentUpon>Notification Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdmin\SettingDbForm.resx">
       <DependentUpon>SettingDbForm.cs</DependentUpon>
@@ -271,6 +280,9 @@
       <DependentUpon>POS.edmx</DependentUpon>
       <LastGenOutput>POS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Notification_48px.png" />
+    <None Include="Resources\Error_20px.png" />
+    <None Include="Resources\Error_48px.png" />
     <None Include="Resources\Edit_50px.png" />
     <None Include="Resources\Truck_50px.png" />
     <None Include="Resources\Ticket Purchase_48px.png" />

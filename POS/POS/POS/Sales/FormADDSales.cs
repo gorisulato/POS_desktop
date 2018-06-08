@@ -52,7 +52,7 @@ namespace POS
                 }
                 else
                 {
-                    paramsp = snumberparam;
+                    paramsp = txt_salesNumber.Text;
                 }
                 dg_detail.DataSource = null;
                 dg_detail.Columns.Clear();

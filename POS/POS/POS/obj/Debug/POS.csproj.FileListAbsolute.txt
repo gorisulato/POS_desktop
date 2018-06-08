@@ -41,3 +41,4 @@ E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Purchasing.FormAddPO.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Receiving.ReceivingList.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Receiving.FormAddReceiveing.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.SystemAdmin.Notification_Form.resources

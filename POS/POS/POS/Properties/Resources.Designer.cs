@@ -863,6 +863,26 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Error_20px {
+            get {
+                object obj = ResourceManager.GetObject("Error_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Error_48px {
+            get {
+                object obj = ResourceManager.GetObject("Error_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exit_64px {
             get {
                 object obj = ResourceManager.GetObject("Exit_64px", resourceCulture);
@@ -1906,6 +1926,16 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap Notification_100px {
             get {
                 object obj = ResourceManager.GetObject("Notification_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Notification_48px {
+            get {
+                object obj = ResourceManager.GetObject("Notification_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

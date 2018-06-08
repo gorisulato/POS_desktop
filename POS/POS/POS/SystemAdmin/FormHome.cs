@@ -15,7 +15,8 @@ namespace POS.SystemAdmin
 {
     public partial class FormHome : Form
     {
-        private bool ALT_F4 = false;
+     
+  
         public FormHome()
         {
             InitializeComponent();
@@ -37,11 +38,27 @@ namespace POS.SystemAdmin
         {
             WindowState = FormWindowState.Minimized;
         }
-
+        public void check_Method()
+        {
+            Notification_Form n = new Notification_Form() ;
+            int countrecords = n.count();
+            if (countrecords > 0)
+            {
+                btn_notif.Image = Properties.Resources.Notification_48px;
+            }
+            else
+            {
+                btn_notif.Image = Properties.Resources.Notification_white;
+            }
+        }
         private void FormHome_Load(object sender, EventArgs e)
         {
-          
-           
+            timer1.Start();
+
+            //check_Method();
+
+
+
         }
 
         private void SalesList_Click(object sender, EventArgs e)
@@ -197,6 +214,18 @@ namespace POS.SystemAdmin
         {
             ReceivingList rc = new ReceivingList();
             rc.Show(this);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            check_Method();
+            
+        }
+
+        private void btn_notif_Click(object sender, EventArgs e)
+        {
+            Notification_Form n = new Notification_Form(); 
+            n.Show(this);
         }
     }
 }

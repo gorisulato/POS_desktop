@@ -170,6 +170,34 @@ namespace POS.Receiving
             LoadReceiveing();
         }
 
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (indexDatagrid > 0)
+            {
+                FormAddReceiveing add = new FormAddReceiveing("edit", indexDatagrid);
+                add.RefreshDgv += new FormAddReceiveing.DoEvent(LoadReceiveing);
+                add.ShowDialog();
+            }
+           else
+            {
+                MessageBox.Show("Silahkan Pilih Data Yang Akan Di Edit", "Error Collecting Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void dg_Rc_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dg_Rc.SelectedRows)
+            {
+                indexDatagrid = Convert.ToInt32(row.Cells[0].Value.ToString());
+            }
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
         private void LoadReceiveing()
         {
             try

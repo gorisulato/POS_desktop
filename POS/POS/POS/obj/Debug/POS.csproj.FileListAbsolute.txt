@@ -42,3 +42,4 @@ E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Properties.Resources.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.exe
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.pdb
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.SystemAdmin.Form1.resources

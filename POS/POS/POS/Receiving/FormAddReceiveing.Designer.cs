@@ -358,6 +358,7 @@
             this.btn_addItems.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_addItems.Textcolor = System.Drawing.Color.White;
             this.btn_addItems.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addItems.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // txt_items_id
             // 

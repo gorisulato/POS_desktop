@@ -221,6 +221,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PUserImages">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.PUserImage">
+        <MappingFragment StoreEntitySet="PUserImage">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="Image_id" ColumnName="Image_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PCustomers">
       <EntityTypeMapping TypeName="Point_Of_SalesModel.PCustomer">
         <MappingFragment StoreEntitySet="PCustomer">

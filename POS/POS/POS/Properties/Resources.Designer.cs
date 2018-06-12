@@ -1783,6 +1783,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Menu_64px {
+            get {
+                object obj = ResourceManager.GetObject("Menu_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Menu_grey {
             get {
                 object obj = ResourceManager.GetObject("Menu_grey", resourceCulture);
@@ -2146,6 +2156,16 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap Print_100px {
             get {
                 object obj = ResourceManager.GetObject("Print_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Question_Mark_48px {
+            get {
+                object obj = ResourceManager.GetObject("Question_Mark_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

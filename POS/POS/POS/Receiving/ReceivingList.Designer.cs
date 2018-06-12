@@ -113,6 +113,7 @@
             this.dg_Rc.ReadOnly = true;
             this.dg_Rc.Size = new System.Drawing.Size(926, 258);
             this.dg_Rc.TabIndex = 2;
+            this.dg_Rc.SelectionChanged += new System.EventHandler(this.dg_Rc_SelectionChanged);
             // 
             // panel4
             // 
@@ -158,6 +159,7 @@
             this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_exit.Textcolor = System.Drawing.Color.White;
             this.btn_exit.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_add_Rc
             // 
@@ -447,8 +449,9 @@
             // 
             this.editToolStripMenuItem.Image = global::POS.Properties.Resources.Edit_50px;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // bunifuDragControl3
             // 

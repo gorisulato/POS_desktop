@@ -103,6 +103,9 @@
     <Compile Include="DB\PSupplier.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\PUserImage.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\P_Colour.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
@@ -159,6 +162,12 @@
     </Compile>
     <Compile Include="Receiving\ReceivingList.Designer.cs">
       <DependentUpon>ReceivingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\FormHome.cs">
       <SubType>Form</SubType>
@@ -218,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receiving\ReceivingList.resx">
       <DependentUpon>ReceivingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdmin\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
@@ -283,6 +295,8 @@
       <DependentUpon>POS.edmx</DependentUpon>
       <LastGenOutput>POS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Menu_64px.png" />
+    <None Include="Resources\Question Mark_48px.png" />
     <None Include="Resources\Notification_48px.png" />
     <None Include="Resources\Error_20px.png" />
     <None Include="Resources\Error_48px.png" />

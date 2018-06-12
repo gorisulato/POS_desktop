@@ -42,6 +42,7 @@ namespace POS.DB
         public virtual DbSet<TSale> TSales { get; set; }
         public virtual DbSet<TSalesDetail> TSalesDetails { get; set; }
         public virtual DbSet<TUser> TUsers { get; set; }
+        public virtual DbSet<PUserImage> PUserImages { get; set; }
         public virtual DbSet<PCustomer> PCustomers { get; set; }
     }
 }

@@ -107,7 +107,7 @@ namespace POS.SystemAdmin
             catch (Exception)
             {
 
-                MessageBox.Show("Koneksi gagal silahkan periksa konfigurasi koneksi database. Silahkan Periksa seting koneksi database anda", "Error Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Koneksi gagal silahkan periksa konfigurasi koneksi database", "Error Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_editdb_Click(object sender, EventArgs e)

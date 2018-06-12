@@ -12,21 +12,11 @@
           <Property Name="clor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PCustomer">
           <Key>
             <PropertyRef Name="id_Customer" />
-            <PropertyRef Name="CustomerName" />
-            <PropertyRef Name="MemberCode" />
-            <PropertyRef Name="Alamat" />
-            <PropertyRef Name="TempatLahir" />
-            <PropertyRef Name="TanggalLahir" />
-            <PropertyRef Name="created_by" />
-            <PropertyRef Name="created_date" />
-            <PropertyRef Name="is_deleted" />
           </Key>
-          <Property Name="id_Customer" Type="int" Nullable="false" />
+          <Property Name="id_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MemberCode" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Alamat" Type="nvarchar(max)" Nullable="false" />
@@ -67,6 +57,15 @@ warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a prim
           <Property Name="is_deleted" Type="bit" Nullable="false" />
           <Property Name="deleted_by" Type="int" />
           <Property Name="deleted_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PUserImage">
+          <Key>
+            <PropertyRef Name="Image_id" />
+          </Key>
+          <Property Name="Image_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Filename" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
         </EntityType>
         <EntityType Name="TInventory">
           <Key>
@@ -243,8 +242,10 @@ warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a prim
         </EntityType>
         <EntityContainer Name="Point_Of_SalesModelStoreContainer">
           <EntitySet Name="P_Colour" EntityType="Self.P_Colour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PCustomer" EntityType="Self.PCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PPaymentType" EntityType="Self.PPaymentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PSupplier" EntityType="Self.PSupplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PUserImage" EntityType="Self.PUserImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TInventory" EntityType="Self.TInventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TPurchaseOrder" EntityType="Self.TPurchaseOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TPurchaseOrderDetail" EntityType="Self.TPurchaseOrderDetail" Schema="dbo" store:Type="Tables" />
@@ -255,24 +256,6 @@ warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a prim
           <EntitySet Name="TSales" EntityType="Self.TSales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSalesDetail" EntityType="Self.TSalesDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TUser" EntityType="Self.TUser" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PCustomer" EntityType="Self.PCustomer" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PCustomer].[id_Customer] AS [id_Customer], 
-    [PCustomer].[CustomerName] AS [CustomerName], 
-    [PCustomer].[MemberCode] AS [MemberCode], 
-    [PCustomer].[Alamat] AS [Alamat], 
-    [PCustomer].[TempatLahir] AS [TempatLahir], 
-    [PCustomer].[TanggalLahir] AS [TanggalLahir], 
-    [PCustomer].[PointReward] AS [PointReward], 
-    [PCustomer].[created_by] AS [created_by], 
-    [PCustomer].[created_date] AS [created_date], 
-    [PCustomer].[modified_by] AS [modified_by], 
-    [PCustomer].[modified_on] AS [modified_on], 
-    [PCustomer].[is_deleted] AS [is_deleted], 
-    [PCustomer].[deleted_by] AS [deleted_by], 
-    [PCustomer].[deleted_date] AS [deleted_date]
-    FROM [dbo].[PCustomer] AS [PCustomer]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -292,6 +275,7 @@ warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a prim
           <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
           <EntitySet Name="TSalesDetails" EntityType="Point_Of_SalesModel.TSalesDetail" />
           <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
+          <EntitySet Name="PUserImages" EntityType="Point_Of_SalesModel.PUserImage" />
           <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
         </EntityContainer>
         <EntityType Name="P_Colour">
@@ -501,19 +485,20 @@ warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a prim
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="PUserImage">
+          <Key>
+            <PropertyRef Name="Image_id" />
+          </Key>
+          <Property Name="Image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Filename" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="PCustomer">
           <Key>
             <PropertyRef Name="id_Customer" />
-            <PropertyRef Name="CustomerName" />
-            <PropertyRef Name="MemberCode" />
-            <PropertyRef Name="Alamat" />
-            <PropertyRef Name="TempatLahir" />
-            <PropertyRef Name="TanggalLahir" />
-            <PropertyRef Name="created_by" />
-            <PropertyRef Name="created_date" />
-            <PropertyRef Name="is_deleted" />
           </Key>
-          <Property Name="id_Customer" Type="Int32" Nullable="false" />
+          <Property Name="id_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MemberCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Alamat" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -751,6 +736,16 @@ warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a prim
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PUserImages">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.PUserImage">
+              <MappingFragment StoreEntitySet="PUserImage">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Filename" ColumnName="Filename" />
+                <ScalarProperty Name="Image_id" ColumnName="Image_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

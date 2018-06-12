@@ -14,6 +14,7 @@
     <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
     <EntitySet Name="TSalesDetails" EntityType="Point_Of_SalesModel.TSalesDetail" />
     <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
+    <EntitySet Name="PUserImages" EntityType="Point_Of_SalesModel.PUserImage" />
     <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
   </EntityContainer>
   <EntityType Name="P_Colour">
@@ -223,19 +224,20 @@
     <Property Name="deleted_by" Type="Int32" />
     <Property Name="deleted_date" Type="DateTime" Precision="3" />
   </EntityType>
+  <EntityType Name="PUserImage">
+    <Key>
+      <PropertyRef Name="Image_id" />
+    </Key>
+    <Property Name="Image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Filename" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="PCustomer">
     <Key>
       <PropertyRef Name="id_Customer" />
-      <PropertyRef Name="CustomerName" />
-      <PropertyRef Name="MemberCode" />
-      <PropertyRef Name="Alamat" />
-      <PropertyRef Name="TempatLahir" />
-      <PropertyRef Name="TanggalLahir" />
-      <PropertyRef Name="created_by" />
-      <PropertyRef Name="created_date" />
-      <PropertyRef Name="is_deleted" />
     </Key>
-    <Property Name="id_Customer" Type="Int32" Nullable="false" />
+    <Property Name="id_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="MemberCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Alamat" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />

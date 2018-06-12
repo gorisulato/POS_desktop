@@ -89,7 +89,7 @@ namespace POS.SystemAdmin
                     //register session
                     var _sessions = Properties.Settings.Default;
                     _sessions._username = dataUser.User.Username;
-                    _sessions._userID = dataUser.User.Role_id;
+                    _sessions._userID = dataUser.User.User_id;
                     _sessions.password = txt_password.text.Replace(Environment.NewLine, "");
                     _sessions._userRole = dataUser.User.Role_id;
                     _sessions._userRolename = dataUser.Role.Role_Name;

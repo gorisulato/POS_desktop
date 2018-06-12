@@ -472,6 +472,7 @@ namespace POS.SystemAdmin
         }
         public void Load_Image()
         {
+            var _sessions = Properties.Settings.Default;
             var image = Point_Of_SalesEntities.PUserImages.Where(x => x.user_id == Properties.Settings.Default._userID).FirstOrDefault();
             if (image != null)
             {
@@ -485,7 +486,7 @@ namespace POS.SystemAdmin
 
             var user = (from u in Point_Of_SalesEntities.TUsers
                         from r in Point_Of_SalesEntities.TRoles.Where(x => x.Role_id == u.Role_id).DefaultIfEmpty()
-                        select new { GCF = u, r = r.Role_Name }).Where(s => s.GCF.is_deleted == false && s.GCF.User_id == Properties.Settings.Default._userID).FirstOrDefault();
+                        select new { GCF = u, r = r.Role_Name }).Where(s => s.GCF.is_deleted == false && s.GCF.User_id == _sessions._userID).FirstOrDefault();
 
             lbl_content_username.Text = user.GCF.Username;
             lbl_contentuserrole.Text = user.r;

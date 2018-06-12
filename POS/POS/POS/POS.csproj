@@ -163,12 +163,6 @@
     <Compile Include="Receiving\ReceivingList.Designer.cs">
       <DependentUpon>ReceivingList.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemAdmin\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SystemAdmin\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="SystemAdmin\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receiving\ReceivingList.resx">
       <DependentUpon>ReceivingList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SystemAdmin\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdmin\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>

@@ -26,10 +26,10 @@ namespace POS.SystemAdmin
             this.KeyPreview = true;
             txt_password._TextBox.PasswordChar = '*';
             var _sessions = Properties.Settings.Default;
-            if (_sessions.password != "" || _sessions._username != "")
+            if (_sessions.remembered_password != "" || _sessions.remembered_userid != "")
             {
-                txt_password.text = _sessions.password;
-                txt_username.text = _sessions._username;
+                txt_password.text = _sessions.remembered_password;
+                txt_username.text = _sessions.remembered_userid;
             }
             else
             {

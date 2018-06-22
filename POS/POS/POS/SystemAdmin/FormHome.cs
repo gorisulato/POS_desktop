@@ -20,7 +20,7 @@ namespace POS.SystemAdmin
     {
         int AffectedRows = 0;
         string Filename = "";
-        List<PUserImage> list;
+       
         Notification_Form n = null;
         POS_Entities Point_Of_SalesEntities;
         UtilityClass Util = new UtilityClass();
@@ -52,7 +52,17 @@ namespace POS.SystemAdmin
             Set_SafetyStock();
             Load_Image();
             check_Method();
+            if (panel_burger.Width == 200)
+            {
 
+                bunifuImageButton1.Image = Properties.Resources.Long_Arrow_Left_52px;
+                
+            }
+            else
+            {
+                bunifuImageButton1.Image = Properties.Resources.Menu_64px;
+                
+            }
 
 
         }
@@ -238,19 +248,21 @@ namespace POS.SystemAdmin
 
             if (panel_burger.Width == 200)
             {
-
+                
                 Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
                 t.add(panel_burger, "Width", 0);
                 t.run();
 
+                bunifuImageButton1.Image = Properties.Resources.Menu_64px;
             }
             else
             {
-
+                bunifuTransition1.ShowSync(panel_burger);
                 Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
                 t.add(panel_burger, "Width", 200);
                 t.run();
-
+               
+                bunifuImageButton1.Image = Properties.Resources.Long_Arrow_Left_52px;
             }
         }
         private void label1_Click(object sender, EventArgs e)

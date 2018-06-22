@@ -50,6 +50,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PictureBoxAbouAmmar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PictureBoxAbouAmmar.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleDataGridViewPaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\SimpleDataGridViewPaging.dll</HintPath>
@@ -286,6 +290,7 @@
       <DependentUpon>POS.edmx</DependentUpon>
       <LastGenOutput>POS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Long Arrow Left_52px.png" />
     <None Include="Resources\Menu_64px.png" />
     <None Include="Resources\Question Mark_48px.png" />
     <None Include="Resources\Notification_48px.png" />

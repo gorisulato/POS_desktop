@@ -166,5 +166,29 @@ namespace POS.Properties {
                 this["last_safetystock_updated"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string remembered_userid {
+            get {
+                return ((string)(this["remembered_userid"]));
+            }
+            set {
+                this["remembered_userid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string remembered_password {
+            get {
+                return ((string)(this["remembered_password"]));
+            }
+            set {
+                this["remembered_password"] = value;
+            }
+        }
     }
 }

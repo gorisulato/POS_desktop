@@ -91,10 +91,13 @@ namespace POS.SystemAdmin
                     _sessions._username = dataUser.User.Username;
                     _sessions._userID = dataUser.User.User_id;
                     _sessions.password = txt_password.text.Replace(Environment.NewLine, "");
+
                     _sessions._userRole = dataUser.User.Role_id;
                     _sessions._userRolename = dataUser.Role.Role_Name;
                     if (cb_remember.Checked == true)
                     {
+                        _sessions.remembered_password= txt_password.text;
+                        _sessions.remembered_userid= txt_username.text ;
                         _sessions.Save();
                     }
 

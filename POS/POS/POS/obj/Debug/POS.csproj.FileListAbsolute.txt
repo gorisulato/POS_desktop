@@ -26,7 +26,6 @@ E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\EntityFramework.SqlServer.dll
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\System.Linq.Dynamic.dll
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\EntityFramework.xml
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\EntityFramework.SqlServer.xml
-E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Purchasing.FormAddPO.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Purchasing.PurchaseOrder.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Receiving.FormAddReceiveing.resources

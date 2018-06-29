@@ -12,17 +12,34 @@
           <Property Name="clor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PCustomer">
           <Key>
             <PropertyRef Name="id_Customer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="MemberCode" />
+            <PropertyRef Name="Alamat" />
+            <PropertyRef Name="TempatLahir" />
+            <PropertyRef Name="TanggalLahir" />
+            <PropertyRef Name="created_by" />
+            <PropertyRef Name="created_date" />
+            <PropertyRef Name="is_deleted" />
           </Key>
-          <Property Name="id_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_Customer" Type="int" Nullable="false" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MemberCode" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Alamat" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TempatLahir" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TanggalLahir" Type="datetime" Nullable="false" />
           <Property Name="PointReward" Type="int" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
         </EntityType>
         <EntityType Name="PPaymentType">
           <Key>
@@ -62,6 +79,13 @@
           <Property Name="Unit_Price" Type="float" />
           <Property Name="Stock" Type="int" />
           <Property Name="Items_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
         </EntityType>
         <EntityType Name="TPurchaseOrder">
           <Key>
@@ -142,6 +166,20 @@
           <Property Name="Role_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ROle_Description" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="TSafetyStock">
+          <Key>
+            <PropertyRef Name="Safetystock_id" />
+          </Key>
+          <Property Name="Safetystock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemsId" Type="int" Nullable="false" />
+          <Property Name="SafetyStock" Type="float" Nullable="false" />
+          <Property Name="safetystockDateStart" Type="datetime" Nullable="false" />
+          <Property Name="safetystockDateEnd" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="int" Nullable="false" />
+          <Property Name="Created_Date" Type="datetime" Nullable="false" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Updated_by" Type="int" />
+        </EntityType>
         <EntityType Name="TSales">
           <Key>
             <PropertyRef Name="TSales_id" />
@@ -157,6 +195,14 @@
           <Property Name="PaymentType" Type="int" Nullable="false" />
           <Property Name="PaymentAmount" Type="float" />
           <Property Name="Change" Type="float" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
+          <Property Name="PsupplierId" Type="int" />
         </EntityType>
         <EntityType Name="TSalesDetail">
           <Key>
@@ -170,6 +216,13 @@
           <Property Name="Discount" Type="float" />
           <Property Name="Tax" Type="float" />
           <Property Name="Subtotal" Type="float" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
         </EntityType>
         <EntityType Name="TUser">
           <Key>
@@ -190,7 +243,6 @@
         </EntityType>
         <EntityContainer Name="Point_Of_SalesModelStoreContainer">
           <EntitySet Name="P_Colour" EntityType="Self.P_Colour" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PCustomer" EntityType="Self.PCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PPaymentType" EntityType="Self.PPaymentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PSupplier" EntityType="Self.PSupplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TInventory" EntityType="Self.TInventory" Schema="dbo" store:Type="Tables" />
@@ -199,9 +251,28 @@
           <EntitySet Name="TReceiveingDetail" EntityType="Self.TReceiveingDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TReceiveingStock" EntityType="Self.TReceiveingStock" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRole" EntityType="Self.TRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSafetyStock" EntityType="Self.TSafetyStock" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSales" EntityType="Self.TSales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSalesDetail" EntityType="Self.TSalesDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TUser" EntityType="Self.TUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PCustomer" EntityType="Self.PCustomer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PCustomer].[id_Customer] AS [id_Customer], 
+    [PCustomer].[CustomerName] AS [CustomerName], 
+    [PCustomer].[MemberCode] AS [MemberCode], 
+    [PCustomer].[Alamat] AS [Alamat], 
+    [PCustomer].[TempatLahir] AS [TempatLahir], 
+    [PCustomer].[TanggalLahir] AS [TanggalLahir], 
+    [PCustomer].[PointReward] AS [PointReward], 
+    [PCustomer].[created_by] AS [created_by], 
+    [PCustomer].[created_date] AS [created_date], 
+    [PCustomer].[modified_by] AS [modified_by], 
+    [PCustomer].[modified_on] AS [modified_on], 
+    [PCustomer].[is_deleted] AS [is_deleted], 
+    [PCustomer].[deleted_by] AS [deleted_by], 
+    [PCustomer].[deleted_date] AS [deleted_date]
+    FROM [dbo].[PCustomer] AS [PCustomer]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -209,18 +280,19 @@
       <Schema Namespace="Point_Of_SalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Point_Of_SalesEntities" annotation:LazyLoadingEnabled="true" >
           <EntitySet Name="P_Colour" EntityType="Point_Of_SalesModel.P_Colour" />
-          <EntitySet Name="TSalesDetails" EntityType="Point_Of_SalesModel.TSalesDetail" />
-          <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
-          <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
           <EntitySet Name="PPaymentTypes" EntityType="Point_Of_SalesModel.PPaymentType" />
-          <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
-          <EntitySet Name="TRoles" EntityType="Point_Of_SalesModel.TRole" />
-          <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
           <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
+          <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
           <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
-          <EntitySet Name="TReceiveingStocks" EntityType="Point_Of_SalesModel.TReceiveingStock" />
-          <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
           <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
+          <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
+          <EntitySet Name="TReceiveingStocks" EntityType="Point_Of_SalesModel.TReceiveingStock" />
+          <EntitySet Name="TRoles" EntityType="Point_Of_SalesModel.TRole" />
+          <EntitySet Name="TSafetyStocks" EntityType="Point_Of_SalesModel.TSafetyStock" />
+          <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
+          <EntitySet Name="TSalesDetails" EntityType="Point_Of_SalesModel.TSalesDetail" />
+          <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
+          <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
         </EntityContainer>
         <EntityType Name="P_Colour">
           <Key>
@@ -229,91 +301,12 @@
           <Property Name="clor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TSalesDetail">
-          <Key>
-            <PropertyRef Name="Sales_Detail_id" />
-          </Key>
-          <Property Name="Sales_Detail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Sales_Number" Type="Int32" Nullable="false" />
-          <Property Name="Items" Type="Int32" Nullable="false" />
-          <Property Name="Qty" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="Int32" Nullable="false" />
-          <Property Name="Discount" Type="Double" />
-          <Property Name="Tax" Type="Double" />
-          <Property Name="Subtotal" Type="Double" />
-        </EntityType>
-        <EntityType Name="TInventory">
-          <Key>
-            <PropertyRef Name="Items_Id" />
-          </Key>
-          <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Colour" Type="Int32" />
-          <Property Name="Size" Type="Double" />
-          <Property Name="Unit_Price" Type="Double" />
-          <Property Name="Stock" Type="Int32" />
-          <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="PCustomer">
-          <Key>
-            <PropertyRef Name="id_Customer" />
-          </Key>
-          <Property Name="id_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MemberCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Alamat" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TempatLahir" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TanggalLahir" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="PointReward" Type="Int32" />
-        </EntityType>
         <EntityType Name="PPaymentType">
           <Key>
             <PropertyRef Name="id_paymenttype" />
           </Key>
           <Property Name="id_paymenttype" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TSale">
-          <Key>
-            <PropertyRef Name="TSales_id" />
-          </Key>
-          <Property Name="TSales_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Sales_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Customer" Type="Int32" />
-          <Property Name="Discount" Type="Double" />
-          <Property Name="TotalSales" Type="Double" Nullable="false" />
-          <Property Name="SalesDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="StatusSales" Type="Int32" Nullable="false" />
-          <Property Name="PaymentType" Type="Int32" Nullable="false" />
-          <Property Name="PaymentAmount" Type="Double" />
-          <Property Name="Change" Type="Double" />
-        </EntityType>
-        <EntityType Name="TRole">
-          <Key>
-            <PropertyRef Name="Role_id" />
-          </Key>
-          <Property Name="Role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="is_Admin" Type="Boolean" Nullable="false" />
-          <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ROle_Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TUser">
-          <Key>
-            <PropertyRef Name="User_id" />
-          </Key>
-          <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="is_active" Type="Boolean" Nullable="false" />
-          <Property Name="Role_id" Type="Int32" Nullable="false" />
-          <Property Name="created_by" Type="Int32" Nullable="false" />
-          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modified_by" Type="Int32" />
-          <Property Name="modified_on" Type="DateTime" Precision="3" />
-          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
-          <Property Name="deleted_by" Type="Int32" />
-          <Property Name="deleted_date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="PSupplier">
           <Key>
@@ -327,6 +320,25 @@
           <Property Name="contact_Person" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Contact_person_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="contact_person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TInventory">
+          <Key>
+            <PropertyRef Name="Items_Id" />
+          </Key>
+          <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Colour" Type="Int32" />
+          <Property Name="Size" Type="Double" />
+          <Property Name="Unit_Price" Type="Double" />
+          <Property Name="Stock" Type="Int32" />
+          <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="created_by" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modified_by" Type="Int32" />
@@ -352,14 +364,14 @@
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="TReceiveingStock">
+        <EntityType Name="TPurchaseOrderDetail">
           <Key>
-            <PropertyRef Name="TReceiveID" />
+            <PropertyRef Name="PODetailId" />
           </Key>
-          <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
-          <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Items" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" />
           <Property Name="created_by" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modified_by" Type="Int32" />
@@ -367,7 +379,7 @@
           <Property Name="is_deleted" Type="Boolean" Nullable="false" />
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
-          <Property Name="PsupplierId" Type="Int32" />
+          <Property Name="differenceqty" Type="Int32" />
         </EntityType>
         <EntityType Name="TReceiveingDetail">
           <Key>
@@ -388,14 +400,14 @@
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
           <Property Name="ReceiveQty" Type="Int32" />
         </EntityType>
-        <EntityType Name="TPurchaseOrderDetail">
+        <EntityType Name="TReceiveingStock">
           <Key>
-            <PropertyRef Name="PODetailId" />
+            <PropertyRef Name="TReceiveID" />
           </Key>
-          <Property Name="PODetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TReceiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PurchaseOrder" Type="Int32" Nullable="false" />
-          <Property Name="Items" Type="Int32" Nullable="false" />
-          <Property Name="Qty" Type="Int32" />
+          <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReceiveNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="created_by" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modified_by" Type="Int32" />
@@ -403,9 +415,120 @@
           <Property Name="is_deleted" Type="Boolean" Nullable="false" />
           <Property Name="deleted_by" Type="Int32" />
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
-          <Property Name="differenceqty" Type="Int32" />
+          <Property Name="PsupplierId" Type="Int32" />
         </EntityType>
-      </Schema>
+        <EntityType Name="TRole">
+          <Key>
+            <PropertyRef Name="Role_id" />
+          </Key>
+          <Property Name="Role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="is_Admin" Type="Boolean" Nullable="false" />
+          <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROle_Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TSafetyStock">
+          <Key>
+            <PropertyRef Name="Safetystock_id" />
+          </Key>
+          <Property Name="Safetystock_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemsId" Type="Int32" Nullable="false" />
+          <Property Name="SafetyStock" Type="Double" Nullable="false" />
+          <Property Name="safetystockDateStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="safetystockDateEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="Int32" Nullable="false" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TSale">
+          <Key>
+            <PropertyRef Name="TSales_id" />
+          </Key>
+          <Property Name="TSales_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sales_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="Int32" />
+          <Property Name="Discount" Type="Double" />
+          <Property Name="TotalSales" Type="Double" Nullable="false" />
+          <Property Name="SalesDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StatusSales" Type="Int32" Nullable="false" />
+          <Property Name="PaymentType" Type="Int32" Nullable="false" />
+          <Property Name="PaymentAmount" Type="Double" />
+          <Property Name="Change" Type="Double" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="PsupplierId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TSalesDetail">
+          <Key>
+            <PropertyRef Name="Sales_Detail_id" />
+          </Key>
+          <Property Name="Sales_Detail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sales_Number" Type="Int32" Nullable="false" />
+          <Property Name="Items" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Discount" Type="Double" />
+          <Property Name="Tax" Type="Double" />
+          <Property Name="Subtotal" Type="Double" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TUser">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <Property Name="Role_id" Type="Int32" Nullable="false" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PCustomer">
+          <Key>
+            <PropertyRef Name="id_Customer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="MemberCode" />
+            <PropertyRef Name="Alamat" />
+            <PropertyRef Name="TempatLahir" />
+            <PropertyRef Name="TanggalLahir" />
+            <PropertyRef Name="created_by" />
+            <PropertyRef Name="created_date" />
+            <PropertyRef Name="is_deleted" />
+          </Key>
+          <Property Name="id_Customer" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MemberCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Alamat" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TempatLahir" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TanggalLahir" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PointReward" Type="Int32" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -419,96 +542,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TSalesDetails">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TSalesDetail">
-              <MappingFragment StoreEntitySet="TSalesDetail">
-                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-                <ScalarProperty Name="Tax" ColumnName="Tax" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="Items" ColumnName="Items" />
-                <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
-                <ScalarProperty Name="Sales_Detail_id" ColumnName="Sales_Detail_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TInventories">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TInventory">
-              <MappingFragment StoreEntitySet="TInventory">
-                <ScalarProperty Name="Items_Name" ColumnName="Items_Name" />
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Colour" ColumnName="Colour" />
-                <ScalarProperty Name="Items_number" ColumnName="Items_number" />
-                <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PCustomers">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.PCustomer">
-              <MappingFragment StoreEntitySet="PCustomer">
-                <ScalarProperty Name="PointReward" ColumnName="PointReward" />
-                <ScalarProperty Name="TanggalLahir" ColumnName="TanggalLahir" />
-                <ScalarProperty Name="TempatLahir" ColumnName="TempatLahir" />
-                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
-                <ScalarProperty Name="MemberCode" ColumnName="MemberCode" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="id_Customer" ColumnName="id_Customer" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PPaymentTypes">
             <EntityTypeMapping TypeName="Point_Of_SalesModel.PPaymentType">
               <MappingFragment StoreEntitySet="PPaymentType">
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="id_paymenttype" ColumnName="id_paymenttype" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TSales">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TSale">
-              <MappingFragment StoreEntitySet="TSales">
-                <ScalarProperty Name="Change" ColumnName="Change" />
-                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
-                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
-                <ScalarProperty Name="StatusSales" ColumnName="StatusSales" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="SalesDate" ColumnName="SalesDate" />
-                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Customer" ColumnName="Customer" />
-                <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
-                <ScalarProperty Name="TSales_id" ColumnName="TSales_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TRoles">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TRole">
-              <MappingFragment StoreEntitySet="TRole">
-                <ScalarProperty Name="ROle_Description" ColumnName="ROle_Description" />
-                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
-                <ScalarProperty Name="is_Admin" ColumnName="is_Admin" />
-                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TUsers">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TUser">
-              <MappingFragment StoreEntitySet="TUser">
-                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
-                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
-                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
-                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
-                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
-                <ScalarProperty Name="created_date" ColumnName="created_date" />
-                <ScalarProperty Name="created_by" ColumnName="created_by" />
-                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
-                <ScalarProperty Name="is_active" ColumnName="is_active" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="User_id" ColumnName="User_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -533,6 +571,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TInventories">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TInventory">
+              <MappingFragment StoreEntitySet="TInventory">
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Items_Name" ColumnName="Items_Name" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Items_number" ColumnName="Items_number" />
+                <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TPurchaseOrders">
             <EntityTypeMapping TypeName="Point_Of_SalesModel.TPurchaseOrder">
               <MappingFragment StoreEntitySet="TPurchaseOrder">
@@ -551,10 +609,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TReceiveingStocks">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TReceiveingStock">
-              <MappingFragment StoreEntitySet="TReceiveingStock">
-                <ScalarProperty Name="PsupplierId" ColumnName="PsupplierId" />
+          <EntitySetMapping Name="TPurchaseOrderDetails">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TPurchaseOrderDetail">
+              <MappingFragment StoreEntitySet="TPurchaseOrderDetail">
+                <ScalarProperty Name="differenceqty" ColumnName="differenceqty" />
                 <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
                 <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
                 <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
@@ -562,10 +620,10 @@
                 <ScalarProperty Name="modified_by" ColumnName="modified_by" />
                 <ScalarProperty Name="created_date" ColumnName="created_date" />
                 <ScalarProperty Name="created_by" ColumnName="created_by" />
-                <ScalarProperty Name="ReceiveNumber" ColumnName="ReceiveNumber" />
-                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Items" ColumnName="Items" />
                 <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-                <ScalarProperty Name="TReceiveID" ColumnName="TReceiveID" />
+                <ScalarProperty Name="PODetailId" ColumnName="PODetailId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -589,10 +647,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TPurchaseOrderDetails">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TPurchaseOrderDetail">
-              <MappingFragment StoreEntitySet="TPurchaseOrderDetail">
-                <ScalarProperty Name="differenceqty" ColumnName="differenceqty" />
+          <EntitySetMapping Name="TReceiveingStocks">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TReceiveingStock">
+              <MappingFragment StoreEntitySet="TReceiveingStock">
+                <ScalarProperty Name="PsupplierId" ColumnName="PsupplierId" />
                 <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
                 <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
                 <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
@@ -600,10 +658,119 @@
                 <ScalarProperty Name="modified_by" ColumnName="modified_by" />
                 <ScalarProperty Name="created_date" ColumnName="created_date" />
                 <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="ReceiveNumber" ColumnName="ReceiveNumber" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+                <ScalarProperty Name="TReceiveID" ColumnName="TReceiveID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRoles">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TRole">
+              <MappingFragment StoreEntitySet="TRole">
+                <ScalarProperty Name="ROle_Description" ColumnName="ROle_Description" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="is_Admin" ColumnName="is_Admin" />
+                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSafetyStocks">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TSafetyStock">
+              <MappingFragment StoreEntitySet="TSafetyStock">
+                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="safetystockDateEnd" ColumnName="safetystockDateEnd" />
+                <ScalarProperty Name="safetystockDateStart" ColumnName="safetystockDateStart" />
+                <ScalarProperty Name="SafetyStock" ColumnName="SafetyStock" />
+                <ScalarProperty Name="ItemsId" ColumnName="ItemsId" />
+                <ScalarProperty Name="Safetystock_id" ColumnName="Safetystock_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSales">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TSale">
+              <MappingFragment StoreEntitySet="TSales">
+                <ScalarProperty Name="PsupplierId" ColumnName="PsupplierId" />
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Change" ColumnName="Change" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="StatusSales" ColumnName="StatusSales" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SalesDate" ColumnName="SalesDate" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
+                <ScalarProperty Name="TSales_id" ColumnName="TSales_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSalesDetails">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TSalesDetail">
+              <MappingFragment StoreEntitySet="TSalesDetail">
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Qty" ColumnName="Qty" />
                 <ScalarProperty Name="Items" ColumnName="Items" />
-                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-                <ScalarProperty Name="PODetailId" ColumnName="PODetailId" />
+                <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
+                <ScalarProperty Name="Sales_Detail_id" ColumnName="Sales_Detail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TUsers">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TUser">
+              <MappingFragment StoreEntitySet="TUser">
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PCustomers">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.PCustomer">
+              <MappingFragment StoreEntitySet="PCustomer">
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="PointReward" ColumnName="PointReward" />
+                <ScalarProperty Name="TanggalLahir" ColumnName="TanggalLahir" />
+                <ScalarProperty Name="TempatLahir" ColumnName="TempatLahir" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="MemberCode" ColumnName="MemberCode" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="id_Customer" ColumnName="id_Customer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

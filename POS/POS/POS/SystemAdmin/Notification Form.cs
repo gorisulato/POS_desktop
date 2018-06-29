@@ -12,6 +12,8 @@ namespace POS.SystemAdmin
 {
     public partial class Notification_Form : Form
     {
+        public delegate void DoEvent();
+        public event DoEvent RefreshDgv;
         FormHome Home = null;
         UtilityClass Util = new UtilityClass();
         public Notification_Form()
@@ -102,6 +104,12 @@ namespace POS.SystemAdmin
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.RefreshDgv();
+        }
+
+        private void btn_minimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

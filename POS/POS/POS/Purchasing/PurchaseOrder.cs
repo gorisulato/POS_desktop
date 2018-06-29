@@ -145,6 +145,7 @@ namespace POS.Purchasing
         private void btnresetsearch_Click(object sender, EventArgs e)
         {
             stat = 0;
+            txt_search_ponumber.Text = "";
             offset_data = 0;
             StartPaginationShow = 1;
             Load_Po();

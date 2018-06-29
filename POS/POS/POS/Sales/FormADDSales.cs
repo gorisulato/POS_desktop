@@ -227,7 +227,7 @@ namespace POS
             var sales = Point_Of_SalesEntities.TSales.Where(s => s.Sales_Number == txt_salesNumber.Text).First();
             var sd = (from u in Point_Of_SalesEntities.TSalesDetails
 
-                      select new { rp = u }).Where(x => x.rp.Sales_Number == sales.TSales_id);
+                      select new { rp = u }).Where(x => x.rp.Sales_Number == sales.TSales_id&&x.rp.is_deleted==false);
 
             var sd2 = sd.Select(x => new
             {
@@ -280,7 +280,11 @@ namespace POS
                         PaymentType = Convert.ToInt32(cb_idpayment.selectedValue),
                         PaymentAmount = 0,
                         Change = 0,
-                        StatusSales = 0
+                        StatusSales = 0,
+                        created_by=Properties.Settings.Default._userID,
+                        created_date=DateTime.Now,
+                        is_deleted=false
+
 
 
 
@@ -379,7 +383,10 @@ namespace POS
                             Qty = Convert.ToInt32(txt_qty.Value),
                             Price = unitprice,
                             Discount = txt_discount.Value,
-                            Subtotal = (unitprice - (unitprice * txt_discount.Value / 100)) * txt_qty.Value
+                            Subtotal = (unitprice - (unitprice * txt_discount.Value / 100)) * txt_qty.Value,
+                            created_by=Properties.Settings.Default._userID,
+                            created_date=DateTime.Now,
+                            is_deleted=false
 
                         });
                         AffectedRows = Point_Of_SalesEntities.SaveChanges();
@@ -423,15 +430,34 @@ namespace POS
             try
             {
                 var sales = Point_Of_SalesEntities.TSales.Where(s => s.Sales_Number == txt_salesNumber.Text).First();
-                Point_Of_SalesEntities.TSales.Remove(sales);
+                sales.is_deleted = true;
+                sales.deleted_date = DateTime.Now;
+                sales.deleted_by = Properties.Settings.Default._userID;
+
+                Point_Of_SalesEntities.SaveChanges();
 
                 //AffectedRows = Point_Of_SalesEntities.SaveChanges();
 
 
                 if (dg_detail.RowCount > 0)
                 {
-                    var detail = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Number == sales.TSales_id).First();
-                    Point_Of_SalesEntities.TSalesDetails.Remove(detail);
+                    var detail = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Number == sales.TSales_id).ToList();
+                    var detail2 = detail.Select(x => new {
+
+                        x.Sales_Detail_id
+                    }).ToArray();
+
+                    for(int i = 0; i < detail2.Length; i++)
+                    {
+                        var detailid =Convert.ToInt32( detail2[i].Sales_Detail_id);
+                        var detaildeleted = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Detail_id == detailid).First();
+                        detaildeleted.is_deleted = true;
+                        detaildeleted.deleted_by = Properties.Settings.Default._userID;
+                        detaildeleted.deleted_date = DateTime.Now;
+                        Point_Of_SalesEntities.SaveChanges();
+                    }
+                  
+                    Point_Of_SalesEntities.SaveChanges();
                 }
 
 
@@ -638,8 +664,10 @@ namespace POS
                     DialogResult dr = MessageBox.Show("Anda Yakin Menghapus Data", "Hapus Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
-                        var salesd = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Detail_id == salesdetailid).First();
-                        Point_Of_SalesEntities.TSalesDetails.Remove(salesd);
+                        var editdetail = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Detail_id == salesdetailid).First();
+                        editdetail.is_deleted = true;
+                        editdetail.deleted_by = Properties.Settings.Default._userID;
+                        editdetail.deleted_date = DateTime.Now;
                         AffectedRows = Point_Of_SalesEntities.SaveChanges();
                         if (AffectedRows > 0)
                         {

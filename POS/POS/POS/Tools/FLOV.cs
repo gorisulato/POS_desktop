@@ -99,7 +99,7 @@ namespace POS
             {
                 if (Custom != "")
                 {
-                    where = " where PSupplierId= "+Custom+" And ";
+                    where = " where PSupplierId= "+Custom+ " And status=0 And ";
                     where = where + columnwhere + " " + @operator + " " + valuewhere + " ";
                 }
                 else
@@ -189,7 +189,7 @@ namespace POS
 
             if (Custom != "")
             {
-                where = " where PSupplierId= " + Custom + " And ";
+                where = " where PSupplierId= " + Custom + " And status=0 And ";
                 where = where + columnwhere + " " + @operator + " " + valuewhere + " ";
             }
             else

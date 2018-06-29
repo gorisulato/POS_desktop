@@ -33,32 +33,32 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dg_Po = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_add_po = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dt_podatesearch = new Bunifu.Framework.UI.BunifuDatepicker();
             this.lbl_search_poDate = new System.Windows.Forms.Label();
             this.lbl_searchsalesnumber = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.searchbox = new System.Windows.Forms.Panel();
+            this.btnresetsearch = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_searchPO = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_search_ponumber = new AltoControls.AltoTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtpageinfo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_first = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_prev = new Bunifu.Framework.UI.BunifuImageButton();
             this.txt_pagination = new System.Windows.Forms.Label();
+            this.btn_next = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_last = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelsearch = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_add_po = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnresetsearch = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_searchPO = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_first = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_prev = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_next = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_last = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ds_sales = new System.Windows.Forms.BindingSource(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ds_sales = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_Po)).BeginInit();
             this.panel4.SuspendLayout();
@@ -66,13 +66,13 @@
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panelsearch.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_first)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_last)).BeginInit();
+            this.panelsearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,161 +116,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(901, 56);
             this.panel4.TabIndex = 8;
-            // 
-            // dt_podatesearch
-            // 
-            this.dt_podatesearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dt_podatesearch.BorderRadius = 0;
-            this.dt_podatesearch.ForeColor = System.Drawing.Color.White;
-            this.dt_podatesearch.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dt_podatesearch.FormatCustom = null;
-            this.dt_podatesearch.Location = new System.Drawing.Point(186, 32);
-            this.dt_podatesearch.Name = "dt_podatesearch";
-            this.dt_podatesearch.Size = new System.Drawing.Size(172, 34);
-            this.dt_podatesearch.TabIndex = 9;
-            this.dt_podatesearch.Value = new System.DateTime(2018, 5, 29, 0, 9, 11, 242);
-            // 
-            // lbl_search_poDate
-            // 
-            this.lbl_search_poDate.AutoSize = true;
-            this.lbl_search_poDate.ForeColor = System.Drawing.Color.White;
-            this.lbl_search_poDate.Location = new System.Drawing.Point(183, 16);
-            this.lbl_search_poDate.Name = "lbl_search_poDate";
-            this.lbl_search_poDate.Size = new System.Drawing.Size(98, 13);
-            this.lbl_search_poDate.TabIndex = 8;
-            this.lbl_search_poDate.Text = "Tanggal Pembelian";
-            // 
-            // lbl_searchsalesnumber
-            // 
-            this.lbl_searchsalesnumber.AutoSize = true;
-            this.lbl_searchsalesnumber.ForeColor = System.Drawing.Color.White;
-            this.lbl_searchsalesnumber.Location = new System.Drawing.Point(29, 16);
-            this.lbl_searchsalesnumber.Name = "lbl_searchsalesnumber";
-            this.lbl_searchsalesnumber.Size = new System.Drawing.Size(89, 13);
-            this.lbl_searchsalesnumber.TabIndex = 7;
-            this.lbl_searchsalesnumber.Text = "Nomor pembelian";
-            // 
-            // searchbox
-            // 
-            this.searchbox.BackColor = System.Drawing.Color.Teal;
-            this.searchbox.Controls.Add(this.btnresetsearch);
-            this.searchbox.Controls.Add(this.btn_searchPO);
-            this.searchbox.Controls.Add(this.dt_podatesearch);
-            this.searchbox.Controls.Add(this.lbl_search_poDate);
-            this.searchbox.Controls.Add(this.lbl_searchsalesnumber);
-            this.searchbox.Controls.Add(this.txt_search_ponumber);
-            this.searchbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchbox.Location = new System.Drawing.Point(0, 30);
-            this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(901, 10);
-            this.searchbox.TabIndex = 7;
-            // 
-            // txt_search_ponumber
-            // 
-            this.txt_search_ponumber.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_search_ponumber.BackColor = System.Drawing.Color.Transparent;
-            this.txt_search_ponumber.Br = System.Drawing.Color.White;
-            this.txt_search_ponumber.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_search_ponumber.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_search_ponumber.Location = new System.Drawing.Point(22, 33);
-            this.txt_search_ponumber.Name = "txt_search_ponumber";
-            this.txt_search_ponumber.Radius = 6;
-            this.txt_search_ponumber.Size = new System.Drawing.Size(135, 33);
-            this.txt_search_ponumber.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 388);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(901, 47);
-            this.panel2.TabIndex = 6;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.txtpageinfo);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(399, 47);
-            this.flowLayoutPanel2.TabIndex = 1;
-            // 
-            // txtpageinfo
-            // 
-            this.txtpageinfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtpageinfo.AutoSize = true;
-            this.txtpageinfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpageinfo.ForeColor = System.Drawing.Color.White;
-            this.txtpageinfo.Location = new System.Drawing.Point(3, 0);
-            this.txtpageinfo.Name = "txtpageinfo";
-            this.txtpageinfo.Size = new System.Drawing.Size(45, 17);
-            this.txtpageinfo.TabIndex = 0;
-            this.txtpageinfo.Text = "label1";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btn_first);
-            this.flowLayoutPanel1.Controls.Add(this.btn_prev);
-            this.flowLayoutPanel1.Controls.Add(this.txt_pagination);
-            this.flowLayoutPanel1.Controls.Add(this.btn_next);
-            this.flowLayoutPanel1.Controls.Add(this.btn_last);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(405, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(496, 47);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // txt_pagination
-            // 
-            this.txt_pagination.AutoSize = true;
-            this.txt_pagination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pagination.ForeColor = System.Drawing.Color.White;
-            this.txt_pagination.Location = new System.Drawing.Point(85, 0);
-            this.txt_pagination.Name = "txt_pagination";
-            this.txt_pagination.Size = new System.Drawing.Size(45, 17);
-            this.txt_pagination.TabIndex = 5;
-            this.txt_pagination.Text = "label1";
-            // 
-            // panelsearch
-            // 
-            this.panelsearch.BackColor = System.Drawing.Color.Teal;
-            this.panelsearch.Controls.Add(this.bunifuImageButton1);
-            this.panelsearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelsearch.Location = new System.Drawing.Point(0, 0);
-            this.panelsearch.Name = "panelsearch";
-            this.panelsearch.Size = new System.Drawing.Size(901, 30);
-            this.panelsearch.TabIndex = 5;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panelsearch;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this.searchbox;
-            this.bunifuDragControl2.Vertical = true;
-            // 
-            // bunifuDragControl3
-            // 
-            this.bunifuDragControl3.Fixed = true;
-            this.bunifuDragControl3.Horizontal = true;
-            this.bunifuDragControl3.TargetControl = this.panel4;
-            this.bunifuDragControl3.Vertical = true;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 26);
             // 
             // btn_exit
             // 
@@ -342,6 +187,54 @@
             this.btn_add_po.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add_po.Click += new System.EventHandler(this.btn_add_po_Click);
             // 
+            // dt_podatesearch
+            // 
+            this.dt_podatesearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dt_podatesearch.BorderRadius = 0;
+            this.dt_podatesearch.ForeColor = System.Drawing.Color.White;
+            this.dt_podatesearch.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dt_podatesearch.FormatCustom = null;
+            this.dt_podatesearch.Location = new System.Drawing.Point(186, 32);
+            this.dt_podatesearch.Name = "dt_podatesearch";
+            this.dt_podatesearch.Size = new System.Drawing.Size(172, 34);
+            this.dt_podatesearch.TabIndex = 9;
+            this.dt_podatesearch.Value = new System.DateTime(2018, 5, 29, 0, 9, 11, 242);
+            // 
+            // lbl_search_poDate
+            // 
+            this.lbl_search_poDate.AutoSize = true;
+            this.lbl_search_poDate.ForeColor = System.Drawing.Color.White;
+            this.lbl_search_poDate.Location = new System.Drawing.Point(183, 16);
+            this.lbl_search_poDate.Name = "lbl_search_poDate";
+            this.lbl_search_poDate.Size = new System.Drawing.Size(98, 13);
+            this.lbl_search_poDate.TabIndex = 8;
+            this.lbl_search_poDate.Text = "Tanggal Pembelian";
+            // 
+            // lbl_searchsalesnumber
+            // 
+            this.lbl_searchsalesnumber.AutoSize = true;
+            this.lbl_searchsalesnumber.ForeColor = System.Drawing.Color.White;
+            this.lbl_searchsalesnumber.Location = new System.Drawing.Point(29, 16);
+            this.lbl_searchsalesnumber.Name = "lbl_searchsalesnumber";
+            this.lbl_searchsalesnumber.Size = new System.Drawing.Size(89, 13);
+            this.lbl_searchsalesnumber.TabIndex = 7;
+            this.lbl_searchsalesnumber.Text = "Nomor pembelian";
+            // 
+            // searchbox
+            // 
+            this.searchbox.BackColor = System.Drawing.Color.Teal;
+            this.searchbox.Controls.Add(this.btnresetsearch);
+            this.searchbox.Controls.Add(this.btn_searchPO);
+            this.searchbox.Controls.Add(this.dt_podatesearch);
+            this.searchbox.Controls.Add(this.lbl_search_poDate);
+            this.searchbox.Controls.Add(this.lbl_searchsalesnumber);
+            this.searchbox.Controls.Add(this.txt_search_ponumber);
+            this.searchbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchbox.Location = new System.Drawing.Point(0, 30);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(901, 10);
+            this.searchbox.TabIndex = 7;
+            // 
             // btnresetsearch
             // 
             this.btnresetsearch.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -412,6 +305,64 @@
             this.btn_searchPO.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_searchPO.Click += new System.EventHandler(this.btn_searchPO_Click);
             // 
+            // txt_search_ponumber
+            // 
+            this.txt_search_ponumber.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_search_ponumber.BackColor = System.Drawing.Color.Transparent;
+            this.txt_search_ponumber.Br = System.Drawing.Color.White;
+            this.txt_search_ponumber.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_search_ponumber.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_search_ponumber.Location = new System.Drawing.Point(22, 33);
+            this.txt_search_ponumber.Name = "txt_search_ponumber";
+            this.txt_search_ponumber.Radius = 6;
+            this.txt_search_ponumber.Size = new System.Drawing.Size(135, 33);
+            this.txt_search_ponumber.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 388);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(901, 47);
+            this.panel2.TabIndex = 6;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.txtpageinfo);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(399, 47);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // txtpageinfo
+            // 
+            this.txtpageinfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtpageinfo.AutoSize = true;
+            this.txtpageinfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpageinfo.ForeColor = System.Drawing.Color.White;
+            this.txtpageinfo.Location = new System.Drawing.Point(3, 0);
+            this.txtpageinfo.Name = "txtpageinfo";
+            this.txtpageinfo.Size = new System.Drawing.Size(45, 17);
+            this.txtpageinfo.TabIndex = 0;
+            this.txtpageinfo.Text = "label1";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btn_first);
+            this.flowLayoutPanel1.Controls.Add(this.btn_prev);
+            this.flowLayoutPanel1.Controls.Add(this.txt_pagination);
+            this.flowLayoutPanel1.Controls.Add(this.btn_next);
+            this.flowLayoutPanel1.Controls.Add(this.btn_last);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(405, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(496, 47);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // btn_first
             // 
             this.btn_first.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -439,6 +390,17 @@
             this.btn_prev.TabStop = false;
             this.btn_prev.Zoom = 10;
             this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
+            // 
+            // txt_pagination
+            // 
+            this.txt_pagination.AutoSize = true;
+            this.txt_pagination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pagination.ForeColor = System.Drawing.Color.White;
+            this.txt_pagination.Location = new System.Drawing.Point(85, 0);
+            this.txt_pagination.Name = "txt_pagination";
+            this.txt_pagination.Size = new System.Drawing.Size(45, 17);
+            this.txt_pagination.TabIndex = 5;
+            this.txt_pagination.Text = "label1";
             // 
             // btn_next
             // 
@@ -468,6 +430,16 @@
             this.btn_last.Zoom = 10;
             this.btn_last.Click += new System.EventHandler(this.btn_last_Click);
             // 
+            // panelsearch
+            // 
+            this.panelsearch.BackColor = System.Drawing.Color.Teal;
+            this.panelsearch.Controls.Add(this.bunifuImageButton1);
+            this.panelsearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelsearch.Location = new System.Drawing.Point(0, 0);
+            this.panelsearch.Name = "panelsearch";
+            this.panelsearch.Size = new System.Drawing.Size(901, 30);
+            this.panelsearch.TabIndex = 5;
+            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -482,6 +454,34 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panelsearch;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.searchbox;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // bunifuDragControl3
+            // 
+            this.bunifuDragControl3.Fixed = true;
+            this.bunifuDragControl3.Horizontal = true;
+            this.bunifuDragControl3.TargetControl = this.panel4;
+            this.bunifuDragControl3.Vertical = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 26);
             // 
             // editToolStripMenuItem
             // 
@@ -517,13 +517,13 @@
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.panelsearch.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_first)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_last)).EndInit();
+            this.panelsearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).EndInit();
             this.ResumeLayout(false);
 

@@ -30,17 +30,18 @@ namespace POS.DB
         }
     
         public virtual DbSet<P_Colour> P_Colour { get; set; }
-        public virtual DbSet<TSalesDetail> TSalesDetails { get; set; }
-        public virtual DbSet<TInventory> TInventories { get; set; }
-        public virtual DbSet<PCustomer> PCustomers { get; set; }
         public virtual DbSet<PPaymentType> PPaymentTypes { get; set; }
-        public virtual DbSet<TSale> TSales { get; set; }
-        public virtual DbSet<TRole> TRoles { get; set; }
-        public virtual DbSet<TUser> TUsers { get; set; }
         public virtual DbSet<PSupplier> PSuppliers { get; set; }
+        public virtual DbSet<TInventory> TInventories { get; set; }
         public virtual DbSet<TPurchaseOrder> TPurchaseOrders { get; set; }
-        public virtual DbSet<TReceiveingStock> TReceiveingStocks { get; set; }
-        public virtual DbSet<TReceiveingDetail> TReceiveingDetails { get; set; }
         public virtual DbSet<TPurchaseOrderDetail> TPurchaseOrderDetails { get; set; }
+        public virtual DbSet<TReceiveingDetail> TReceiveingDetails { get; set; }
+        public virtual DbSet<TReceiveingStock> TReceiveingStocks { get; set; }
+        public virtual DbSet<TRole> TRoles { get; set; }
+        public virtual DbSet<TSafetyStock> TSafetyStocks { get; set; }
+        public virtual DbSet<TSale> TSales { get; set; }
+        public virtual DbSet<TSalesDetail> TSalesDetails { get; set; }
+        public virtual DbSet<TUser> TUsers { get; set; }
+        public virtual DbSet<PCustomer> PCustomers { get; set; }
     }
 }

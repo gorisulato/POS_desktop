@@ -143,5 +143,28 @@ namespace POS.Properties {
                 this["password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int notif_count {
+            get {
+                return ((int)(this["notif_count"]));
+            }
+            set {
+                this["notif_count"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime last_safetystock_updated {
+            get {
+                return ((global::System.DateTime)(this["last_safetystock_updated"]));
+            }
+            set {
+                this["last_safetystock_updated"] = value;
+            }
+        }
     }
 }

@@ -284,6 +284,7 @@
             this.btnresetsearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnresetsearch.Textcolor = System.Drawing.Color.White;
             this.btnresetsearch.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnresetsearch.Click += new System.EventHandler(this.btnresetsearch_Click);
             // 
             // btn_searchPO
             // 
@@ -348,9 +349,9 @@
             this.lbl_searchsalesnumber.ForeColor = System.Drawing.Color.White;
             this.lbl_searchsalesnumber.Location = new System.Drawing.Point(29, 16);
             this.lbl_searchsalesnumber.Name = "lbl_searchsalesnumber";
-            this.lbl_searchsalesnumber.Size = new System.Drawing.Size(89, 13);
+            this.lbl_searchsalesnumber.Size = new System.Drawing.Size(97, 13);
             this.lbl_searchsalesnumber.TabIndex = 7;
-            this.lbl_searchsalesnumber.Text = "Nomor pembelian";
+            this.lbl_searchsalesnumber.Text = "Nomor Penerimaan";
             // 
             // txt_search_ponumber
             // 

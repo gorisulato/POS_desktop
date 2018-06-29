@@ -7,17 +7,34 @@
     <Property Name="clor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Point_Of_Sales.dbo.PCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="PCustomer">
     <Key>
       <PropertyRef Name="id_Customer" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="MemberCode" />
+      <PropertyRef Name="Alamat" />
+      <PropertyRef Name="TempatLahir" />
+      <PropertyRef Name="TanggalLahir" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="created_date" />
+      <PropertyRef Name="is_deleted" />
     </Key>
-    <Property Name="id_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_Customer" Type="int" Nullable="false" />
     <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="MemberCode" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Alamat" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TempatLahir" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TanggalLahir" Type="datetime" Nullable="false" />
     <Property Name="PointReward" Type="int" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
   </EntityType>
   <EntityType Name="PPaymentType">
     <Key>
@@ -57,6 +74,13 @@
     <Property Name="Unit_Price" Type="float" />
     <Property Name="Stock" Type="int" />
     <Property Name="Items_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
   </EntityType>
   <EntityType Name="TPurchaseOrder">
     <Key>
@@ -137,6 +161,20 @@
     <Property Name="Role_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ROle_Description" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="TSafetyStock">
+    <Key>
+      <PropertyRef Name="Safetystock_id" />
+    </Key>
+    <Property Name="Safetystock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemsId" Type="int" Nullable="false" />
+    <Property Name="SafetyStock" Type="float" Nullable="false" />
+    <Property Name="safetystockDateStart" Type="datetime" Nullable="false" />
+    <Property Name="safetystockDateEnd" Type="datetime" Nullable="false" />
+    <Property Name="Created_By" Type="int" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_Date" Type="datetime" />
+    <Property Name="Updated_by" Type="int" />
+  </EntityType>
   <EntityType Name="TSales">
     <Key>
       <PropertyRef Name="TSales_id" />
@@ -152,6 +190,14 @@
     <Property Name="PaymentType" Type="int" Nullable="false" />
     <Property Name="PaymentAmount" Type="float" />
     <Property Name="Change" Type="float" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+    <Property Name="PsupplierId" Type="int" />
   </EntityType>
   <EntityType Name="TSalesDetail">
     <Key>
@@ -165,6 +211,13 @@
     <Property Name="Discount" Type="float" />
     <Property Name="Tax" Type="float" />
     <Property Name="Subtotal" Type="float" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
   </EntityType>
   <EntityType Name="TUser">
     <Key>
@@ -185,7 +238,6 @@
   </EntityType>
   <EntityContainer Name="Point_Of_SalesModelStoreContainer">
     <EntitySet Name="P_Colour" EntityType="Self.P_Colour" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PCustomer" EntityType="Self.PCustomer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PPaymentType" EntityType="Self.PPaymentType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PSupplier" EntityType="Self.PSupplier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TInventory" EntityType="Self.TInventory" Schema="dbo" store:Type="Tables" />
@@ -194,8 +246,27 @@
     <EntitySet Name="TReceiveingDetail" EntityType="Self.TReceiveingDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TReceiveingStock" EntityType="Self.TReceiveingStock" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TRole" EntityType="Self.TRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TSafetyStock" EntityType="Self.TSafetyStock" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TSales" EntityType="Self.TSales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TSalesDetail" EntityType="Self.TSalesDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TUser" EntityType="Self.TUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PCustomer" EntityType="Self.PCustomer" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PCustomer].[id_Customer] AS [id_Customer], 
+    [PCustomer].[CustomerName] AS [CustomerName], 
+    [PCustomer].[MemberCode] AS [MemberCode], 
+    [PCustomer].[Alamat] AS [Alamat], 
+    [PCustomer].[TempatLahir] AS [TempatLahir], 
+    [PCustomer].[TanggalLahir] AS [TanggalLahir], 
+    [PCustomer].[PointReward] AS [PointReward], 
+    [PCustomer].[created_by] AS [created_by], 
+    [PCustomer].[created_date] AS [created_date], 
+    [PCustomer].[modified_by] AS [modified_by], 
+    [PCustomer].[modified_on] AS [modified_on], 
+    [PCustomer].[is_deleted] AS [is_deleted], 
+    [PCustomer].[deleted_by] AS [deleted_by], 
+    [PCustomer].[deleted_date] AS [deleted_date]
+    FROM [dbo].[PCustomer] AS [PCustomer]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

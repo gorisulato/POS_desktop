@@ -22,5 +22,12 @@ namespace POS.DB
         public Nullable<double> Discount { get; set; }
         public Nullable<double> Tax { get; set; }
         public Nullable<double> Subtotal { get; set; }
+        public int created_by { get; set; }
+        public System.DateTime created_date { get; set; }
+        public Nullable<int> modified_by { get; set; }
+        public Nullable<System.DateTime> modified_on { get; set; }
+        public bool is_deleted { get; set; }
+        public Nullable<int> deleted_by { get; set; }
+        public Nullable<System.DateTime> deleted_date { get; set; }
     }
 }

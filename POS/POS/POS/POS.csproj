@@ -124,6 +124,9 @@
     <Compile Include="DB\TRole.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\TSafetyStock.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\TSale.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>

@@ -33,5 +33,7 @@ namespace POS.DB
         public Nullable<int> deleted_by { get; set; }
         public Nullable<System.DateTime> deleted_date { get; set; }
         public Nullable<int> PsupplierId { get; set; }
+        public string Card_no { get; set; }
+        public string Approval_No { get; set; }
     }
 }

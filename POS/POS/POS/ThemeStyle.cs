@@ -33,16 +33,16 @@ namespace POS
             BunifuElipse Eclipse = new BunifuElipse();
             Eclipse.TargetControl = btn;
             Eclipse.ElipseRadius = 20;
-            btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(170)))), ((int)(((byte)(253)))));
-            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
 
-            btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             btn.Cursor = System.Windows.Forms.Cursors.Hand;
             btn.DisabledColor = System.Drawing.Color.Gray;
             btn.IconVisible = true;
             btn.IconZoom = _iconZoom;
             btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(162)))), ((int)(((byte)(224)))));
             btn.OnHoverTextColor = System.Drawing.Color.White;
             btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);

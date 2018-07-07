@@ -9,6 +9,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Data.Entity.Core.EntityClient;
 using POS.DB;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Windows.Forms;
 
 namespace POS
 {
@@ -41,41 +44,41 @@ namespace POS
 
         #region "Connection"
 
-        //public void AssignConnectionInfo(ReportDocument document, ConnectionInfo crConnection, CrystalReportViewer crv)
-        //{
-        //    try
-        //    {
-        //        foreach (CrystalDecisions.CrystalReports.Engine.Table table in document.Database.Tables)
-        //        {
-        //            TableLogOnInfo logOnInfo = table.LogOnInfo;
-        //            if (logOnInfo != null)
-        //            {
+        public void AssignConnectionInfo(ReportDocument document, ConnectionInfo crConnection, CrystalReportViewer crv)
+        {
+            try
+            {
+                foreach (CrystalDecisions.CrystalReports.Engine.Table table in document.Database.Tables)
+                {
+                    TableLogOnInfo logOnInfo = table.LogOnInfo;
+                    if (logOnInfo != null)
+                    {
 
-        //                table.LogOnInfo.TableName = table.Name;
-        //                table.LogOnInfo.ConnectionInfo.UserID = crConnection.UserID;
-        //                table.LogOnInfo.ConnectionInfo.Password = crConnection.Password;
-        //                table.LogOnInfo.ConnectionInfo.DatabaseName = crConnection.DatabaseName;
-        //                table.LogOnInfo.ConnectionInfo.ServerName = crConnection.ServerName;
-        //                //crv.LogOnInfo.Add(table.LogOnInfo);
-        //                table.ApplyLogOnInfo(table.LogOnInfo);
-        //                var x = crConnection.DatabaseName;
-        //                table.Location = x + table.Name;
+                        table.LogOnInfo.TableName = table.Name;
+                        table.LogOnInfo.ConnectionInfo.UserID = crConnection.UserID;
+                        table.LogOnInfo.ConnectionInfo.Password = crConnection.Password;
+                        table.LogOnInfo.ConnectionInfo.DatabaseName = crConnection.DatabaseName;
+                        table.LogOnInfo.ConnectionInfo.ServerName = crConnection.ServerName;
+                        //crv.LogOnInfo.Add(table.LogOnInfo);
+                        table.ApplyLogOnInfo(table.LogOnInfo);
+                        var x = crConnection.DatabaseName;
+                        table.Location = x + table.Name;
 
-        //                document.DataSourceConnections[0].SetLogon(crConnection.UserID, crConnection.Password);
-        //                document.DataSourceConnections[0].SetConnection(crConnection.ServerName, crConnection.DatabaseName, crConnection.UserID, crConnection.Password);
-        //                var a = document.DataSourceConnections[0].ServerName;
-        //            }
-        //        }
-        //    }
-        //    catch (CrystalReportsException e)
+                        document.DataSourceConnections[0].SetLogon(crConnection.UserID, crConnection.Password);
+                        document.DataSourceConnections[0].SetConnection(crConnection.ServerName, crConnection.DatabaseName, crConnection.UserID, crConnection.Password);
+                        var a = document.DataSourceConnections[0].ServerName;
+                    }
+                }
+            }
+            catch (CrystalReportsException e)
 
-        //    {
-        //        e.Message.ToString();
+            {
+                e.Message.ToString();
 
-        //    }
+            }
 
 
-        //}
+        }
 
         public Boolean OpenConnection()
         {

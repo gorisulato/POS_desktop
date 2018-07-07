@@ -205,9 +205,13 @@ namespace POS
                     Util.connection.Close();
                     foreach (DataGridViewRow row in dg_sales.Rows)
                     {
+                        row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                         row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
                         
+                     
+                        
                     }
+                    
                     this.dg_sales.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                     this.dg_sales.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 }

@@ -1,4 +1,5 @@
 ﻿using POS.DB;
+using POS.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace POS
 {
     public partial class FormADDSales : Form
     {
+        ThemeStyle style = new ThemeStyle();
         public delegate void DoEvent();
         public event DoEvent RefreshDgv;
         sales_list sl;
@@ -124,6 +126,19 @@ namespace POS
         }
         private void FormADDSales_Load(object sender, EventArgs e)
         {
+            style._primaryButton(btn_print);
+            style._primaryButton(btn_addDetails);
+            style._primaryButton(btn_addItems);
+            style._primaryButton(btn_Batal);
+            style._primaryButton(btn_delete);
+            style._primaryButton(btn_edit);
+            style._primaryButton(btn_exit);
+            style._primaryButton(btn_pay);
+            style._primaryButton(btn_update_master);
+            style._primaryButton(btn_search_LOV);
+
+            txt_cardno.Enabled = false;
+            txt_approvalcode.Enabled = false;
             dt_salesdate.Value = DateTime.Now;
             dg_detail.MultiSelect = false;
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
@@ -134,7 +149,7 @@ namespace POS
                 btn_Batal.Visible = false;
 
                 Detail.Visible = false;
-                this.Height = 453;
+                this.Height = 491;
                 Load_datadetail();
                 LoadPaymentType();
             }
@@ -166,7 +181,8 @@ namespace POS
                 txt_customer_show.Text = loadsales.Customer == 0?"":loadcust.CustomerName;
                 cb_idpayment.selectedIndex = pt;
                 cb_paymentType.selectedIndex = pt;
-             
+                txt_approvalcode.Text = loadsales.Approval_No;
+                txt_cardno.Text = loadsales.Card_no;
                 txt_sales_discount.Value = Convert.ToDouble(loadsales.Discount);
                 total_sales.Text = loadsales.TotalSales.ToString();
                 lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", loadsales.TotalSales);
@@ -177,7 +193,7 @@ namespace POS
                 btn_Batal.Visible = true;
                 btn_addDetails.Visible = false;
                 Detail.Visible = true;
-                this.Height = 750;
+                this.Height = 788;
                 Load_datadetail();
             }
 
@@ -238,6 +254,8 @@ namespace POS
 
             sales.Customer = int.Parse(txt_customer_id.Text);
             sales.PaymentType = int.Parse(cb_idpayment.selectedValue);
+            sales.Card_no = txt_cardno.Text;
+            sales.Approval_No = txt_approvalcode.Text;
             sales.Discount = txt_sales_discount.Value;
             sales.TotalSales = sum;
             sales.StatusSales = 0;
@@ -283,7 +301,9 @@ namespace POS
                         StatusSales = 0,
                         created_by=Properties.Settings.Default._userID,
                         created_date=DateTime.Now,
-                        is_deleted=false
+                        is_deleted=false,
+                        Card_no=txt_cardno.Text,
+                        Approval_No=txt_approvalcode.Text
 
 
 
@@ -483,6 +503,17 @@ namespace POS
         {
             var a = cb_paymentType.selectedIndex;
             cb_idpayment.selectedIndex = a;
+
+            if (cb_paymentType.selectedValue != "Cash")
+            {
+                txt_cardno.Enabled = true;
+                txt_approvalcode.Enabled = true;
+            }
+            else
+            {
+                txt_cardno.Enabled = false;
+                txt_approvalcode.Enabled = false;
+            }
         }
 
 
@@ -492,8 +523,8 @@ namespace POS
             {
                 var sales = Point_Of_SalesEntities.TSales.Where(s => s.Sales_Number == txt_salesNumber.Text).First();
 
-                sales.PaymentAmount = int.Parse(txt_paymentamount.Text);
-                sales.Change = int.Parse(txt_change.Text);
+                sales.PaymentAmount = float.Parse(txt_paymentamount.Text);
+                sales.Change = float.Parse(txt_change.Text);
                 sales.StatusSales = 1;
                 sales.Discount = txt_sales_discount.Value;
                 sales.Customer = int.Parse(txt_customer_id.Text);
@@ -518,8 +549,8 @@ namespace POS
         private void txt_paymentamount_TextChanged(object sender, EventArgs e)
         {
             //var z= 
-            txt_change.Text = (int.Parse(txt_paymentamount.Text==""?"0":txt_paymentamount.Text) - int.Parse(total_sales.Text)).ToString();
-            lbl_change.Text = "Rp" + " " + string.Format("{0:n}", int.Parse(txt_change.Text));
+            txt_change.Text = (float.Parse(txt_paymentamount.Text==""?"0":txt_paymentamount.Text) - float.Parse(total_sales.Text)).ToString();
+            lbl_change.Text = "Rp" + " " + string.Format("{0:n}", float.Parse(txt_change.Text));
         }
 
         private void dg_detail_SelectionChanged(object sender, EventArgs e)
@@ -711,17 +742,14 @@ namespace POS
             txt_customer_show.Text = "";
         }
 
+
+
         #endregion
 
-        private void btn_addDetails_Load(object sender, EventArgs e)
+        private void btn_print_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-     
+            InvoiceViewer iv = new InvoiceViewer(txt_salesNumber.Text);
+            iv.ShowDialog();
         }
     }
 }

@@ -157,31 +157,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TSales">
-      <EntityTypeMapping TypeName="Point_Of_SalesModel.TSale">
-        <MappingFragment StoreEntitySet="TSales">
-          <ScalarProperty Name="PsupplierId" ColumnName="PsupplierId" />
-          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
-          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
-          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
-          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
-          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
-          <ScalarProperty Name="created_date" ColumnName="created_date" />
-          <ScalarProperty Name="created_by" ColumnName="created_by" />
-          <ScalarProperty Name="Change" ColumnName="Change" />
-          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
-          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
-          <ScalarProperty Name="StatusSales" ColumnName="StatusSales" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="SalesDate" ColumnName="SalesDate" />
-          <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Customer" ColumnName="Customer" />
-          <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
-          <ScalarProperty Name="TSales_id" ColumnName="TSales_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TSalesDetails">
       <EntityTypeMapping TypeName="Point_Of_SalesModel.TSalesDetail">
         <MappingFragment StoreEntitySet="TSalesDetail">
@@ -248,6 +223,33 @@
           <ScalarProperty Name="MemberCode" ColumnName="MemberCode" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
           <ScalarProperty Name="id_Customer" ColumnName="id_Customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSales">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.TSale">
+        <MappingFragment StoreEntitySet="TSales">
+          <ScalarProperty Name="Approval_No" ColumnName="Approval_No" />
+          <ScalarProperty Name="Card_no" ColumnName="Card_no" />
+          <ScalarProperty Name="PsupplierId" ColumnName="PsupplierId" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="StatusSales" ColumnName="StatusSales" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SalesDate" ColumnName="SalesDate" />
+          <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
+          <ScalarProperty Name="TSales_id" ColumnName="TSales_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

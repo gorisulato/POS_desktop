@@ -11,11 +11,11 @@
     <EntitySet Name="TReceiveingStocks" EntityType="Point_Of_SalesModel.TReceiveingStock" />
     <EntitySet Name="TRoles" EntityType="Point_Of_SalesModel.TRole" />
     <EntitySet Name="TSafetyStocks" EntityType="Point_Of_SalesModel.TSafetyStock" />
-    <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
     <EntitySet Name="TSalesDetails" EntityType="Point_Of_SalesModel.TSalesDetail" />
     <EntitySet Name="TUsers" EntityType="Point_Of_SalesModel.TUser" />
     <EntitySet Name="PUserImages" EntityType="Point_Of_SalesModel.PUserImage" />
     <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
+    <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
   </EntityContainer>
   <EntityType Name="P_Colour">
     <Key>
@@ -163,30 +163,6 @@
     <Property Name="Updated_Date" Type="DateTime" Precision="3" />
     <Property Name="Updated_by" Type="Int32" />
   </EntityType>
-  <EntityType Name="TSale">
-    <Key>
-      <PropertyRef Name="TSales_id" />
-    </Key>
-    <Property Name="TSales_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Sales_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Customer" Type="Int32" />
-    <Property Name="Discount" Type="Double" />
-    <Property Name="TotalSales" Type="Double" Nullable="false" />
-    <Property Name="SalesDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="StatusSales" Type="Int32" Nullable="false" />
-    <Property Name="PaymentType" Type="Int32" Nullable="false" />
-    <Property Name="PaymentAmount" Type="Double" />
-    <Property Name="Change" Type="Double" />
-    <Property Name="created_by" Type="Int32" Nullable="false" />
-    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="modified_by" Type="Int32" />
-    <Property Name="modified_on" Type="DateTime" Precision="3" />
-    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
-    <Property Name="deleted_by" Type="Int32" />
-    <Property Name="deleted_date" Type="DateTime" Precision="3" />
-    <Property Name="PsupplierId" Type="Int32" />
-  </EntityType>
   <EntityType Name="TSalesDetail">
     <Key>
       <PropertyRef Name="Sales_Detail_id" />
@@ -251,5 +227,31 @@
     <Property Name="is_deleted" Type="Boolean" Nullable="false" />
     <Property Name="deleted_by" Type="Int32" />
     <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TSale">
+    <Key>
+      <PropertyRef Name="TSales_id" />
+    </Key>
+    <Property Name="TSales_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sales_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Customer" Type="Int32" />
+    <Property Name="Discount" Type="Double" />
+    <Property Name="TotalSales" Type="Double" Nullable="false" />
+    <Property Name="SalesDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StatusSales" Type="Int32" Nullable="false" />
+    <Property Name="PaymentType" Type="Int32" Nullable="false" />
+    <Property Name="PaymentAmount" Type="Double" />
+    <Property Name="Change" Type="Double" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="PsupplierId" Type="Int32" />
+    <Property Name="Card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Approval_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

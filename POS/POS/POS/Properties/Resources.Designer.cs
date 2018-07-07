@@ -373,6 +373,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Business_Building_50px {
+            get {
+                object obj = ResourceManager.GetObject("Business_Building_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Calendar_100px {
             get {
                 object obj = ResourceManager.GetObject("Calendar_100px", resourceCulture);

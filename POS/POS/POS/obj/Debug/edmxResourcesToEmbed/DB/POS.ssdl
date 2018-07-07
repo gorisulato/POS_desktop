@@ -197,6 +197,8 @@
     <Property Name="deleted_by" Type="int" />
     <Property Name="deleted_date" Type="datetime" />
     <Property Name="PsupplierId" Type="int" />
+    <Property Name="Card_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Approval_No" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TSalesDetail">
     <Key>

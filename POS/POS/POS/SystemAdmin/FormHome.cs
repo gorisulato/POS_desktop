@@ -1,4 +1,5 @@
 ﻿using POS.DB;
+using POS.Master.Customer;
 using POS.Purchasing;
 using POS.Receiving;
 using System;
@@ -374,7 +375,7 @@ namespace POS.SystemAdmin
 
 
         }
-
+        FormCustomer cus;
         sales_list su;
         PurchaseOrder purchase;
         public void setsu()
@@ -505,9 +506,68 @@ namespace POS.SystemAdmin
             var host = Dns.GetHostEntry(Dns.GetHostName());
             lbl_contentipaddress.Text = host.AddressList[1].ToString();
         }
+
+
         #endregion
 
+        void updatecus()
+        {
+            cus = null;
+        }
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            if (cus == null)
+            {
+                cus = new FormCustomer();
+                cus.RefreshDgv += new FormCustomer.DoEvent(updatecus);
+                cus.Show();
+            }
+            else
+            {
+                cus.WindowState = FormWindowState.Normal;
+                cus.Focus();
+            }
+        }
 
+        private void btn_expandmaster_Click(object sender, EventArgs e)
+        {
 
+            if (panelexpandablemaster.Height == 133)
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandablemaster, "Height", 10);
+                t.run();
+                btn_expandmaster.Image = Properties.Resources.chevron_white;
+            }
+            else
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandablemaster, "Height", 133);
+                t.run();
+                btn_expandmaster.Image = Properties.Resources.unexpand;
+            }
+        }
+
+        private void lbl_mastermenu_Click(object sender, EventArgs e)
+        {
+            if (panelexpandablemaster.Height == 133)
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandablemaster, "Height", 10);
+                t.run();
+                btn_expandmaster.Image = Properties.Resources.chevron_white;
+            }
+            else
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandablemaster, "Height", 133);
+                t.run();
+                btn_expandmaster.Image = Properties.Resources.unexpand;
+            }
+        }
     }
 }

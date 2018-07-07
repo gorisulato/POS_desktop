@@ -65,6 +65,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Main = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_approvalcode = new AltoControls.AltoTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_cardno = new AltoControls.AltoTextBox();
             this.btn_clear = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_update_master = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cb_idpayment = new Bunifu.Framework.UI.BunifuDropdown();
@@ -79,6 +83,7 @@
             this.lbl_payment = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_paymentamount = new AltoControls.AltoTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Detail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_detail)).BeginInit();
             this.panel1.SuspendLayout();
@@ -102,7 +107,7 @@
             this.Detail.Controls.Add(this.dg_detail);
             this.Detail.Controls.Add(this.panel1);
             this.Detail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Detail.Location = new System.Drawing.Point(0, 453);
+            this.Detail.Location = new System.Drawing.Point(0, 491);
             this.Detail.Name = "Detail";
             this.Detail.Size = new System.Drawing.Size(902, 297);
             this.Detail.TabIndex = 1;
@@ -368,6 +373,7 @@
             // upper_panel
             // 
             this.upper_panel.BackgroundImage = global::POS.Properties.Resources.upper;
+            this.upper_panel.Controls.Add(this.btn_print);
             this.upper_panel.Controls.Add(this.btn_Batal);
             this.upper_panel.Controls.Add(this.btn_exit);
             this.upper_panel.Controls.Add(this.label1);
@@ -398,7 +404,7 @@
             this.btn_Batal.IconVisible = true;
             this.btn_Batal.IconZoom = 90D;
             this.btn_Batal.IsTab = false;
-            this.btn_Batal.Location = new System.Drawing.Point(632, 12);
+            this.btn_Batal.Location = new System.Drawing.Point(477, 12);
             this.btn_Batal.Name = "btn_Batal";
             this.btn_Batal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Batal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -433,7 +439,7 @@
             this.btn_exit.IconVisible = true;
             this.btn_exit.IconZoom = 90D;
             this.btn_exit.IsTab = false;
-            this.btn_exit.Location = new System.Drawing.Point(766, 12);
+            this.btn_exit.Location = new System.Drawing.Point(762, 12);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -518,7 +524,7 @@
             // 
             this.lbl_total.AutoSize = true;
             this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_total.Location = new System.Drawing.Point(303, 104);
+            this.lbl_total.Location = new System.Drawing.Point(303, 186);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(95, 17);
             this.lbl_total.TabIndex = 4;
@@ -532,7 +538,7 @@
             this.total_sales.Enabled = false;
             this.total_sales.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.total_sales.ForeColor = System.Drawing.Color.DimGray;
-            this.total_sales.Location = new System.Drawing.Point(297, 132);
+            this.total_sales.Location = new System.Drawing.Point(297, 214);
             this.total_sales.Name = "total_sales";
             this.total_sales.Radius = 6;
             this.total_sales.Size = new System.Drawing.Size(164, 33);
@@ -559,19 +565,18 @@
             this.btn_addDetails.IconVisible = true;
             this.btn_addDetails.IconZoom = 90D;
             this.btn_addDetails.IsTab = false;
-            this.btn_addDetails.Location = new System.Drawing.Point(10, 346);
+            this.btn_addDetails.Location = new System.Drawing.Point(10, 384);
             this.btn_addDetails.Name = "btn_addDetails";
             this.btn_addDetails.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_addDetails.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_addDetails.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_addDetails.selected = false;
-            this.btn_addDetails.Size = new System.Drawing.Size(107, 33);
+            this.btn_addDetails.Size = new System.Drawing.Size(142, 33);
             this.btn_addDetails.TabIndex = 204;
             this.btn_addDetails.Text = "Tambah Detail";
             this.btn_addDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_addDetails.Textcolor = System.Drawing.Color.White;
             this.btn_addDetails.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addDetails.Load += new System.EventHandler(this.btn_addDetails_Load);
             this.btn_addDetails.Click += new System.EventHandler(this.btn_addDetails_Click);
             // 
             // txt_customer_id
@@ -634,7 +639,7 @@
             // txt_sales_discount
             // 
             this.txt_sales_discount.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txt_sales_discount.Location = new System.Drawing.Point(297, 50);
+            this.txt_sales_discount.Location = new System.Drawing.Point(297, 132);
             this.txt_sales_discount.Name = "txt_sales_discount";
             this.txt_sales_discount.SignColor = System.Drawing.Color.White;
             this.txt_sales_discount.Size = new System.Drawing.Size(164, 33);
@@ -646,7 +651,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label5.Location = new System.Drawing.Point(303, 27);
+            this.label5.Location = new System.Drawing.Point(303, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 17);
             this.label5.TabIndex = 213;
@@ -661,11 +666,15 @@
             this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main.Location = new System.Drawing.Point(0, 66);
             this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(902, 387);
+            this.Main.Size = new System.Drawing.Size(902, 425);
             this.Main.TabIndex = 2;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txt_approvalcode);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txt_cardno);
             this.groupBox2.Controls.Add(this.btn_clear);
             this.groupBox2.Controls.Add(this.btn_update_master);
             this.groupBox2.Controls.Add(this.cb_idpayment);
@@ -686,10 +695,58 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.groupBox2.Location = new System.Drawing.Point(10, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(470, 337);
+            this.groupBox2.Size = new System.Drawing.Size(470, 373);
             this.groupBox2.TabIndex = 217;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Penjualan";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label11.Location = new System.Drawing.Point(305, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 17);
+            this.label11.TabIndex = 222;
+            this.label11.Text = "Approval Code";
+            // 
+            // txt_approvalcode
+            // 
+            this.txt_approvalcode.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_approvalcode.BackColor = System.Drawing.Color.Transparent;
+            this.txt_approvalcode.Br = System.Drawing.Color.White;
+            this.txt_approvalcode.Enabled = false;
+            this.txt_approvalcode.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txt_approvalcode.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_approvalcode.Location = new System.Drawing.Point(297, 50);
+            this.txt_approvalcode.Name = "txt_approvalcode";
+            this.txt_approvalcode.Radius = 6;
+            this.txt_approvalcode.Size = new System.Drawing.Size(164, 33);
+            this.txt_approvalcode.TabIndex = 221;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label10.Location = new System.Drawing.Point(12, 308);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 17);
+            this.label10.TabIndex = 220;
+            this.label10.Text = "Nomor Kartu";
+            // 
+            // txt_cardno
+            // 
+            this.txt_cardno.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_cardno.BackColor = System.Drawing.Color.Transparent;
+            this.txt_cardno.Br = System.Drawing.Color.White;
+            this.txt_cardno.Enabled = false;
+            this.txt_cardno.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txt_cardno.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_cardno.Location = new System.Drawing.Point(4, 332);
+            this.txt_cardno.Name = "txt_cardno";
+            this.txt_cardno.Radius = 6;
+            this.txt_cardno.Size = new System.Drawing.Size(198, 33);
+            this.txt_cardno.TabIndex = 219;
             // 
             // btn_clear
             // 
@@ -714,6 +771,7 @@
             this.btn_update_master.ButtonText = "Perbarui Data Penjualan";
             this.btn_update_master.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_update_master.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_update_master.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update_master.Iconcolor = System.Drawing.Color.Transparent;
             this.btn_update_master.Iconimage = global::POS.Properties.Resources.edit_white;
             this.btn_update_master.Iconimage_right = null;
@@ -724,16 +782,16 @@
             this.btn_update_master.IconRightVisible = true;
             this.btn_update_master.IconRightZoom = 0D;
             this.btn_update_master.IconVisible = true;
-            this.btn_update_master.IconZoom = 90D;
+            this.btn_update_master.IconZoom = 60D;
             this.btn_update_master.IsTab = false;
-            this.btn_update_master.Location = new System.Drawing.Point(297, 269);
+            this.btn_update_master.Location = new System.Drawing.Point(311, 321);
             this.btn_update_master.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_update_master.Name = "btn_update_master";
             this.btn_update_master.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_update_master.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_update_master.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_update_master.selected = false;
-            this.btn_update_master.Size = new System.Drawing.Size(153, 45);
+            this.btn_update_master.Size = new System.Drawing.Size(150, 44);
             this.btn_update_master.TabIndex = 217;
             this.btn_update_master.Text = "Perbarui Data Penjualan";
             this.btn_update_master.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -798,11 +856,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.groupBox1.Location = new System.Drawing.Point(497, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 337);
+            this.groupBox1.Size = new System.Drawing.Size(395, 374);
             this.groupBox1.TabIndex = 216;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pembayaran";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lbl_change
             // 
@@ -921,13 +978,48 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Jumlah Pembayaran";
             // 
+            // btn_print
+            // 
+            this.btn_print.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_print.BorderRadius = 0;
+            this.btn_print.ButtonText = "Cetak Faktur";
+            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_print.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_print.Iconimage = global::POS.Properties.Resources.Print_100px;
+            this.btn_print.Iconimage_right = null;
+            this.btn_print.Iconimage_right_Selected = null;
+            this.btn_print.Iconimage_Selected = null;
+            this.btn_print.IconMarginLeft = 0;
+            this.btn_print.IconMarginRight = 0;
+            this.btn_print.IconRightVisible = true;
+            this.btn_print.IconRightZoom = 0D;
+            this.btn_print.IconVisible = true;
+            this.btn_print.IconZoom = 90D;
+            this.btn_print.IsTab = false;
+            this.btn_print.Location = new System.Drawing.Point(621, 12);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_print.selected = false;
+            this.btn_print.Size = new System.Drawing.Size(128, 42);
+            this.btn_print.TabIndex = 6;
+            this.btn_print.Text = "Cetak Faktur";
+            this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print.Textcolor = System.Drawing.Color.White;
+            this.btn_print.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // FormADDSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(902, 750);
+            this.ClientSize = new System.Drawing.Size(902, 788);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.Detail);
             this.Controls.Add(this.upper_panel);
@@ -1006,5 +1098,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_edit;
         private Bunifu.Framework.UI.BunifuFlatButton btn_update_master;
         private Bunifu.Framework.UI.BunifuImageButton btn_clear;
+        private System.Windows.Forms.Label label11;
+        private AltoControls.AltoTextBox txt_approvalcode;
+        private System.Windows.Forms.Label label10;
+        private AltoControls.AltoTextBox txt_cardno;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_print;
     }
 }

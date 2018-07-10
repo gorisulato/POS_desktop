@@ -4,7 +4,6 @@
     <EntitySet Name="P_Colour" EntityType="Point_Of_SalesModel.P_Colour" />
     <EntitySet Name="PPaymentTypes" EntityType="Point_Of_SalesModel.PPaymentType" />
     <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
-    <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
     <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
     <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
     <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
@@ -16,6 +15,10 @@
     <EntitySet Name="PUserImages" EntityType="Point_Of_SalesModel.PUserImage" />
     <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
     <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
+    <EntitySet Name="TPayables" EntityType="Point_Of_SalesModel.TPayable" />
+    <EntitySet Name="P_Coa" EntityType="Point_Of_SalesModel.P_Coa" />
+    <EntitySet Name="TJournals" EntityType="Point_Of_SalesModel.TJournal" />
+    <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
   </EntityContainer>
   <EntityType Name="P_Colour">
     <Key>
@@ -43,25 +46,6 @@
     <Property Name="contact_Person" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Contact_person_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="contact_person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="created_by" Type="Int32" Nullable="false" />
-    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="modified_by" Type="Int32" />
-    <Property Name="modified_on" Type="DateTime" Precision="3" />
-    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
-    <Property Name="deleted_by" Type="Int32" />
-    <Property Name="deleted_date" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="TInventory">
-    <Key>
-      <PropertyRef Name="Items_Id" />
-    </Key>
-    <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Colour" Type="Int32" />
-    <Property Name="Size" Type="Double" />
-    <Property Name="Unit_Price" Type="Double" />
-    <Property Name="Stock" Type="Int32" />
-    <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="created_by" Type="Int32" Nullable="false" />
     <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="modified_by" Type="Int32" />
@@ -253,5 +237,77 @@
     <Property Name="PsupplierId" Type="Int32" />
     <Property Name="Card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Approval_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TPayable">
+    <Key>
+      <PropertyRef Name="idBeban" />
+    </Key>
+    <Property Name="idBeban" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tahun" Type="Int32" />
+    <Property Name="Bulan" Type="Int32" />
+    <Property Name="Coa" Type="Int32" />
+    <Property Name="Jenis_Coa" Type="Int32" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="NominalBeban" Type="Double" />
+  </EntityType>
+  <EntityType Name="P_Coa">
+    <Key>
+      <PropertyRef Name="Id_COA" />
+    </Key>
+    <Property Name="Id_COA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kode_Coa" Type="String" MaxLength="59" FixedLength="false" Unicode="true" />
+    <Property Name="Nama_COA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="Parrent" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TJournal">
+    <Key>
+      <PropertyRef Name="TJournalID" />
+    </Key>
+    <Property Name="TJournalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransactionCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="Int32" Nullable="false" />
+    <Property Name="DebitCredit" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TInventory">
+    <Key>
+      <PropertyRef Name="Items_Id" />
+    </Key>
+    <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Colour" Type="Int32" />
+    <Property Name="Size" Type="Double" />
+    <Property Name="Unit_Price" Type="Double" />
+    <Property Name="Stock" Type="Int32" />
+    <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_on" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleted_by" Type="Int32" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="MarginPrice" Type="Double" />
   </EntityType>
 </Schema>

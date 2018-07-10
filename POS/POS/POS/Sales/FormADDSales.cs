@@ -231,6 +231,11 @@ namespace POS
         #endregion
 
         #region action Method
+        public void cetakfaktur()
+        {
+            InvoiceViewer iv = new InvoiceViewer(txt_salesNumber.Text);
+            iv.ShowDialog();
+        }
         public void clear_txtdetail()
         {
             txt_items_id.Text = "";
@@ -252,7 +257,7 @@ namespace POS
             }).ToList();
             var sum = Convert.ToInt32(sd2.Sum(s => s.Subtotal)) - (Convert.ToInt32(sd2.Sum(s => s.Subtotal)) * txt_sales_discount.Value / 100);
 
-            sales.Customer = int.Parse(txt_customer_id.Text);
+            sales.Customer = int.Parse(txt_customer_id.Text==""?"0": txt_customer_id.Text);
             sales.PaymentType = int.Parse(cb_idpayment.selectedValue);
             sales.Card_no = txt_cardno.Text;
             sales.Approval_No = txt_approvalcode.Text;
@@ -392,50 +397,68 @@ namespace POS
 
                 if (count == 0)
                 {
-                    int unitprice = Convert.ToInt32(items.rp.Unit_Price);
+                    int unitprice = Convert.ToInt32(items.rp.MarginPrice);
                     if (this.ValidateChildren())
                     {
-                        var user = Point_Of_SalesEntities.Set<TSalesDetail>();
-                        user.Add(new TSalesDetail
+                        if (items.rp.Stock >= txt_qty.Value)
                         {
-                            Sales_Number = sales.sales.TSales_id,
-                            Items = int.Parse(txt_items_id.Text),
-                            Qty = Convert.ToInt32(txt_qty.Value),
-                            Price = unitprice,
-                            Discount = txt_discount.Value,
-                            Subtotal = (unitprice - (unitprice * txt_discount.Value / 100)) * txt_qty.Value,
-                            created_by=Properties.Settings.Default._userID,
-                            created_date=DateTime.Now,
-                            is_deleted=false
+                            var user = Point_Of_SalesEntities.Set<TSalesDetail>();
+                            user.Add(new TSalesDetail
+                            {
+                                Sales_Number = sales.sales.TSales_id,
+                                Items = int.Parse(txt_items_id.Text),
+                                Qty = Convert.ToInt32(txt_qty.Value),
+                                Price = unitprice,
+                                Discount = txt_discount.Value,
+                                Subtotal = (unitprice - (unitprice * txt_discount.Value / 100)) * txt_qty.Value,
+                                created_by = Properties.Settings.Default._userID,
+                                created_date = DateTime.Now,
+                                is_deleted = false
 
-                        });
-                        AffectedRows = Point_Of_SalesEntities.SaveChanges();
-                        if (AffectedRows > 0)
-                        {
-                            MessageBox.Show("Data Has Been Inserted", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            update_stock("add");
+                            });
+                            AffectedRows = Point_Of_SalesEntities.SaveChanges();
+                            if (AffectedRows > 0)
+                            {
+                                MessageBox.Show("Data Has Been Inserted", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                update_stock("add");
 
 
+                            }
+                            Load_datadetail();
                         }
-                        Load_datadetail();
+                        else
+                        {
+                            MessageBox.Show("Qty Pembelian Melebihi Stock Yang ada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                       
                     }
                     else
                     {
                         MessageBox.Show(this, "Data Not Complete");
                     }
+
                 }
                 if (count > 0)
                 {
-                    var salesdetailupdate = Point_Of_SalesEntities.TSalesDetails.Where(x => x.Sales_Number == sales.sales.TSales_id && x.Items == items.rp.Items_Id).First();
-                    salesdetailupdate.Qty = salesdetailupdate.Qty + Convert.ToInt32(txt_qty.Value);
-                    salesdetailupdate.Discount = salesdetailupdate.Discount + txt_discount.Value;
-                    salesdetailupdate.Subtotal = salesdetailupdate.Subtotal + (txt_qty.Value * (salesdetailupdate.Price - (salesdetailupdate.Price * (txt_discount.Value + salesdetailupdate.Discount) / 100)));
-                    AffectedRows = Point_Of_SalesEntities.SaveChanges();
-                    if (AffectedRows > 0)
+                    if (items.rp.Stock >= txt_qty.Value)
                     {
-                        MessageBox.Show("Item Penjualan Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Load_datadetail();
+                        var salesdetailupdate = Point_Of_SalesEntities.TSalesDetails.Where(x => x.Sales_Number == sales.sales.TSales_id && x.Items == items.rp.Items_Id).First();
+                        salesdetailupdate.Qty = salesdetailupdate.Qty + Convert.ToInt32(txt_qty.Value);
+                        salesdetailupdate.Discount = salesdetailupdate.Discount + txt_discount.Value;
+                        salesdetailupdate.Subtotal = salesdetailupdate.Subtotal + (txt_qty.Value * (salesdetailupdate.Price - (salesdetailupdate.Price * (txt_discount.Value + salesdetailupdate.Discount) / 100)));
+                        AffectedRows = Point_Of_SalesEntities.SaveChanges();
+                        if (AffectedRows > 0)
+                        {
+                            MessageBox.Show("Item Penjualan Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Load_datadetail();
+                        }
                     }
+
+                    else
+                    {
+                        MessageBox.Show("Qty Pembelian Melebihi Stock Yang ada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
 
             }
@@ -527,7 +550,7 @@ namespace POS
                 sales.Change = float.Parse(txt_change.Text);
                 sales.StatusSales = 1;
                 sales.Discount = txt_sales_discount.Value;
-                sales.Customer = int.Parse(txt_customer_id.Text);
+                sales.Customer = int.Parse(txt_customer_id.Text==""?"0": txt_customer_id.Text);
                 sales.PaymentType = int.Parse(cb_idpayment.selectedValue);
 
                 AffectedRows = Point_Of_SalesEntities.SaveChanges();
@@ -654,7 +677,10 @@ namespace POS
         private void btn_pay_Click(object sender, EventArgs e)
         {
             payment();
+            cetakfaktur();
         }
+
+
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
@@ -742,14 +768,13 @@ namespace POS
             txt_customer_show.Text = "";
         }
 
-
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            cetakfaktur();
+        }
 
         #endregion
 
-        private void btn_print_Click(object sender, EventArgs e)
-        {
-            InvoiceViewer iv = new InvoiceViewer(txt_salesNumber.Text);
-            iv.ShowDialog();
-        }
+
     }
 }

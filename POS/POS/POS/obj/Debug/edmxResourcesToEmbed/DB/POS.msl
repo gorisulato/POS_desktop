@@ -38,26 +38,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TInventories">
-      <EntityTypeMapping TypeName="Point_Of_SalesModel.TInventory">
-        <MappingFragment StoreEntitySet="TInventory">
-          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
-          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
-          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
-          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
-          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
-          <ScalarProperty Name="created_date" ColumnName="created_date" />
-          <ScalarProperty Name="created_by" ColumnName="created_by" />
-          <ScalarProperty Name="Items_Name" ColumnName="Items_Name" />
-          <ScalarProperty Name="Stock" ColumnName="Stock" />
-          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
-          <ScalarProperty Name="Colour" ColumnName="Colour" />
-          <ScalarProperty Name="Items_number" ColumnName="Items_number" />
-          <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TPurchaseOrders">
       <EntityTypeMapping TypeName="Point_Of_SalesModel.TPurchaseOrder">
         <MappingFragment StoreEntitySet="TPurchaseOrder">
@@ -250,6 +230,82 @@
           <ScalarProperty Name="Customer" ColumnName="Customer" />
           <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
           <ScalarProperty Name="TSales_id" ColumnName="TSales_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TPayables">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.TPayable">
+        <MappingFragment StoreEntitySet="TPayable">
+          <ScalarProperty Name="NominalBeban" ColumnName="NominalBeban" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="Jenis_Coa" ColumnName="Jenis_Coa" />
+          <ScalarProperty Name="Coa" ColumnName="Coa" />
+          <ScalarProperty Name="Bulan" ColumnName="Bulan" />
+          <ScalarProperty Name="Tahun" ColumnName="Tahun" />
+          <ScalarProperty Name="idBeban" ColumnName="idBeban" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Coa">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.P_Coa">
+        <MappingFragment StoreEntitySet="P_Coa">
+          <ScalarProperty Name="Parrent" ColumnName="Parrent" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="Nama_COA" ColumnName="Nama_COA" />
+          <ScalarProperty Name="Kode_Coa" ColumnName="Kode_Coa" />
+          <ScalarProperty Name="Id_COA" ColumnName="Id_COA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TJournals">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.TJournal">
+        <MappingFragment StoreEntitySet="TJournal">
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DebitCredit" ColumnName="DebitCredit" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+          <ScalarProperty Name="TJournalID" ColumnName="TJournalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TInventories">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.TInventory">
+        <MappingFragment StoreEntitySet="TInventory">
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="Items_Name" ColumnName="Items_Name" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+          <ScalarProperty Name="Items_number" ColumnName="Items_number" />
+          <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

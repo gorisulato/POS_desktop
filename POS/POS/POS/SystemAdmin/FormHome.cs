@@ -2,6 +2,8 @@
 using POS.Master.Customer;
 using POS.Purchasing;
 using POS.Receiving;
+using POS.Reports;
+using POS.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -568,6 +570,18 @@ namespace POS.SystemAdmin
                 t.run();
                 btn_expandmaster.Image = Properties.Resources.unexpand;
             }
+        }
+
+        private void btn_beban_Click(object sender, EventArgs e)
+        {
+            FormInputBeban ib = new FormInputBeban();
+            ib.ShowDialog();
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            RPT_LossProfitViewer ls = new RPT_LossProfitViewer();
+            ls.ShowDialog();
         }
     }
 }

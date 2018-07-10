@@ -29,23 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel_mainMenu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panelexpandablemaster = new System.Windows.Forms.Panel();
+            this.btn_beban = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panelmastermenu = new System.Windows.Forms.Panel();
+            this.lbl_mastermenu = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_expandmaster = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_pembelian = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_receive = new Bunifu.Framework.UI.BunifuImageButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_po = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_expandpembelian = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_sales = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_saleslist = new Bunifu.Framework.UI.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_expandsubmenusales = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_burger = new System.Windows.Forms.Panel();
             this.panel_userInfo = new System.Windows.Forms.Panel();
             this.lbl_contentipaddress = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -56,21 +71,9 @@
             this.lbl_titlenameuser = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbl_userinfo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_pp = new System.Windows.Forms.Panel();
+            this.pp_user = new PictureBoxAbouAmmar.صورة_دائرة();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.panelexpandablemaster = new System.Windows.Forms.Panel();
-            this.panelmastermenu = new System.Windows.Forms.Panel();
-            this.lbl_mastermenu = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btn_expandmaster = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_receive = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_po = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_expandpembelian = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_saleslist = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_expandsubmenusales = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pp_user = new PictureBoxAbouAmmar.صورة_دائرة();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_notif = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_logout = new Bunifu.Framework.UI.BunifuImageButton();
@@ -78,28 +81,31 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_minimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel_mainMenu.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel_pembelian.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel_sales.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel_burger.SuspendLayout();
-            this.panel_userInfo.SuspendLayout();
-            this.panel_pp.SuspendLayout();
             this.panelexpandablemaster.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_beban)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.panelmastermenu.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandmaster)).BeginInit();
+            this.panel_pembelian.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_receive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_po)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandpembelian)).BeginInit();
+            this.panel_sales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_saleslist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandsubmenusales)).BeginInit();
+            this.panel_burger.SuspendLayout();
+            this.panel_userInfo.SuspendLayout();
+            this.panel_pp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_user)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_notif)).BeginInit();
@@ -108,7 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -144,6 +150,129 @@
             this.panel4.Size = new System.Drawing.Size(1150, 670);
             this.panel4.TabIndex = 1;
             // 
+            // panelexpandablemaster
+            // 
+            this.panelexpandablemaster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelexpandablemaster.Controls.Add(this.bunifuImageButton4);
+            this.panelexpandablemaster.Controls.Add(this.label9);
+            this.panelexpandablemaster.Controls.Add(this.btn_beban);
+            this.panelexpandablemaster.Controls.Add(this.label8);
+            this.panelexpandablemaster.Controls.Add(this.bunifuImageButton3);
+            this.panelexpandablemaster.Controls.Add(this.label7);
+            this.bunifuTransition1.SetDecoration(this.panelexpandablemaster, BunifuAnimatorNS.DecorationType.None);
+            this.panelexpandablemaster.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelexpandablemaster.Location = new System.Drawing.Point(0, 390);
+            this.panelexpandablemaster.Name = "panelexpandablemaster";
+            this.panelexpandablemaster.Size = new System.Drawing.Size(1150, 133);
+            this.panelexpandablemaster.TabIndex = 13;
+            // 
+            // btn_beban
+            // 
+            this.btn_beban.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.btn_beban, BunifuAnimatorNS.DecorationType.None);
+            this.btn_beban.Image = global::POS.Properties.Resources.accounting_grey;
+            this.btn_beban.ImageActive = null;
+            this.btn_beban.Location = new System.Drawing.Point(141, 41);
+            this.btn_beban.Name = "btn_beban";
+            this.btn_beban.Size = new System.Drawing.Size(108, 72);
+            this.btn_beban.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_beban.TabIndex = 7;
+            this.btn_beban.TabStop = false;
+            this.btn_beban.Zoom = 10;
+            this.btn_beban.Click += new System.EventHandler(this.btn_beban_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label8.Location = new System.Drawing.Point(136, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 25);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Beban/Biaya";
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton3.Image = global::POS.Properties.Resources.Business_Building_50px;
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(13, 41);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(108, 72);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.TabIndex = 5;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label7.Location = new System.Drawing.Point(16, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 25);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Customer";
+            // 
+            // panelmastermenu
+            // 
+            this.panelmastermenu.Controls.Add(this.lbl_mastermenu);
+            this.panelmastermenu.Controls.Add(this.flowLayoutPanel3);
+            this.bunifuTransition1.SetDecoration(this.panelmastermenu, BunifuAnimatorNS.DecorationType.None);
+            this.panelmastermenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelmastermenu.Location = new System.Drawing.Point(0, 344);
+            this.panelmastermenu.Name = "panelmastermenu";
+            this.panelmastermenu.Size = new System.Drawing.Size(1150, 46);
+            this.panelmastermenu.TabIndex = 12;
+            // 
+            // lbl_mastermenu
+            // 
+            this.lbl_mastermenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_mastermenu.AutoSize = true;
+            this.lbl_mastermenu.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.lbl_mastermenu, BunifuAnimatorNS.DecorationType.None);
+            this.lbl_mastermenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mastermenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_mastermenu.Location = new System.Drawing.Point(9, 8);
+            this.lbl_mastermenu.Name = "lbl_mastermenu";
+            this.lbl_mastermenu.Size = new System.Drawing.Size(73, 25);
+            this.lbl_mastermenu.TabIndex = 1;
+            this.lbl_mastermenu.Text = "Master";
+            this.lbl_mastermenu.Click += new System.EventHandler(this.lbl_mastermenu_Click);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.btn_expandmaster);
+            this.bunifuTransition1.SetDecoration(this.flowLayoutPanel3, BunifuAnimatorNS.DecorationType.None);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1106, 0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(44, 46);
+            this.flowLayoutPanel3.TabIndex = 0;
+            // 
+            // btn_expandmaster
+            // 
+            this.btn_expandmaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bunifuTransition1.SetDecoration(this.btn_expandmaster, BunifuAnimatorNS.DecorationType.None);
+            this.btn_expandmaster.Image = global::POS.Properties.Resources.chevron_white;
+            this.btn_expandmaster.ImageActive = null;
+            this.btn_expandmaster.Location = new System.Drawing.Point(3, 3);
+            this.btn_expandmaster.Name = "btn_expandmaster";
+            this.btn_expandmaster.Size = new System.Drawing.Size(28, 30);
+            this.btn_expandmaster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_expandmaster.TabIndex = 12;
+            this.btn_expandmaster.TabStop = false;
+            this.btn_expandmaster.Zoom = 10;
+            this.btn_expandmaster.Click += new System.EventHandler(this.btn_expandmaster_Click);
+            // 
             // panel_pembelian
             // 
             this.panel_pembelian.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -171,6 +300,21 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Penerimaan";
             // 
+            // btn_receive
+            // 
+            this.btn_receive.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.btn_receive, BunifuAnimatorNS.DecorationType.None);
+            this.btn_receive.Image = global::POS.Properties.Resources.Truck_50px;
+            this.btn_receive.ImageActive = null;
+            this.btn_receive.Location = new System.Drawing.Point(137, 44);
+            this.btn_receive.Name = "btn_receive";
+            this.btn_receive.Size = new System.Drawing.Size(108, 72);
+            this.btn_receive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_receive.TabIndex = 3;
+            this.btn_receive.TabStop = false;
+            this.btn_receive.Zoom = 10;
+            this.btn_receive.Click += new System.EventHandler(this.btn_receive_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -183,6 +327,21 @@
             this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "Pembelian";
+            // 
+            // btn_po
+            // 
+            this.btn_po.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.btn_po, BunifuAnimatorNS.DecorationType.None);
+            this.btn_po.Image = global::POS.Properties.Resources.Ticket_Purchase_48px;
+            this.btn_po.ImageActive = null;
+            this.btn_po.Location = new System.Drawing.Point(12, 44);
+            this.btn_po.Name = "btn_po";
+            this.btn_po.Size = new System.Drawing.Size(108, 72);
+            this.btn_po.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_po.TabIndex = 0;
+            this.btn_po.TabStop = false;
+            this.btn_po.Zoom = 10;
+            this.btn_po.Click += new System.EventHandler(this.btn_po_Click);
             // 
             // panel6
             // 
@@ -220,6 +379,21 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(44, 46);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
+            // btn_expandpembelian
+            // 
+            this.btn_expandpembelian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bunifuTransition1.SetDecoration(this.btn_expandpembelian, BunifuAnimatorNS.DecorationType.None);
+            this.btn_expandpembelian.Image = global::POS.Properties.Resources.chevron_white;
+            this.btn_expandpembelian.ImageActive = null;
+            this.btn_expandpembelian.Location = new System.Drawing.Point(3, 3);
+            this.btn_expandpembelian.Name = "btn_expandpembelian";
+            this.btn_expandpembelian.Size = new System.Drawing.Size(28, 30);
+            this.btn_expandpembelian.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_expandpembelian.TabIndex = 12;
+            this.btn_expandpembelian.TabStop = false;
+            this.btn_expandpembelian.Zoom = 10;
+            this.btn_expandpembelian.Click += new System.EventHandler(this.btn_expandpembelian_Click);
+            // 
             // panel_sales
             // 
             this.panel_sales.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -247,6 +421,21 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Data Penjualan";
             // 
+            // btn_saleslist
+            // 
+            this.btn_saleslist.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.btn_saleslist, BunifuAnimatorNS.DecorationType.None);
+            this.btn_saleslist.Image = global::POS.Properties.Resources.Market_Square_50px;
+            this.btn_saleslist.ImageActive = null;
+            this.btn_saleslist.Location = new System.Drawing.Point(137, 44);
+            this.btn_saleslist.Name = "btn_saleslist";
+            this.btn_saleslist.Size = new System.Drawing.Size(108, 72);
+            this.btn_saleslist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_saleslist.TabIndex = 3;
+            this.btn_saleslist.TabStop = false;
+            this.btn_saleslist.Zoom = 10;
+            this.btn_saleslist.Click += new System.EventHandler(this.btn_saleslist_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -259,6 +448,21 @@
             this.label2.Size = new System.Drawing.Size(55, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Kasir";
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton2.Image = global::POS.Properties.Resources.Add_Shopping_Cart_48px;
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(12, 44);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(108, 72);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 0;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // panel5
             // 
@@ -294,6 +498,21 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(44, 32);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btn_expandsubmenusales
+            // 
+            this.btn_expandsubmenusales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bunifuTransition1.SetDecoration(this.btn_expandsubmenusales, BunifuAnimatorNS.DecorationType.None);
+            this.btn_expandsubmenusales.Image = global::POS.Properties.Resources.chevron_white;
+            this.btn_expandsubmenusales.ImageActive = null;
+            this.btn_expandsubmenusales.Location = new System.Drawing.Point(3, 3);
+            this.btn_expandsubmenusales.Name = "btn_expandsubmenusales";
+            this.btn_expandsubmenusales.Size = new System.Drawing.Size(28, 30);
+            this.btn_expandsubmenusales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_expandsubmenusales.TabIndex = 12;
+            this.btn_expandsubmenusales.TabStop = false;
+            this.btn_expandsubmenusales.Zoom = 10;
+            this.btn_expandsubmenusales.Click += new System.EventHandler(this.btn_expandsubmenusales_Click);
             // 
             // panel_burger
             // 
@@ -420,199 +639,6 @@
             this.panel_pp.Size = new System.Drawing.Size(200, 192);
             this.panel_pp.TabIndex = 0;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 60000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // bunifuTransition1
-            // 
-            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
-            this.bunifuTransition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation3;
-            this.bunifuTransition1.TimeStep = 0.01F;
-            // 
-            // panelexpandablemaster
-            // 
-            this.panelexpandablemaster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelexpandablemaster.Controls.Add(this.bunifuImageButton3);
-            this.panelexpandablemaster.Controls.Add(this.label7);
-            this.bunifuTransition1.SetDecoration(this.panelexpandablemaster, BunifuAnimatorNS.DecorationType.None);
-            this.panelexpandablemaster.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelexpandablemaster.Location = new System.Drawing.Point(0, 390);
-            this.panelexpandablemaster.Name = "panelexpandablemaster";
-            this.panelexpandablemaster.Size = new System.Drawing.Size(1150, 133);
-            this.panelexpandablemaster.TabIndex = 13;
-            // 
-            // panelmastermenu
-            // 
-            this.panelmastermenu.Controls.Add(this.lbl_mastermenu);
-            this.panelmastermenu.Controls.Add(this.flowLayoutPanel3);
-            this.bunifuTransition1.SetDecoration(this.panelmastermenu, BunifuAnimatorNS.DecorationType.None);
-            this.panelmastermenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelmastermenu.Location = new System.Drawing.Point(0, 344);
-            this.panelmastermenu.Name = "panelmastermenu";
-            this.panelmastermenu.Size = new System.Drawing.Size(1150, 46);
-            this.panelmastermenu.TabIndex = 12;
-            // 
-            // lbl_mastermenu
-            // 
-            this.lbl_mastermenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_mastermenu.AutoSize = true;
-            this.lbl_mastermenu.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.lbl_mastermenu, BunifuAnimatorNS.DecorationType.None);
-            this.lbl_mastermenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mastermenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_mastermenu.Location = new System.Drawing.Point(9, 8);
-            this.lbl_mastermenu.Name = "lbl_mastermenu";
-            this.lbl_mastermenu.Size = new System.Drawing.Size(73, 25);
-            this.lbl_mastermenu.TabIndex = 1;
-            this.lbl_mastermenu.Text = "Master";
-            this.lbl_mastermenu.Click += new System.EventHandler(this.lbl_mastermenu_Click);
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.btn_expandmaster);
-            this.bunifuTransition1.SetDecoration(this.flowLayoutPanel3, BunifuAnimatorNS.DecorationType.None);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(1106, 0);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(44, 46);
-            this.flowLayoutPanel3.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(16, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 25);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Customer";
-            // 
-            // btn_expandmaster
-            // 
-            this.btn_expandmaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bunifuTransition1.SetDecoration(this.btn_expandmaster, BunifuAnimatorNS.DecorationType.None);
-            this.btn_expandmaster.Image = global::POS.Properties.Resources.chevron_white;
-            this.btn_expandmaster.ImageActive = null;
-            this.btn_expandmaster.Location = new System.Drawing.Point(3, 3);
-            this.btn_expandmaster.Name = "btn_expandmaster";
-            this.btn_expandmaster.Size = new System.Drawing.Size(28, 30);
-            this.btn_expandmaster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_expandmaster.TabIndex = 12;
-            this.btn_expandmaster.TabStop = false;
-            this.btn_expandmaster.Zoom = 10;
-            this.btn_expandmaster.Click += new System.EventHandler(this.btn_expandmaster_Click);
-            // 
-            // btn_receive
-            // 
-            this.btn_receive.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.btn_receive, BunifuAnimatorNS.DecorationType.None);
-            this.btn_receive.Image = global::POS.Properties.Resources.Truck_50px;
-            this.btn_receive.ImageActive = null;
-            this.btn_receive.Location = new System.Drawing.Point(137, 44);
-            this.btn_receive.Name = "btn_receive";
-            this.btn_receive.Size = new System.Drawing.Size(108, 72);
-            this.btn_receive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_receive.TabIndex = 3;
-            this.btn_receive.TabStop = false;
-            this.btn_receive.Zoom = 10;
-            this.btn_receive.Click += new System.EventHandler(this.btn_receive_Click);
-            // 
-            // btn_po
-            // 
-            this.btn_po.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.btn_po, BunifuAnimatorNS.DecorationType.None);
-            this.btn_po.Image = global::POS.Properties.Resources.Ticket_Purchase_48px;
-            this.btn_po.ImageActive = null;
-            this.btn_po.Location = new System.Drawing.Point(12, 44);
-            this.btn_po.Name = "btn_po";
-            this.btn_po.Size = new System.Drawing.Size(108, 72);
-            this.btn_po.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_po.TabIndex = 0;
-            this.btn_po.TabStop = false;
-            this.btn_po.Zoom = 10;
-            this.btn_po.Click += new System.EventHandler(this.btn_po_Click);
-            // 
-            // btn_expandpembelian
-            // 
-            this.btn_expandpembelian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bunifuTransition1.SetDecoration(this.btn_expandpembelian, BunifuAnimatorNS.DecorationType.None);
-            this.btn_expandpembelian.Image = global::POS.Properties.Resources.chevron_white;
-            this.btn_expandpembelian.ImageActive = null;
-            this.btn_expandpembelian.Location = new System.Drawing.Point(3, 3);
-            this.btn_expandpembelian.Name = "btn_expandpembelian";
-            this.btn_expandpembelian.Size = new System.Drawing.Size(28, 30);
-            this.btn_expandpembelian.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_expandpembelian.TabIndex = 12;
-            this.btn_expandpembelian.TabStop = false;
-            this.btn_expandpembelian.Zoom = 10;
-            this.btn_expandpembelian.Click += new System.EventHandler(this.btn_expandpembelian_Click);
-            // 
-            // btn_saleslist
-            // 
-            this.btn_saleslist.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.btn_saleslist, BunifuAnimatorNS.DecorationType.None);
-            this.btn_saleslist.Image = global::POS.Properties.Resources.Market_Square_50px;
-            this.btn_saleslist.ImageActive = null;
-            this.btn_saleslist.Location = new System.Drawing.Point(137, 44);
-            this.btn_saleslist.Name = "btn_saleslist";
-            this.btn_saleslist.Size = new System.Drawing.Size(108, 72);
-            this.btn_saleslist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_saleslist.TabIndex = 3;
-            this.btn_saleslist.TabStop = false;
-            this.btn_saleslist.Zoom = 10;
-            this.btn_saleslist.Click += new System.EventHandler(this.btn_saleslist_Click);
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton2.Image = global::POS.Properties.Resources.Add_Shopping_Cart_48px;
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(12, 44);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(108, 72);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 0;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
-            // 
-            // btn_expandsubmenusales
-            // 
-            this.btn_expandsubmenusales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bunifuTransition1.SetDecoration(this.btn_expandsubmenusales, BunifuAnimatorNS.DecorationType.None);
-            this.btn_expandsubmenusales.Image = global::POS.Properties.Resources.chevron_white;
-            this.btn_expandsubmenusales.ImageActive = null;
-            this.btn_expandsubmenusales.Location = new System.Drawing.Point(3, 3);
-            this.btn_expandsubmenusales.Name = "btn_expandsubmenusales";
-            this.btn_expandsubmenusales.Size = new System.Drawing.Size(28, 30);
-            this.btn_expandsubmenusales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_expandsubmenusales.TabIndex = 12;
-            this.btn_expandsubmenusales.TabStop = false;
-            this.btn_expandsubmenusales.Zoom = 10;
-            this.btn_expandsubmenusales.Click += new System.EventHandler(this.btn_expandsubmenusales_Click);
-            // 
             // pp_user
             // 
             this.pp_user.BackColor = System.Drawing.Color.DarkGray;
@@ -625,6 +651,33 @@
             this.pp_user.TabIndex = 0;
             this.pp_user.TabStop = false;
             this.pp_user.Click += new System.EventHandler(this.pp_user_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // bunifuTransition1
+            // 
+            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
+            this.bunifuTransition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
+            this.bunifuTransition1.TimeStep = 0.01F;
             // 
             // panel1
             // 
@@ -728,20 +781,33 @@
             this.btn_close.Zoom = 10;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // bunifuImageButton3
+            // bunifuImageButton4
             // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = global::POS.Properties.Resources.Business_Building_50px;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(13, 41);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(108, 72);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 5;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            this.bunifuImageButton4.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton4.Image = global::POS.Properties.Resources.birthday_list_grey;
+            this.bunifuImageButton4.ImageActive = null;
+            this.bunifuImageButton4.Location = new System.Drawing.Point(285, 41);
+            this.bunifuImageButton4.Name = "bunifuImageButton4";
+            this.bunifuImageButton4.Size = new System.Drawing.Size(108, 72);
+            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton4.TabIndex = 9;
+            this.bunifuImageButton4.TabStop = false;
+            this.bunifuImageButton4.Zoom = 10;
+            this.bunifuImageButton4.Click += new System.EventHandler(this.bunifuImageButton4_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(255, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(179, 25);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Laporan Laba Rugi";
             // 
             // FormHome
             // 
@@ -760,32 +826,34 @@
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.panel_mainMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel_pembelian.ResumeLayout(false);
-            this.panel_pembelian.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel_sales.ResumeLayout(false);
-            this.panel_sales.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel_burger.ResumeLayout(false);
-            this.panel_userInfo.ResumeLayout(false);
-            this.panel_userInfo.PerformLayout();
-            this.panel_pp.ResumeLayout(false);
             this.panelexpandablemaster.ResumeLayout(false);
             this.panelexpandablemaster.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_beban)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.panelmastermenu.ResumeLayout(false);
             this.panelmastermenu.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandmaster)).EndInit();
+            this.panel_pembelian.ResumeLayout(false);
+            this.panel_pembelian.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_receive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_po)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandpembelian)).EndInit();
+            this.panel_sales.ResumeLayout(false);
+            this.panel_sales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_saleslist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandsubmenusales)).EndInit();
+            this.panel_burger.ResumeLayout(false);
+            this.panel_userInfo.ResumeLayout(false);
+            this.panel_userInfo.PerformLayout();
+            this.panel_pp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pp_user)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_notif)).EndInit();
@@ -794,7 +862,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -849,5 +917,9 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_expandmaster;
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private Bunifu.Framework.UI.BunifuImageButton btn_beban;
+        private System.Windows.Forms.Label label8;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private System.Windows.Forms.Label label9;
     }
 }

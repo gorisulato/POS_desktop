@@ -120,10 +120,19 @@
     <Compile Include="DB\PUserImage.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\P_Coa.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\P_Colour.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\TInventory.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TJournal.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TPayable.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\TPurchaseOrder.cs">
@@ -189,6 +198,19 @@
     <Compile Include="Receiving\ReceivingList.Designer.cs">
       <DependentUpon>ReceivingList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\RPT_LossProfit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_LossProfit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\RPT_LossProfitViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RPT_LossProfitViewer.Designer.cs">
+      <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales\InvoiceViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +271,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sales\SalesModel.cs" />
     <Compile Include="ThemeStyle.cs" />
+    <Compile Include="Tools\FormInputBeban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FormInputBeban.Designer.cs">
+      <DependentUpon>FormInputBeban.cs</DependentUpon>
+    </Compile>
     <Compile Include="UtilityClass.cs" />
     <EmbeddedResource Include="Master\Customer\FormAddCustomer.resx">
       <DependentUpon>FormAddCustomer.cs</DependentUpon>
@@ -267,6 +295,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receiving\ReceivingList.resx">
       <DependentUpon>ReceivingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reports\RPT_LossProfit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_LossProfit.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reports\RPT_LossProfitViewer.resx">
+      <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\InvoiceViewer.resx">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
@@ -307,6 +343,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tools\FormInputBeban.resx">
+      <DependentUpon>FormInputBeban.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DB\POS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>POS.Designer.cs</LastGenOutput>

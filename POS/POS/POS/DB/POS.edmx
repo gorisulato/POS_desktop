@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Point_Of_SalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="P_Coa">
+          <Key>
+            <PropertyRef Name="Id_COA" />
+          </Key>
+          <Property Name="Id_COA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kode_Coa" Type="nvarchar" MaxLength="59" />
+          <Property Name="Nama_COA" Type="nvarchar" MaxLength="50" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
+          <Property Name="Parrent" Type="int" />
+        </EntityType>
         <EntityType Name="P_Colour">
           <Key>
             <PropertyRef Name="clor_id" />
@@ -85,6 +101,43 @@
           <Property Name="is_deleted" Type="bit" Nullable="false" />
           <Property Name="deleted_by" Type="int" />
           <Property Name="deleted_date" Type="datetime" />
+          <Property Name="MarginPrice" Type="float" />
+        </EntityType>
+        <EntityType Name="TJournal">
+          <Key>
+            <PropertyRef Name="TJournalID" />
+          </Key>
+          <Property Name="TJournalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Account" Type="int" Nullable="false" />
+          <Property Name="DebitCredit" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Amount" Type="float" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TPayable">
+          <Key>
+            <PropertyRef Name="idBeban" />
+          </Key>
+          <Property Name="idBeban" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tahun" Type="int" />
+          <Property Name="Bulan" Type="int" />
+          <Property Name="Coa" Type="int" />
+          <Property Name="Jenis_Coa" Type="int" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
+          <Property Name="NominalBeban" Type="float" />
         </EntityType>
         <EntityType Name="TPurchaseOrder">
           <Key>
@@ -243,12 +296,15 @@
           <Property Name="deleted_date" Type="datetime" />
         </EntityType>
         <EntityContainer Name="Point_Of_SalesModelStoreContainer">
+          <EntitySet Name="P_Coa" EntityType="Self.P_Coa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="P_Colour" EntityType="Self.P_Colour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PCustomer" EntityType="Self.PCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PPaymentType" EntityType="Self.PPaymentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PSupplier" EntityType="Self.PSupplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PUserImage" EntityType="Self.PUserImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TInventory" EntityType="Self.TInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TJournal" EntityType="Self.TJournal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TPayable" EntityType="Self.TPayable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TPurchaseOrder" EntityType="Self.TPurchaseOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TPurchaseOrderDetail" EntityType="Self.TPurchaseOrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TReceiveingDetail" EntityType="Self.TReceiveingDetail" Schema="dbo" store:Type="Tables" />
@@ -267,7 +323,6 @@
           <EntitySet Name="P_Colour" EntityType="Point_Of_SalesModel.P_Colour" />
           <EntitySet Name="PPaymentTypes" EntityType="Point_Of_SalesModel.PPaymentType" />
           <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
-          <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
           <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
           <EntitySet Name="TPurchaseOrderDetails" EntityType="Point_Of_SalesModel.TPurchaseOrderDetail" />
           <EntitySet Name="TReceiveingDetails" EntityType="Point_Of_SalesModel.TReceiveingDetail" />
@@ -279,6 +334,10 @@
           <EntitySet Name="PUserImages" EntityType="Point_Of_SalesModel.PUserImage" />
           <EntitySet Name="PCustomers" EntityType="Point_Of_SalesModel.PCustomer" />
           <EntitySet Name="TSales" EntityType="Point_Of_SalesModel.TSale" />
+          <EntitySet Name="TPayables" EntityType="Point_Of_SalesModel.TPayable" />
+          <EntitySet Name="P_Coa" EntityType="Point_Of_SalesModel.P_Coa" />
+          <EntitySet Name="TJournals" EntityType="Point_Of_SalesModel.TJournal" />
+          <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
         </EntityContainer>
         <EntityType Name="P_Colour">
           <Key>
@@ -306,25 +365,6 @@
           <Property Name="contact_Person" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Contact_person_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="contact_person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="created_by" Type="Int32" Nullable="false" />
-          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modified_by" Type="Int32" />
-          <Property Name="modified_on" Type="DateTime" Precision="3" />
-          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
-          <Property Name="deleted_by" Type="Int32" />
-          <Property Name="deleted_date" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="TInventory">
-          <Key>
-            <PropertyRef Name="Items_Id" />
-          </Key>
-          <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Colour" Type="Int32" />
-          <Property Name="Size" Type="Double" />
-          <Property Name="Unit_Price" Type="Double" />
-          <Property Name="Stock" Type="Int32" />
-          <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="created_by" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modified_by" Type="Int32" />
@@ -517,6 +557,78 @@
           <Property Name="Card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Approval_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="TPayable">
+          <Key>
+            <PropertyRef Name="idBeban" />
+          </Key>
+          <Property Name="idBeban" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tahun" Type="Int32" />
+          <Property Name="Bulan" Type="Int32" />
+          <Property Name="Coa" Type="Int32" />
+          <Property Name="Jenis_Coa" Type="Int32" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="NominalBeban" Type="Double" />
+        </EntityType>
+        <EntityType Name="P_Coa">
+          <Key>
+            <PropertyRef Name="Id_COA" />
+          </Key>
+          <Property Name="Id_COA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kode_Coa" Type="String" MaxLength="59" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_COA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="Parrent" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TJournal">
+          <Key>
+            <PropertyRef Name="TJournalID" />
+          </Key>
+          <Property Name="TJournalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="Int32" Nullable="false" />
+          <Property Name="DebitCredit" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TInventory">
+          <Key>
+            <PropertyRef Name="Items_Id" />
+          </Key>
+          <Property Name="Items_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Items_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Colour" Type="Int32" />
+          <Property Name="Size" Type="Double" />
+          <Property Name="Unit_Price" Type="Double" />
+          <Property Name="Stock" Type="Int32" />
+          <Property Name="Items_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="MarginPrice" Type="Double" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -557,26 +669,6 @@
                 <ScalarProperty Name="supplier_address" ColumnName="supplier_address" />
                 <ScalarProperty Name="supplier_name" ColumnName="supplier_name" />
                 <ScalarProperty Name="Supplier_id" ColumnName="Supplier_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TInventories">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.TInventory">
-              <MappingFragment StoreEntitySet="TInventory">
-                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
-                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
-                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
-                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
-                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
-                <ScalarProperty Name="created_date" ColumnName="created_date" />
-                <ScalarProperty Name="created_by" ColumnName="created_by" />
-                <ScalarProperty Name="Items_Name" ColumnName="Items_Name" />
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Colour" ColumnName="Colour" />
-                <ScalarProperty Name="Items_number" ColumnName="Items_number" />
-                <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -772,6 +864,82 @@
                 <ScalarProperty Name="Customer" ColumnName="Customer" />
                 <ScalarProperty Name="Sales_Number" ColumnName="Sales_Number" />
                 <ScalarProperty Name="TSales_id" ColumnName="TSales_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TPayables">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TPayable">
+              <MappingFragment StoreEntitySet="TPayable">
+                <ScalarProperty Name="NominalBeban" ColumnName="NominalBeban" />
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Jenis_Coa" ColumnName="Jenis_Coa" />
+                <ScalarProperty Name="Coa" ColumnName="Coa" />
+                <ScalarProperty Name="Bulan" ColumnName="Bulan" />
+                <ScalarProperty Name="Tahun" ColumnName="Tahun" />
+                <ScalarProperty Name="idBeban" ColumnName="idBeban" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Coa">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.P_Coa">
+              <MappingFragment StoreEntitySet="P_Coa">
+                <ScalarProperty Name="Parrent" ColumnName="Parrent" />
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Nama_COA" ColumnName="Nama_COA" />
+                <ScalarProperty Name="Kode_Coa" ColumnName="Kode_Coa" />
+                <ScalarProperty Name="Id_COA" ColumnName="Id_COA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TJournals">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TJournal">
+              <MappingFragment StoreEntitySet="TJournal">
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DebitCredit" ColumnName="DebitCredit" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+                <ScalarProperty Name="TJournalID" ColumnName="TJournalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TInventories">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.TInventory">
+              <MappingFragment StoreEntitySet="TInventory">
+                <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Items_Name" ColumnName="Items_Name" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Items_number" ColumnName="Items_number" />
+                <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

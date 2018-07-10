@@ -32,7 +32,6 @@ namespace POS.DB
         public virtual DbSet<P_Colour> P_Colour { get; set; }
         public virtual DbSet<PPaymentType> PPaymentTypes { get; set; }
         public virtual DbSet<PSupplier> PSuppliers { get; set; }
-        public virtual DbSet<TInventory> TInventories { get; set; }
         public virtual DbSet<TPurchaseOrder> TPurchaseOrders { get; set; }
         public virtual DbSet<TPurchaseOrderDetail> TPurchaseOrderDetails { get; set; }
         public virtual DbSet<TReceiveingDetail> TReceiveingDetails { get; set; }
@@ -44,5 +43,9 @@ namespace POS.DB
         public virtual DbSet<PUserImage> PUserImages { get; set; }
         public virtual DbSet<PCustomer> PCustomers { get; set; }
         public virtual DbSet<TSale> TSales { get; set; }
+        public virtual DbSet<TPayable> TPayables { get; set; }
+        public virtual DbSet<P_Coa> P_Coa { get; set; }
+        public virtual DbSet<TJournal> TJournals { get; set; }
+        public virtual DbSet<TInventory> TInventories { get; set; }
     }
 }

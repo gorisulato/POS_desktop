@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Point_Of_SalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="P_Coa">
+    <Key>
+      <PropertyRef Name="Id_COA" />
+    </Key>
+    <Property Name="Id_COA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kode_Coa" Type="nvarchar" MaxLength="59" />
+    <Property Name="Nama_COA" Type="nvarchar" MaxLength="50" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+    <Property Name="Parrent" Type="int" />
+  </EntityType>
   <EntityType Name="P_Colour">
     <Key>
       <PropertyRef Name="clor_id" />
@@ -80,6 +96,43 @@
     <Property Name="is_deleted" Type="bit" Nullable="false" />
     <Property Name="deleted_by" Type="int" />
     <Property Name="deleted_date" Type="datetime" />
+    <Property Name="MarginPrice" Type="float" />
+  </EntityType>
+  <EntityType Name="TJournal">
+    <Key>
+      <PropertyRef Name="TJournalID" />
+    </Key>
+    <Property Name="TJournalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Account" Type="int" Nullable="false" />
+    <Property Name="DebitCredit" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TPayable">
+    <Key>
+      <PropertyRef Name="idBeban" />
+    </Key>
+    <Property Name="idBeban" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tahun" Type="int" />
+    <Property Name="Bulan" Type="int" />
+    <Property Name="Coa" Type="int" />
+    <Property Name="Jenis_Coa" Type="int" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
+    <Property Name="NominalBeban" Type="float" />
   </EntityType>
   <EntityType Name="TPurchaseOrder">
     <Key>
@@ -238,12 +291,15 @@
     <Property Name="deleted_date" Type="datetime" />
   </EntityType>
   <EntityContainer Name="Point_Of_SalesModelStoreContainer">
+    <EntitySet Name="P_Coa" EntityType="Self.P_Coa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="P_Colour" EntityType="Self.P_Colour" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PCustomer" EntityType="Self.PCustomer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PPaymentType" EntityType="Self.PPaymentType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PSupplier" EntityType="Self.PSupplier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PUserImage" EntityType="Self.PUserImage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TInventory" EntityType="Self.TInventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TJournal" EntityType="Self.TJournal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TPayable" EntityType="Self.TPayable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TPurchaseOrder" EntityType="Self.TPurchaseOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TPurchaseOrderDetail" EntityType="Self.TPurchaseOrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TReceiveingDetail" EntityType="Self.TReceiveingDetail" Schema="dbo" store:Type="Tables" />

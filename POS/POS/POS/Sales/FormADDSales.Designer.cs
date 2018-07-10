@@ -45,6 +45,7 @@
             this.btn_addItems = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_items_id = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.upper_panel = new System.Windows.Forms.Panel();
+            this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.lbl_payment = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_paymentamount = new AltoControls.AltoTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Detail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_detail)).BeginInit();
             this.panel1.SuspendLayout();
@@ -383,6 +383,41 @@
             this.upper_panel.Size = new System.Drawing.Size(902, 66);
             this.upper_panel.TabIndex = 0;
             // 
+            // btn_print
+            // 
+            this.btn_print.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_print.BorderRadius = 0;
+            this.btn_print.ButtonText = "Cetak Faktur";
+            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_print.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_print.Iconimage = global::POS.Properties.Resources.Print_100px;
+            this.btn_print.Iconimage_right = null;
+            this.btn_print.Iconimage_right_Selected = null;
+            this.btn_print.Iconimage_Selected = null;
+            this.btn_print.IconMarginLeft = 0;
+            this.btn_print.IconMarginRight = 0;
+            this.btn_print.IconRightVisible = true;
+            this.btn_print.IconRightZoom = 0D;
+            this.btn_print.IconVisible = true;
+            this.btn_print.IconZoom = 90D;
+            this.btn_print.IsTab = false;
+            this.btn_print.Location = new System.Drawing.Point(621, 12);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_print.selected = false;
+            this.btn_print.Size = new System.Drawing.Size(128, 42);
+            this.btn_print.TabIndex = 6;
+            this.btn_print.Text = "Cetak Faktur";
+            this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print.Textcolor = System.Drawing.Color.White;
+            this.btn_print.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // btn_Batal
             // 
             this.btn_Batal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -676,7 +711,6 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txt_cardno);
             this.groupBox2.Controls.Add(this.btn_clear);
-            this.groupBox2.Controls.Add(this.btn_update_master);
             this.groupBox2.Controls.Add(this.cb_idpayment);
             this.groupBox2.Controls.Add(this.txt_customer_id);
             this.groupBox2.Controls.Add(this.txt_salesNumber);
@@ -784,7 +818,7 @@
             this.btn_update_master.IconVisible = true;
             this.btn_update_master.IconZoom = 60D;
             this.btn_update_master.IsTab = false;
-            this.btn_update_master.Location = new System.Drawing.Point(311, 321);
+            this.btn_update_master.Location = new System.Drawing.Point(100, 269);
             this.btn_update_master.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_update_master.Name = "btn_update_master";
             this.btn_update_master.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -850,6 +884,7 @@
             this.groupBox1.Controls.Add(this.txt_change);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btn_update_master);
             this.groupBox1.Controls.Add(this.lbl_payment);
             this.groupBox1.Controls.Add(this.txt_paymentamount);
             this.groupBox1.Controls.Add(this.label7);
@@ -977,41 +1012,6 @@
             this.label7.Size = new System.Drawing.Size(124, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Jumlah Pembayaran";
-            // 
-            // btn_print
-            // 
-            this.btn_print.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_print.BorderRadius = 0;
-            this.btn_print.ButtonText = "Cetak Faktur";
-            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_print.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_print.Iconimage = global::POS.Properties.Resources.Print_100px;
-            this.btn_print.Iconimage_right = null;
-            this.btn_print.Iconimage_right_Selected = null;
-            this.btn_print.Iconimage_Selected = null;
-            this.btn_print.IconMarginLeft = 0;
-            this.btn_print.IconMarginRight = 0;
-            this.btn_print.IconRightVisible = true;
-            this.btn_print.IconRightZoom = 0D;
-            this.btn_print.IconVisible = true;
-            this.btn_print.IconZoom = 90D;
-            this.btn_print.IsTab = false;
-            this.btn_print.Location = new System.Drawing.Point(621, 12);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_print.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_print.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_print.selected = false;
-            this.btn_print.Size = new System.Drawing.Size(128, 42);
-            this.btn_print.TabIndex = 6;
-            this.btn_print.Text = "Cetak Faktur";
-            this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Textcolor = System.Drawing.Color.White;
-            this.btn_print.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // FormADDSales
             // 

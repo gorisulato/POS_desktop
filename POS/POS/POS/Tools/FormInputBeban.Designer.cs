@@ -45,9 +45,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_nominal = new AltoControls.AltoNMUpDown();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dg_listBeban = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editinventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.hapusBebanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Lovcoa)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_listBeban)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -63,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 54);
+            this.panel1.Size = new System.Drawing.Size(646, 54);
             this.panel1.TabIndex = 1;
             // 
             // label4
@@ -100,7 +113,7 @@
             this.btn_exit.IconVisible = true;
             this.btn_exit.IconZoom = 90D;
             this.btn_exit.IsTab = false;
-            this.btn_exit.Location = new System.Drawing.Point(208, 3);
+            this.btn_exit.Location = new System.Drawing.Point(519, 6);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exit.OnHovercolor = System.Drawing.Color.Teal;
@@ -121,17 +134,18 @@
             this.txt_tahun.Br = System.Drawing.Color.White;
             this.txt_tahun.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txt_tahun.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_tahun.Location = new System.Drawing.Point(12, 88);
+            this.txt_tahun.Location = new System.Drawing.Point(6, 44);
             this.txt_tahun.Name = "txt_tahun";
             this.txt_tahun.Radius = 6;
             this.txt_tahun.Size = new System.Drawing.Size(196, 33);
             this.txt_tahun.TabIndex = 5;
+            this.txt_tahun.TextChanged += new System.EventHandler(this.txt_tahun_TextChanged);
             // 
             // lbl_sales_Number
             // 
             this.lbl_sales_Number.AutoSize = true;
             this.lbl_sales_Number.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_sales_Number.Location = new System.Drawing.Point(16, 134);
+            this.lbl_sales_Number.Location = new System.Drawing.Point(10, 90);
             this.lbl_sales_Number.Name = "lbl_sales_Number";
             this.lbl_sales_Number.Size = new System.Drawing.Size(88, 17);
             this.lbl_sales_Number.TabIndex = 4;
@@ -141,7 +155,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label1.Location = new System.Drawing.Point(16, 63);
+            this.label1.Location = new System.Drawing.Point(10, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 6;
@@ -166,19 +180,20 @@
         "Oktober",
         "November",
         "Desember"};
-            this.cb_month.Location = new System.Drawing.Point(12, 156);
+            this.cb_month.Location = new System.Drawing.Point(6, 112);
             this.cb_month.Name = "cb_month";
             this.cb_month.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cb_month.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cb_month.selectedIndex = 0;
             this.cb_month.Size = new System.Drawing.Size(196, 35);
             this.cb_month.TabIndex = 7;
+            this.cb_month.onItemSelected += new System.EventHandler(this.cb_month_onItemSelected);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label2.Location = new System.Drawing.Point(16, 211);
+            this.label2.Location = new System.Drawing.Point(10, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 8;
@@ -189,7 +204,7 @@
             this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_clear.Image = global::POS.Properties.Resources.Cancel_white;
             this.btn_clear.ImageActive = null;
-            this.btn_clear.Location = new System.Drawing.Point(260, 242);
+            this.btn_clear.Location = new System.Drawing.Point(254, 198);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(28, 31);
             this.btn_clear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -209,7 +224,7 @@
             this.txt_coa_id.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txt_coa_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_coa_id.isPassword = false;
-            this.txt_coa_id.Location = new System.Drawing.Point(208, 242);
+            this.txt_coa_id.Location = new System.Drawing.Point(202, 198);
             this.txt_coa_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_coa_id.Name = "txt_coa_id";
             this.txt_coa_id.Size = new System.Drawing.Size(10, 31);
@@ -225,7 +240,7 @@
             this.txt_coa_show.Enabled = false;
             this.txt_coa_show.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txt_coa_show.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_coa_show.Location = new System.Drawing.Point(12, 242);
+            this.txt_coa_show.Location = new System.Drawing.Point(6, 198);
             this.txt_coa_show.Name = "txt_coa_show";
             this.txt_coa_show.Radius = 6;
             this.txt_coa_show.Size = new System.Drawing.Size(198, 33);
@@ -236,7 +251,7 @@
             this.btn_Lovcoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Lovcoa.Image = global::POS.Properties.Resources.guest_list_white;
             this.btn_Lovcoa.ImageActive = null;
-            this.btn_Lovcoa.Location = new System.Drawing.Point(215, 242);
+            this.btn_Lovcoa.Location = new System.Drawing.Point(209, 198);
             this.btn_Lovcoa.Name = "btn_Lovcoa";
             this.btn_Lovcoa.Size = new System.Drawing.Size(49, 31);
             this.btn_Lovcoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -249,7 +264,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label3.Location = new System.Drawing.Point(16, 288);
+            this.label3.Location = new System.Drawing.Point(10, 244);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 229;
@@ -259,7 +274,7 @@
             // txt_nominal
             // 
             this.txt_nominal.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txt_nominal.Location = new System.Drawing.Point(12, 309);
+            this.txt_nominal.Location = new System.Drawing.Point(6, 265);
             this.txt_nominal.Name = "txt_nominal";
             this.txt_nominal.SignColor = System.Drawing.Color.White;
             this.txt_nominal.Size = new System.Drawing.Size(196, 33);
@@ -288,7 +303,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(173, 357);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(167, 313);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Teal;
@@ -302,35 +317,119 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_tahun);
+            this.groupBox1.Controls.Add(this.bunifuFlatButton1);
+            this.groupBox1.Controls.Add(this.lbl_sales_Number);
+            this.groupBox1.Controls.Add(this.txt_nominal);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cb_month);
+            this.groupBox1.Controls.Add(this.btn_clear);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_coa_id);
+            this.groupBox1.Controls.Add(this.btn_Lovcoa);
+            this.groupBox1.Controls.Add(this.txt_coa_show);
+            this.groupBox1.Location = new System.Drawing.Point(12, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(304, 359);
+            this.groupBox1.TabIndex = 232;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Main Data";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Location = new System.Drawing.Point(322, 60);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(312, 355);
+            this.groupBox2.TabIndex = 233;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "List Data Yang Sudah Di Input";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dg_listBeban);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(306, 336);
+            this.panel2.TabIndex = 0;
+            // 
+            // dg_listBeban
+            // 
+            this.dg_listBeban.AllowUserToAddRows = false;
+            this.dg_listBeban.AllowUserToDeleteRows = false;
+            this.dg_listBeban.AllowUserToOrderColumns = true;
+            this.dg_listBeban.BackgroundColor = System.Drawing.Color.White;
+            this.dg_listBeban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_listBeban.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dg_listBeban.Location = new System.Drawing.Point(0, 0);
+            this.dg_listBeban.Name = "dg_listBeban";
+            this.dg_listBeban.ReadOnly = true;
+            this.dg_listBeban.Size = new System.Drawing.Size(306, 336);
+            this.dg_listBeban.TabIndex = 0;
+            this.dg_listBeban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_listBeban_CellClick);
+            this.dg_listBeban.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_listBeban_CellMouseUp);
+            this.dg_listBeban.SelectionChanged += new System.EventHandler(this.dg_listBeban_SelectionChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editinventory,
+            this.hapusBebanToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            // 
+            // editinventory
+            // 
+            this.editinventory.Image = global::POS.Properties.Resources.edit;
+            this.editinventory.Name = "editinventory";
+            this.editinventory.Size = new System.Drawing.Size(152, 22);
+            this.editinventory.Text = "Edit Beban";
+            this.editinventory.Click += new System.EventHandler(this.editinventory_Click);
+            // 
+            // hapusBebanToolStripMenuItem
+            // 
+            this.hapusBebanToolStripMenuItem.Image = global::POS.Properties.Resources.delete_grey;
+            this.hapusBebanToolStripMenuItem.Name = "hapusBebanToolStripMenuItem";
+            this.hapusBebanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hapusBebanToolStripMenuItem.Text = "Hapus Beban";
+            this.hapusBebanToolStripMenuItem.Click += new System.EventHandler(this.hapusBebanToolStripMenuItem_Click);
+            // 
             // FormInputBeban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(335, 411);
-            this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.txt_nominal);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_clear);
-            this.Controls.Add(this.txt_coa_id);
-            this.Controls.Add(this.txt_coa_show);
-            this.Controls.Add(this.btn_Lovcoa);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cb_month);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_tahun);
-            this.Controls.Add(this.lbl_sales_Number);
+            this.ClientSize = new System.Drawing.Size(646, 427);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInputBeban";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInputBeban";
             this.Load += new System.EventHandler(this.FormInputBeban_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Lovcoa)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_listBeban)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -352,5 +451,13 @@
         private AltoControls.AltoNMUpDown txt_nominal;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dg_listBeban;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editinventory;
+        private System.Windows.Forms.ToolStripMenuItem hapusBebanToolStripMenuItem;
     }
 }

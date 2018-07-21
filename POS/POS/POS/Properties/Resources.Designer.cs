@@ -2043,6 +2043,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Paint_Palette_48px {
+            get {
+                object obj = ResourceManager.GetObject("Paint_Palette_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap password_grey {
             get {
                 object obj = ResourceManager.GetObject("password_grey", resourceCulture);
@@ -2176,6 +2186,16 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap Print_100px {
             get {
                 object obj = ResourceManager.GetObject("Print_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Product_50px {
+            get {
+                object obj = ResourceManager.GetObject("Product_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2443,6 +2463,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sales_Performance_48px {
+            get {
+                object obj = ResourceManager.GetObject("Sales_Performance_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salesman_grey {
             get {
                 object obj = ResourceManager.GetObject("salesman_grey", resourceCulture);
@@ -2666,6 +2696,16 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap supplier {
             get {
                 object obj = ResourceManager.GetObject("supplier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Supplier_48px {
+            get {
+                object obj = ResourceManager.GetObject("Supplier_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

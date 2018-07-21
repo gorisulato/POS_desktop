@@ -162,6 +162,18 @@
     <Compile Include="DB\TUser.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Master\Colour\COlourList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Colour\COlourList.Designer.cs">
+      <DependentUpon>COlourList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Colour\FormAddColour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Colour\FormAddColour.Designer.cs">
+      <DependentUpon>FormAddColour.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\Customer\FormAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,30 @@
     </Compile>
     <Compile Include="Master\Customer\FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Inventory\FormAddInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Inventory\FormAddInventory.Designer.cs">
+      <DependentUpon>FormAddInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Inventory\InventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Inventory\InventoryList.Designer.cs">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Supplier\FormAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Supplier\FormAddSupplier.Designer.cs">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Supplier\SupplierListData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Supplier\SupplierListData.Designer.cs">
+      <DependentUpon>SupplierListData.cs</DependentUpon>
     </Compile>
     <Compile Include="Purchasing\FormAddPO.cs">
       <SubType>Form</SubType>
@@ -197,6 +233,19 @@
     </Compile>
     <Compile Include="Receiving\ReceivingList.Designer.cs">
       <DependentUpon>ReceivingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RPTSalesPeriodic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTSalesPeriodic.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Reports\RPT_LossProfit.cs">
       <AutoGen>True</AutoGen>
@@ -278,11 +327,29 @@
       <DependentUpon>FormInputBeban.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilityClass.cs" />
+    <EmbeddedResource Include="Master\Colour\COlourList.resx">
+      <DependentUpon>COlourList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Colour\FormAddColour.resx">
+      <DependentUpon>FormAddColour.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\Customer\FormAddCustomer.resx">
       <DependentUpon>FormAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Customer\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Inventory\FormAddInventory.resx">
+      <DependentUpon>FormAddInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Inventory\InventoryList.resx">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Supplier\FormAddSupplier.resx">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Supplier\SupplierListData.resx">
+      <DependentUpon>SupplierListData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchasing\FormAddPO.resx">
       <DependentUpon>FormAddPO.cs</DependentUpon>
@@ -301,12 +368,24 @@
       <LastGenOutput>RPT_LossProfit.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Reports\RPTSalesPeriodic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTSalesPeriodic.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reports\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\RPT_LossProfitViewer.resx">
       <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\InvoiceViewer.resx">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Resources\Product_50px.png" />
+    <None Include="Resources\Supplier_48px.png" />
+    <None Include="Resources\Paint Palette_48px.png" />
+    <None Include="Resources\Sales Performance_48px.png" />
     <Content Include="Sales\rEPORTiNVOICE.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rEPORTiNVOICE.cs</LastGenOutput>
@@ -370,9 +449,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Master\Inventory\" />
     <Folder Include="Master\Parameter\" />
-    <Folder Include="Master\Supplier\" />
     <Folder Include="Master\User\" />
   </ItemGroup>
   <ItemGroup>

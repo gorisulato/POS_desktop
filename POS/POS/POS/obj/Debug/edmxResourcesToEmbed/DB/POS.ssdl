@@ -22,6 +22,13 @@
     </Key>
     <Property Name="clor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Nullable="false" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_on" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="deleted_date" Type="datetime" />
   </EntityType>
   <EntityType Name="PCustomer">
     <Key>

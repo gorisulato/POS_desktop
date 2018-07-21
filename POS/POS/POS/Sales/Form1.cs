@@ -199,7 +199,7 @@ namespace POS
                     }
                     dg_sales.DataSource = dt;
                     dg_sales.Refresh();
-                    //dg_Rc.Columns[0].Visible = false;
+                    dg_sales.Columns[0].Visible = false;
 
                     Util.dtreader.Close();
                     Util.connection.Close();
@@ -212,8 +212,11 @@ namespace POS
                         
                     }
                     
-                    this.dg_sales.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    this.dg_sales.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    foreach(DataGridViewColumn col in dg_sales.Columns)
+                    {
+                        col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    }
+                    
                 }
             }
             catch (Exception z)
@@ -282,6 +285,22 @@ namespace POS
 
             Load_Data_Sales();
             
+        }
+
+        private void dg_sales_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dg_sales.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void dg_sales_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dg_sales.RowCount > 0)
+            {
+                dg_sales.Rows[0].Selected = true;
+            }
         }
 
         public void setenablebtnpage()

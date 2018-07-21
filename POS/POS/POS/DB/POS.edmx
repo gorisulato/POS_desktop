@@ -27,6 +27,13 @@
           </Key>
           <Property Name="clor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="created_by" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="int" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="deleted_by" Type="int" />
+          <Property Name="deleted_date" Type="datetime" />
         </EntityType>
         <EntityType Name="PCustomer">
           <Key>
@@ -320,7 +327,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Point_Of_SalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Point_Of_SalesEntities" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="P_Colour" EntityType="Point_Of_SalesModel.P_Colour" />
           <EntitySet Name="PPaymentTypes" EntityType="Point_Of_SalesModel.PPaymentType" />
           <EntitySet Name="PSuppliers" EntityType="Point_Of_SalesModel.PSupplier" />
           <EntitySet Name="TPurchaseOrders" EntityType="Point_Of_SalesModel.TPurchaseOrder" />
@@ -338,14 +344,8 @@
           <EntitySet Name="P_Coa" EntityType="Point_Of_SalesModel.P_Coa" />
           <EntitySet Name="TJournals" EntityType="Point_Of_SalesModel.TJournal" />
           <EntitySet Name="TInventories" EntityType="Point_Of_SalesModel.TInventory" />
+          <EntitySet Name="P_Colour" EntityType="Point_Of_SalesModel.P_Colour" />
         </EntityContainer>
-        <EntityType Name="P_Colour">
-          <Key>
-            <PropertyRef Name="clor_id" />
-          </Key>
-          <Property Name="clor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="PPaymentType">
           <Key>
             <PropertyRef Name="id_paymenttype" />
@@ -629,20 +629,26 @@
           <Property Name="deleted_date" Type="DateTime" Precision="3" />
           <Property Name="MarginPrice" Type="Double" />
         </EntityType>
+        <EntityType Name="P_Colour">
+          <Key>
+            <PropertyRef Name="clor_id" />
+          </Key>
+          <Property Name="clor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created_by" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Int32" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="deleted_by" Type="Int32" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Point_Of_SalesModelStoreContainer" CdmEntityContainer="Point_Of_SalesEntities" >
-          <EntitySetMapping Name="P_Colour">
-            <EntityTypeMapping TypeName="Point_Of_SalesModel.P_Colour">
-              <MappingFragment StoreEntitySet="P_Colour">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="clor_id" ColumnName="clor_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PPaymentTypes">
             <EntityTypeMapping TypeName="Point_Of_SalesModel.PPaymentType">
               <MappingFragment StoreEntitySet="PPaymentType">
@@ -940,6 +946,21 @@
                 <ScalarProperty Name="Colour" ColumnName="Colour" />
                 <ScalarProperty Name="Items_number" ColumnName="Items_number" />
                 <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Colour">
+            <EntityTypeMapping TypeName="Point_Of_SalesModel.P_Colour">
+              <MappingFragment StoreEntitySet="P_Colour">
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="clor_id" ColumnName="clor_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

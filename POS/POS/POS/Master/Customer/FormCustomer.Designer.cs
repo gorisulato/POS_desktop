@@ -33,32 +33,36 @@
             this.editcustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.txtpageinfo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_first = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_prev = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_next = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_last = new Bunifu.Framework.UI.BunifuImageButton();
             this.txt_pagination = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dg_cust = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_add_sales = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.lbl_searchsalesnumber = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_cusnome = new AltoControls.AltoTextBox();
             this.searchbox = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_membercode = new AltoControls.AltoTextBox();
-            this.panelsearch = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btn_first = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_prev = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_next = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_last = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_add_sales = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnresetsearch = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_search = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panelsearch = new System.Windows.Forms.Panel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ds_sales = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_first)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_next)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_last)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,10 +70,6 @@
             this.panel4.SuspendLayout();
             this.searchbox.SuspendLayout();
             this.panelsearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_first)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_next)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_last)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             // editcustomer
             // 
             this.editcustomer.Name = "editcustomer";
-            this.editcustomer.Size = new System.Drawing.Size(152, 22);
+            this.editcustomer.Size = new System.Drawing.Size(149, 22);
             this.editcustomer.Text = "Edit Customer";
             this.editcustomer.Click += new System.EventHandler(this.editcustomer_Click);
             // 
@@ -112,157 +112,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(253, 47);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // txt_pagination
-            // 
-            this.txt_pagination.AutoSize = true;
-            this.txt_pagination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pagination.ForeColor = System.Drawing.Color.White;
-            this.txt_pagination.Location = new System.Drawing.Point(3, 0);
-            this.txt_pagination.Name = "txt_pagination";
-            this.txt_pagination.Size = new System.Drawing.Size(45, 17);
-            this.txt_pagination.TabIndex = 5;
-            this.txt_pagination.Text = "label1";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.txt_pagination);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(399, 47);
-            this.flowLayoutPanel2.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 303);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(891, 47);
-            this.panel2.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dg_cust);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 350);
-            this.panel1.TabIndex = 8;
-            // 
-            // dg_cust
-            // 
-            this.dg_cust.AllowUserToAddRows = false;
-            this.dg_cust.AllowUserToDeleteRows = false;
-            this.dg_cust.AllowUserToOrderColumns = true;
-            this.dg_cust.BackgroundColor = System.Drawing.Color.White;
-            this.dg_cust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_cust.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dg_cust.Location = new System.Drawing.Point(0, 0);
-            this.dg_cust.Name = "dg_cust";
-            this.dg_cust.ReadOnly = true;
-            this.dg_cust.Size = new System.Drawing.Size(891, 350);
-            this.dg_cust.TabIndex = 2;
-            this.dg_cust.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_cust_CellMouseUp);
-            this.dg_cust.SelectionChanged += new System.EventHandler(this.dg_cust_SelectionChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Teal;
-            this.panel4.Controls.Add(this.btn_exit);
-            this.panel4.Controls.Add(this.btn_add_sales);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 40);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(891, 56);
-            this.panel4.TabIndex = 7;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // lbl_searchsalesnumber
-            // 
-            this.lbl_searchsalesnumber.AutoSize = true;
-            this.lbl_searchsalesnumber.ForeColor = System.Drawing.Color.White;
-            this.lbl_searchsalesnumber.Location = new System.Drawing.Point(29, 16);
-            this.lbl_searchsalesnumber.Name = "lbl_searchsalesnumber";
-            this.lbl_searchsalesnumber.Size = new System.Drawing.Size(82, 13);
-            this.lbl_searchsalesnumber.TabIndex = 7;
-            this.lbl_searchsalesnumber.Text = "Nama Customer";
-            // 
-            // txt_cusnome
-            // 
-            this.txt_cusnome.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_cusnome.BackColor = System.Drawing.Color.Transparent;
-            this.txt_cusnome.Br = System.Drawing.Color.White;
-            this.txt_cusnome.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_cusnome.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_cusnome.Location = new System.Drawing.Point(22, 33);
-            this.txt_cusnome.Name = "txt_cusnome";
-            this.txt_cusnome.Radius = 6;
-            this.txt_cusnome.Size = new System.Drawing.Size(135, 33);
-            this.txt_cusnome.TabIndex = 6;
-            // 
-            // searchbox
-            // 
-            this.searchbox.BackColor = System.Drawing.Color.Teal;
-            this.searchbox.Controls.Add(this.bunifuCustomLabel1);
-            this.searchbox.Controls.Add(this.txt_membercode);
-            this.searchbox.Controls.Add(this.btnresetsearch);
-            this.searchbox.Controls.Add(this.btn_search);
-            this.searchbox.Controls.Add(this.lbl_searchsalesnumber);
-            this.searchbox.Controls.Add(this.txt_cusnome);
-            this.searchbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchbox.Location = new System.Drawing.Point(0, 30);
-            this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(891, 10);
-            this.searchbox.TabIndex = 6;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(208, 16);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(73, 13);
-            this.bunifuCustomLabel1.TabIndex = 14;
-            this.bunifuCustomLabel1.Text = "Kode Member";
-            // 
-            // txt_membercode
-            // 
-            this.txt_membercode.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_membercode.BackColor = System.Drawing.Color.Transparent;
-            this.txt_membercode.Br = System.Drawing.Color.White;
-            this.txt_membercode.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_membercode.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_membercode.Location = new System.Drawing.Point(200, 33);
-            this.txt_membercode.Name = "txt_membercode";
-            this.txt_membercode.Radius = 6;
-            this.txt_membercode.Size = new System.Drawing.Size(170, 33);
-            this.txt_membercode.TabIndex = 13;
-            // 
-            // panelsearch
-            // 
-            this.panelsearch.BackColor = System.Drawing.Color.Teal;
-            this.panelsearch.Controls.Add(this.bunifuImageButton1);
-            this.panelsearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelsearch.Location = new System.Drawing.Point(0, 0);
-            this.panelsearch.Name = "panelsearch";
-            this.panelsearch.Size = new System.Drawing.Size(891, 30);
-            this.panelsearch.TabIndex = 5;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panelsearch;
-            this.bunifuDragControl1.Vertical = true;
             // 
             // btn_first
             // 
@@ -320,6 +169,76 @@
             this.btn_last.TabStop = false;
             this.btn_last.Zoom = 10;
             this.btn_last.Click += new System.EventHandler(this.btn_last_Click);
+            // 
+            // txt_pagination
+            // 
+            this.txt_pagination.AutoSize = true;
+            this.txt_pagination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pagination.ForeColor = System.Drawing.Color.White;
+            this.txt_pagination.Location = new System.Drawing.Point(3, 0);
+            this.txt_pagination.Name = "txt_pagination";
+            this.txt_pagination.Size = new System.Drawing.Size(45, 17);
+            this.txt_pagination.TabIndex = 5;
+            this.txt_pagination.Text = "label1";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.txt_pagination);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(399, 47);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 303);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(891, 47);
+            this.panel2.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.dg_cust);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 96);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(891, 350);
+            this.panel1.TabIndex = 8;
+            // 
+            // dg_cust
+            // 
+            this.dg_cust.AllowUserToAddRows = false;
+            this.dg_cust.AllowUserToDeleteRows = false;
+            this.dg_cust.AllowUserToOrderColumns = true;
+            this.dg_cust.BackgroundColor = System.Drawing.Color.White;
+            this.dg_cust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_cust.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dg_cust.Location = new System.Drawing.Point(0, 0);
+            this.dg_cust.Name = "dg_cust";
+            this.dg_cust.ReadOnly = true;
+            this.dg_cust.Size = new System.Drawing.Size(891, 350);
+            this.dg_cust.TabIndex = 2;
+            this.dg_cust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_cust_CellClick);
+            this.dg_cust.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_cust_CellMouseUp);
+            this.dg_cust.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_cust_DataBindingComplete);
+            this.dg_cust.SelectionChanged += new System.EventHandler(this.dg_cust_SelectionChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Teal;
+            this.panel4.Controls.Add(this.btn_exit);
+            this.panel4.Controls.Add(this.btn_add_sales);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(891, 56);
+            this.panel4.TabIndex = 7;
             // 
             // btn_exit
             // 
@@ -391,6 +310,72 @@
             this.btn_add_sales.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add_sales.Click += new System.EventHandler(this.btn_add_sales_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // lbl_searchsalesnumber
+            // 
+            this.lbl_searchsalesnumber.AutoSize = true;
+            this.lbl_searchsalesnumber.ForeColor = System.Drawing.Color.White;
+            this.lbl_searchsalesnumber.Location = new System.Drawing.Point(29, 16);
+            this.lbl_searchsalesnumber.Name = "lbl_searchsalesnumber";
+            this.lbl_searchsalesnumber.Size = new System.Drawing.Size(82, 13);
+            this.lbl_searchsalesnumber.TabIndex = 7;
+            this.lbl_searchsalesnumber.Text = "Nama Customer";
+            // 
+            // txt_cusnome
+            // 
+            this.txt_cusnome.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_cusnome.BackColor = System.Drawing.Color.Transparent;
+            this.txt_cusnome.Br = System.Drawing.Color.White;
+            this.txt_cusnome.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_cusnome.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_cusnome.Location = new System.Drawing.Point(22, 33);
+            this.txt_cusnome.Name = "txt_cusnome";
+            this.txt_cusnome.Radius = 6;
+            this.txt_cusnome.Size = new System.Drawing.Size(135, 33);
+            this.txt_cusnome.TabIndex = 6;
+            // 
+            // searchbox
+            // 
+            this.searchbox.BackColor = System.Drawing.Color.Teal;
+            this.searchbox.Controls.Add(this.bunifuCustomLabel1);
+            this.searchbox.Controls.Add(this.txt_membercode);
+            this.searchbox.Controls.Add(this.btnresetsearch);
+            this.searchbox.Controls.Add(this.btn_search);
+            this.searchbox.Controls.Add(this.lbl_searchsalesnumber);
+            this.searchbox.Controls.Add(this.txt_cusnome);
+            this.searchbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchbox.Location = new System.Drawing.Point(0, 30);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(891, 10);
+            this.searchbox.TabIndex = 6;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(208, 16);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(73, 13);
+            this.bunifuCustomLabel1.TabIndex = 14;
+            this.bunifuCustomLabel1.Text = "Kode Member";
+            // 
+            // txt_membercode
+            // 
+            this.txt_membercode.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_membercode.BackColor = System.Drawing.Color.Transparent;
+            this.txt_membercode.Br = System.Drawing.Color.White;
+            this.txt_membercode.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_membercode.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_membercode.Location = new System.Drawing.Point(200, 33);
+            this.txt_membercode.Name = "txt_membercode";
+            this.txt_membercode.Radius = 6;
+            this.txt_membercode.Size = new System.Drawing.Size(170, 33);
+            this.txt_membercode.TabIndex = 13;
+            // 
             // btnresetsearch
             // 
             this.btnresetsearch.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -461,6 +446,16 @@
             this.btn_search.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // panelsearch
+            // 
+            this.panelsearch.BackColor = System.Drawing.Color.Teal;
+            this.panelsearch.Controls.Add(this.bunifuImageButton1);
+            this.panelsearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelsearch.Location = new System.Drawing.Point(0, 0);
+            this.panelsearch.Name = "panelsearch";
+            this.panelsearch.Size = new System.Drawing.Size(891, 30);
+            this.panelsearch.TabIndex = 5;
+            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -475,6 +470,13 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panelsearch;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FormCustomer
             // 
@@ -493,6 +495,10 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_first)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_next)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_last)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -502,10 +508,6 @@
             this.searchbox.ResumeLayout(false);
             this.searchbox.PerformLayout();
             this.panelsearch.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_first)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_next)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_last)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).EndInit();
             this.ResumeLayout(false);

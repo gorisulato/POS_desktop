@@ -70,3 +70,12 @@ E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPT_LossProfit.rpt
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPT_LossProfit.cs
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Reports.RPT_LossProfitViewer.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Inventory.InventoryList.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Inventory.FormAddInventory.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Supplier.SupplierListData.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Supplier.FormAddSupplier.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Colour.COlourList.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Colour.FormAddColour.resources
+E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPTSalesPeriodic.rpt
+E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPTSalesPeriodic.cs
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Reports.ReportViewer.resources

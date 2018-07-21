@@ -198,6 +198,36 @@ namespace POS.Receiving
             this.Hide();
         }
 
+        private void dg_Rc_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    row_main_selected = e.RowIndex;
+                    dg_Rc.Rows[e.RowIndex].Selected = true;
+                    contextMenuStrip1.Show(dg_Rc, e.Location);
+                    contextMenuStrip1.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void dg_Rc_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dg_Rc.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void dg_Rc_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dg_Rc.RowCount > 0)
+            {
+                dg_Rc.Rows[0].Selected = true;
+            }
+        }
+
         private void LoadReceiveing()
         {
             try

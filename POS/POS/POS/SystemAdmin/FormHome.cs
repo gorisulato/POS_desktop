@@ -1,5 +1,8 @@
 ﻿using POS.DB;
+using POS.Master.Colour;
 using POS.Master.Customer;
+using POS.Master.Inventory;
+using POS.Master.Supplier;
 using POS.Purchasing;
 using POS.Receiving;
 using POS.Reports;
@@ -23,7 +26,10 @@ namespace POS.SystemAdmin
     {
         int AffectedRows = 0;
         string Filename = "";
-       
+        ReportViewer rv;
+        InventoryList inven;
+        SupplierListData supp;
+        COlourList colour;
         Notification_Form n = null;
         POS_Entities Point_Of_SalesEntities;
         UtilityClass Util = new UtilityClass();
@@ -582,6 +588,117 @@ namespace POS.SystemAdmin
         {
             RPT_LossProfitViewer ls = new RPT_LossProfitViewer();
             ls.ShowDialog();
+        }
+
+
+        void resetInv()
+        {
+            inven = null;
+        }
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            if (inven == null)
+            {
+                inven = new InventoryList();
+                inven.RefreshDgv += new InventoryList.DoEvent(resetInv);
+                inven.Show(this);
+            }
+            else
+            {
+                inven.WindowState = FormWindowState.Normal;
+                inven.Focus();
+            }
+        }
+
+        void ResetSupplier()
+        {
+            supp = null;
+        }
+
+        private void supplier_button_Click(object sender, EventArgs e)
+        {
+            if (supp== null)
+            {
+                supp = new SupplierListData();
+                supp.RefreshDgv += new SupplierListData.DoEvent(ResetSupplier);
+                supp.Show(this);
+            }
+            else
+            {
+                supp.WindowState = FormWindowState.Normal;
+                supp.Focus();
+            }
+        }
+
+        void ResetColor()
+        {
+            colour = null;
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+
+            if (colour == null)
+            {
+                colour = new COlourList();
+                colour.RefreshDgv += new COlourList.DoEvent(ResetColor);
+                colour.Show(this);
+            }
+            else
+            {
+                colour.WindowState = FormWindowState.Normal;
+                colour.Focus();
+            }
+        }
+
+        private void bunifuImageButton7_Click(object sender, EventArgs e)
+        {
+
+            if (panelexpandreport.Height == 133)
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandreport, "Height", 10);
+                t.run();
+                bunifuImageButton7.Image = Properties.Resources.chevron_white;
+            }
+            else
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandreport, "Height", 133);
+                t.run();
+                bunifuImageButton7.Image = Properties.Resources.unexpand;
+            }
+        }
+
+        private void lbl_menuReport_Click(object sender, EventArgs e)
+        {
+
+            if (panelexpandreport.Height == 133)
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandreport, "Height", 10);
+                t.run();
+                bunifuImageButton7.Image = Properties.Resources.chevron_white;
+            }
+            else
+            {
+
+                Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                t.add(panelexpandreport, "Height", 133);
+                t.run();
+                bunifuImageButton7.Image = Properties.Resources.unexpand;
+            }
+        }
+      
+        private void btn_salesReport_Click(object sender, EventArgs e)
+        {
+                rv = new ReportViewer("SalesPeriodic");
+              
+                rv.ShowDialog();
+          
         }
     }
 }

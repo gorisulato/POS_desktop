@@ -263,6 +263,22 @@ namespace POS.Purchasing
 
         }
 
+        private void dg_Po_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dg_Po.Rows[0].Selected = true;
+            }
+        }
+
+        private void dg_Po_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dg_Po.RowCount > 0)
+            {
+                dg_Po.Rows[0].Selected = true;
+            }
+        }
+
         public void setenablebtnpage()
         {
             if (StartPaginationShow == 1)

@@ -103,7 +103,9 @@
             this.dg_Po.ReadOnly = true;
             this.dg_Po.Size = new System.Drawing.Size(901, 292);
             this.dg_Po.TabIndex = 2;
+            this.dg_Po.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_Po_CellClick);
             this.dg_Po.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_Po_CellMouseUp);
+            this.dg_Po.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_Po_DataBindingComplete);
             this.dg_Po.SelectionChanged += new System.EventHandler(this.dg_Po_SelectionChanged);
             // 
             // panel4

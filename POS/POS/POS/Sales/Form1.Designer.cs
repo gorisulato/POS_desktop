@@ -32,6 +32,7 @@
             this.panelsearch = new System.Windows.Forms.Panel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.searchbox = new System.Windows.Forms.Panel();
+            this.btnresetsearch = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dt_salesdate_search = new Bunifu.Framework.UI.BunifuDatepicker();
             this.lbl_search_salesDate = new System.Windows.Forms.Label();
@@ -42,28 +43,25 @@
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_add_sales = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txt_pagination = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_first = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_prev = new Bunifu.Framework.UI.BunifuImageButton();
+            this.txtpageinfo = new System.Windows.Forms.Label();
+            this.btn_next = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_last = new Bunifu.Framework.UI.BunifuImageButton();
             this.dg_sales = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editPenjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ds_sales = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtpageinfo = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_first = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_prev = new Bunifu.Framework.UI.BunifuImageButton();
-            this.txt_pagination = new System.Windows.Forms.Label();
-            this.btn_next = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_last = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnresetsearch = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelsearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.searchbox.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_sales)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -71,6 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_last)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_sales)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).BeginInit();
             this.SuspendLayout();
             // 
             // panelsearch
@@ -112,6 +113,41 @@
             this.searchbox.Name = "searchbox";
             this.searchbox.Size = new System.Drawing.Size(900, 10);
             this.searchbox.TabIndex = 2;
+            // 
+            // btnresetsearch
+            // 
+            this.btnresetsearch.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnresetsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnresetsearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnresetsearch.BorderRadius = 0;
+            this.btnresetsearch.ButtonText = "Reset";
+            this.btnresetsearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnresetsearch.DisabledColor = System.Drawing.Color.Gray;
+            this.btnresetsearch.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnresetsearch.Iconimage = global::POS.Properties.Resources.reset_white;
+            this.btnresetsearch.Iconimage_right = null;
+            this.btnresetsearch.Iconimage_right_Selected = null;
+            this.btnresetsearch.Iconimage_Selected = null;
+            this.btnresetsearch.IconMarginLeft = 0;
+            this.btnresetsearch.IconMarginRight = 0;
+            this.btnresetsearch.IconRightVisible = true;
+            this.btnresetsearch.IconRightZoom = 0D;
+            this.btnresetsearch.IconVisible = true;
+            this.btnresetsearch.IconZoom = 50D;
+            this.btnresetsearch.IsTab = false;
+            this.btnresetsearch.Location = new System.Drawing.Point(546, 32);
+            this.btnresetsearch.Name = "btnresetsearch";
+            this.btnresetsearch.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnresetsearch.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnresetsearch.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnresetsearch.selected = false;
+            this.btnresetsearch.Size = new System.Drawing.Size(138, 34);
+            this.btnresetsearch.TabIndex = 12;
+            this.btnresetsearch.Text = "Reset";
+            this.btnresetsearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnresetsearch.Textcolor = System.Drawing.Color.White;
+            this.btnresetsearch.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnresetsearch.Click += new System.EventHandler(this.btnresetsearch_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -290,36 +326,6 @@
             this.panel1.Size = new System.Drawing.Size(900, 504);
             this.panel1.TabIndex = 4;
             // 
-            // dg_sales
-            // 
-            this.dg_sales.AllowUserToAddRows = false;
-            this.dg_sales.AllowUserToDeleteRows = false;
-            this.dg_sales.AllowUserToOrderColumns = true;
-            this.dg_sales.BackgroundColor = System.Drawing.Color.White;
-            this.dg_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_sales.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dg_sales.Location = new System.Drawing.Point(0, 0);
-            this.dg_sales.Name = "dg_sales";
-            this.dg_sales.ReadOnly = true;
-            this.dg_sales.Size = new System.Drawing.Size(900, 504);
-            this.dg_sales.TabIndex = 2;
-            this.dg_sales.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_sales_CellMouseUp);
-            this.dg_sales.SelectionChanged += new System.EventHandler(this.dg_sales_SelectionChanged);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editPenjualanToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(150, 26);
-            // 
-            // editPenjualanToolStripMenuItem
-            // 
-            this.editPenjualanToolStripMenuItem.Name = "editPenjualanToolStripMenuItem";
-            this.editPenjualanToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.editPenjualanToolStripMenuItem.Text = "Edit Penjualan";
-            this.editPenjualanToolStripMenuItem.Click += new System.EventHandler(this.editPenjualanToolStripMenuItem_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
@@ -340,17 +346,16 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(399, 47);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // txtpageinfo
+            // txt_pagination
             // 
-            this.txtpageinfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtpageinfo.AutoSize = true;
-            this.txtpageinfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpageinfo.ForeColor = System.Drawing.Color.White;
-            this.txtpageinfo.Location = new System.Drawing.Point(85, 4);
-            this.txtpageinfo.Name = "txtpageinfo";
-            this.txtpageinfo.Size = new System.Drawing.Size(45, 17);
-            this.txtpageinfo.TabIndex = 0;
-            this.txtpageinfo.Text = "label1";
+            this.txt_pagination.AutoSize = true;
+            this.txt_pagination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pagination.ForeColor = System.Drawing.Color.White;
+            this.txt_pagination.Location = new System.Drawing.Point(3, 0);
+            this.txt_pagination.Name = "txt_pagination";
+            this.txt_pagination.Size = new System.Drawing.Size(45, 17);
+            this.txt_pagination.TabIndex = 5;
+            this.txt_pagination.Text = "label1";
             // 
             // flowLayoutPanel1
             // 
@@ -393,16 +398,17 @@
             this.btn_prev.Zoom = 10;
             this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
             // 
-            // txt_pagination
+            // txtpageinfo
             // 
-            this.txt_pagination.AutoSize = true;
-            this.txt_pagination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pagination.ForeColor = System.Drawing.Color.White;
-            this.txt_pagination.Location = new System.Drawing.Point(3, 0);
-            this.txt_pagination.Name = "txt_pagination";
-            this.txt_pagination.Size = new System.Drawing.Size(45, 17);
-            this.txt_pagination.TabIndex = 5;
-            this.txt_pagination.Text = "label1";
+            this.txtpageinfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtpageinfo.AutoSize = true;
+            this.txtpageinfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpageinfo.ForeColor = System.Drawing.Color.White;
+            this.txtpageinfo.Location = new System.Drawing.Point(85, 4);
+            this.txtpageinfo.Name = "txtpageinfo";
+            this.txtpageinfo.Size = new System.Drawing.Size(45, 17);
+            this.txtpageinfo.TabIndex = 0;
+            this.txtpageinfo.Text = "label1";
             // 
             // btn_next
             // 
@@ -432,40 +438,45 @@
             this.btn_last.Zoom = 10;
             this.btn_last.Click += new System.EventHandler(this.btn_last_Click);
             // 
-            // btnresetsearch
+            // dg_sales
             // 
-            this.btnresetsearch.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnresetsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnresetsearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnresetsearch.BorderRadius = 0;
-            this.btnresetsearch.ButtonText = "Reset";
-            this.btnresetsearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnresetsearch.DisabledColor = System.Drawing.Color.Gray;
-            this.btnresetsearch.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnresetsearch.Iconimage = global::POS.Properties.Resources.reset_white;
-            this.btnresetsearch.Iconimage_right = null;
-            this.btnresetsearch.Iconimage_right_Selected = null;
-            this.btnresetsearch.Iconimage_Selected = null;
-            this.btnresetsearch.IconMarginLeft = 0;
-            this.btnresetsearch.IconMarginRight = 0;
-            this.btnresetsearch.IconRightVisible = true;
-            this.btnresetsearch.IconRightZoom = 0D;
-            this.btnresetsearch.IconVisible = true;
-            this.btnresetsearch.IconZoom = 50D;
-            this.btnresetsearch.IsTab = false;
-            this.btnresetsearch.Location = new System.Drawing.Point(546, 32);
-            this.btnresetsearch.Name = "btnresetsearch";
-            this.btnresetsearch.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnresetsearch.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnresetsearch.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnresetsearch.selected = false;
-            this.btnresetsearch.Size = new System.Drawing.Size(138, 34);
-            this.btnresetsearch.TabIndex = 12;
-            this.btnresetsearch.Text = "Reset";
-            this.btnresetsearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnresetsearch.Textcolor = System.Drawing.Color.White;
-            this.btnresetsearch.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnresetsearch.Click += new System.EventHandler(this.btnresetsearch_Click);
+            this.dg_sales.AllowUserToAddRows = false;
+            this.dg_sales.AllowUserToDeleteRows = false;
+            this.dg_sales.AllowUserToOrderColumns = true;
+            this.dg_sales.BackgroundColor = System.Drawing.Color.White;
+            this.dg_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_sales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dg_sales.Location = new System.Drawing.Point(0, 0);
+            this.dg_sales.Name = "dg_sales";
+            this.dg_sales.ReadOnly = true;
+            this.dg_sales.Size = new System.Drawing.Size(900, 504);
+            this.dg_sales.TabIndex = 2;
+            this.dg_sales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_sales_CellClick);
+            this.dg_sales.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_sales_CellMouseUp);
+            this.dg_sales.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_sales_DataBindingComplete);
+            this.dg_sales.SelectionChanged += new System.EventHandler(this.dg_sales_SelectionChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editPenjualanToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(150, 26);
+            // 
+            // editPenjualanToolStripMenuItem
+            // 
+            this.editPenjualanToolStripMenuItem.Image = global::POS.Properties.Resources.edit;
+            this.editPenjualanToolStripMenuItem.Name = "editPenjualanToolStripMenuItem";
+            this.editPenjualanToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.editPenjualanToolStripMenuItem.Text = "Edit Penjualan";
+            this.editPenjualanToolStripMenuItem.Click += new System.EventHandler(this.editPenjualanToolStripMenuItem_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panelsearch;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // sales_list
             // 
@@ -479,6 +490,7 @@
             this.Controls.Add(this.panelsearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "sales_list";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.sales_list_Load);
             this.panelsearch.ResumeLayout(false);
@@ -487,9 +499,6 @@
             this.searchbox.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dg_sales)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).EndInit();
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
@@ -499,6 +508,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_prev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_last)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_sales)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,6 +544,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_next;
         private Bunifu.Framework.UI.BunifuImageButton btn_last;
         private Bunifu.Framework.UI.BunifuFlatButton btnresetsearch;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 

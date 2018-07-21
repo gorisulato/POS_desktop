@@ -303,6 +303,14 @@ namespace POS
                 else
                     ClearTextBoxes(ctrl.Controls);
             }
+            foreach (Control ctrl in cc)
+            {
+                RichTextBox tb = ctrl as RichTextBox;
+                if (tb != null)
+                    tb.Text = "";
+                else
+                    ClearTextBoxes(ctrl.Controls);
+            }
         }
 
 

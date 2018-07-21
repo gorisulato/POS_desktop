@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Point_Of_SalesModelStoreContainer" CdmEntityContainer="Point_Of_SalesEntities">
-    <EntitySetMapping Name="P_Colour">
-      <EntityTypeMapping TypeName="Point_Of_SalesModel.P_Colour">
-        <MappingFragment StoreEntitySet="P_Colour">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="clor_id" ColumnName="clor_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PPaymentTypes">
       <EntityTypeMapping TypeName="Point_Of_SalesModel.PPaymentType">
         <MappingFragment StoreEntitySet="PPaymentType">
@@ -306,6 +298,21 @@
           <ScalarProperty Name="Colour" ColumnName="Colour" />
           <ScalarProperty Name="Items_number" ColumnName="Items_number" />
           <ScalarProperty Name="Items_Id" ColumnName="Items_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Colour">
+      <EntityTypeMapping TypeName="Point_Of_SalesModel.P_Colour">
+        <MappingFragment StoreEntitySet="P_Colour">
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="clor_id" ColumnName="clor_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

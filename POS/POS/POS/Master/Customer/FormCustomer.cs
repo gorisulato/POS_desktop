@@ -277,5 +277,22 @@ namespace POS.Master.Customer
             Stat = 0;
             Load_DataCustomer();
         }
+
+        private void dg_cust_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dg_cust.Rows[e.RowIndex].Selected = true;
+
+            }
+        }
+
+        private void dg_cust_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dg_cust.RowCount > 0)
+            {
+                dg_cust.Rows[0].Selected = true;
+            }
+        }
     }
 }

@@ -113,6 +113,9 @@
             this.dg_Rc.ReadOnly = true;
             this.dg_Rc.Size = new System.Drawing.Size(926, 258);
             this.dg_Rc.TabIndex = 2;
+            this.dg_Rc.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_Rc_CellMouseClick);
+            this.dg_Rc.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_Rc_CellMouseUp);
+            this.dg_Rc.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_Rc_DataBindingComplete);
             this.dg_Rc.SelectionChanged += new System.EventHandler(this.dg_Rc_SelectionChanged);
             // 
             // panel4
@@ -449,7 +452,7 @@
             // 
             this.editToolStripMenuItem.Image = global::POS.Properties.Resources.Edit_50px;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 

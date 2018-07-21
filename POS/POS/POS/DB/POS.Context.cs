@@ -29,7 +29,6 @@ namespace POS.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<P_Colour> P_Colour { get; set; }
         public virtual DbSet<PPaymentType> PPaymentTypes { get; set; }
         public virtual DbSet<PSupplier> PSuppliers { get; set; }
         public virtual DbSet<TPurchaseOrder> TPurchaseOrders { get; set; }
@@ -47,5 +46,6 @@ namespace POS.DB
         public virtual DbSet<P_Coa> P_Coa { get; set; }
         public virtual DbSet<TJournal> TJournals { get; set; }
         public virtual DbSet<TInventory> TInventories { get; set; }
+        public virtual DbSet<P_Colour> P_Colour { get; set; }
     }
 }

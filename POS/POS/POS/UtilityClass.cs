@@ -378,6 +378,7 @@ namespace POS
 
         #region "Setting"
 
+        
         public string CheckDatabaseConnection()
         {
             var Setting = Properties.Settings.Default;

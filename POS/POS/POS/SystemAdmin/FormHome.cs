@@ -54,8 +54,81 @@ namespace POS.SystemAdmin
             Properties.Settings.Default.notif_count = countrecords;
             Properties.Settings.Default.Save();
         }
+
+
+
+        public void SetRoleAcces()
+        {
+            var sesion = Properties.Settings.Default._userRolename;
+            if (sesion == "Admin")
+            {
+                //panel_sub_submenu_kasir.Visible = false;
+            }
+            else if(sesion== "Kasir")
+            {
+                panel_sub_submenu_kasir.Visible = true;
+                panel_sub_submenu_modifysales.Visible = true;
+                panel_label_pembelian.Visible = false;
+                panel_pembelian.Visible = false;
+                panel_submenu_customer.Visible = true;
+                panel_sub_menu_supplier.Visible = false;
+                panel_sub_Menu_warna.Visible = false;
+                panel_submenu_beban.Visible = false;
+                panelexpandreport.Visible = false;
+                panel_label_reports.Visible = false;
+                panel_submenu_inventory.Visible = false;
+            }
+
+            else if (sesion== "Purchasing")
+            {
+                panel_sales.Visible = false;
+                panel_label_sales.Visible = false;
+                panel_label_pembelian.Visible = true;
+                panel_pembelian.Visible = true;
+                panel_submenu_customer.Visible = false;
+                panel_sub_menu_supplier.Visible = true;
+                panel_sub_Menu_warna.Visible = false;
+                panel_submenu_beban.Visible = false;
+                panelexpandreport.Visible = false;
+                panel_label_reports.Visible = false;
+                panel_submenu_inventory.Visible = false;
+            }
+
+            else if(sesion== "AdminSales")
+            {
+                panel_sub_submenu_kasir.Visible = true;
+                panel_sub_submenu_modifysales.Visible = true;
+                panel_label_pembelian.Visible = false;
+                panelmastermenu.Visible = false;
+                panelexpandablemaster.Visible = false;
+                panel_pembelian.Visible = false;
+                panel_submenu_customer.Visible = false;
+                panel_sub_menu_supplier.Visible = false;
+                panel_sub_Menu_warna.Visible = false;
+                panel_submenu_beban.Visible = false;
+                panelexpandreport.Visible = false;
+                panel_label_reports.Visible = false;
+                panel_submenu_inventory.Visible = false;
+            }
+            else if(sesion== "Accounting")
+            {
+                panel_pembelian.Visible = false;
+                panel_label_pembelian.Visible = false;
+                panel_sales.Visible = false;
+                panel_label_sales.Visible = false;
+                panel_submenu_customer.Visible = false;
+                panel_sub_menu_supplier.Visible = false;
+                panel_submenu_inventory.Visible = false;
+                panel_sub_Menu_warna.Visible = false;
+                panel_submenu_beban.Visible = true;
+                
+
+
+            }
+        }
         private void FormHome_Load(object sender, EventArgs e)
         {
+            SetRoleAcces();
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
             timer1.Start();
             Set_SafetyStock();
@@ -136,7 +209,7 @@ namespace POS.SystemAdmin
             {
 
                 Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
-                t.add(panel_sales, "Height", 10);
+                t.add(panel_sales, "Height", 5);
                 t.run();
                 btn_expandsubmenusales.Image = Properties.Resources.chevron_white;
             }
@@ -194,7 +267,7 @@ namespace POS.SystemAdmin
             {
 
                 Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
-                t.add(panel_pembelian, "Height", 10);
+                t.add(panel_pembelian, "Height", 5);
                 t.run();
                 btn_expandpembelian.Image = Properties.Resources.chevron_white;
             }
@@ -544,7 +617,7 @@ namespace POS.SystemAdmin
             {
 
                 Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
-                t.add(panelexpandablemaster, "Height", 10);
+                t.add(panelexpandablemaster, "Height", 5);
                 t.run();
                 btn_expandmaster.Image = Properties.Resources.chevron_white;
             }
@@ -658,7 +731,7 @@ namespace POS.SystemAdmin
             {
 
                 Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
-                t.add(panelexpandreport, "Height", 10);
+                t.add(panelexpandreport, "Height", 5);
                 t.run();
                 bunifuImageButton7.Image = Properties.Resources.chevron_white;
             }
@@ -699,6 +772,11 @@ namespace POS.SystemAdmin
               
                 rv.ShowDialog();
           
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

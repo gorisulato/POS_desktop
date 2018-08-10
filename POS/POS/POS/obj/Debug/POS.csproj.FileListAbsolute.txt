@@ -79,3 +79,5 @@ E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Master.Colour.FormAddColour.res
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPTSalesPeriodic.rpt
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPTSalesPeriodic.cs
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Reports.ReportViewer.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.SystemAdmin.UserList.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.SystemAdmin.FormAddUsers.resources

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.upper_panel = new System.Windows.Forms.Panel();
-            this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -59,7 +58,6 @@
             // upper_panel
             // 
             this.upper_panel.BackgroundImage = global::POS.Properties.Resources.upper;
-            this.upper_panel.Controls.Add(this.btn_Batal);
             this.upper_panel.Controls.Add(this.btn_exit);
             this.upper_panel.Controls.Add(this.label1);
             this.upper_panel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -67,40 +65,6 @@
             this.upper_panel.Name = "upper_panel";
             this.upper_panel.Size = new System.Drawing.Size(654, 66);
             this.upper_panel.TabIndex = 1;
-            // 
-            // btn_Batal
-            // 
-            this.btn_Batal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Batal.BorderRadius = 0;
-            this.btn_Batal.ButtonText = "Batal";
-            this.btn_Batal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Batal.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Batal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Batal.Iconimage = global::POS.Properties.Resources.Cancel_white;
-            this.btn_Batal.Iconimage_right = null;
-            this.btn_Batal.Iconimage_right_Selected = null;
-            this.btn_Batal.Iconimage_Selected = null;
-            this.btn_Batal.IconMarginLeft = 0;
-            this.btn_Batal.IconMarginRight = 0;
-            this.btn_Batal.IconRightVisible = true;
-            this.btn_Batal.IconRightZoom = 0D;
-            this.btn_Batal.IconVisible = true;
-            this.btn_Batal.IconZoom = 90D;
-            this.btn_Batal.IsTab = false;
-            this.btn_Batal.Location = new System.Drawing.Point(379, 12);
-            this.btn_Batal.Name = "btn_Batal";
-            this.btn_Batal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Batal.selected = false;
-            this.btn_Batal.Size = new System.Drawing.Size(128, 42);
-            this.btn_Batal.TabIndex = 4;
-            this.btn_Batal.Text = "Batal";
-            this.btn_Batal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Batal.Textcolor = System.Drawing.Color.White;
-            this.btn_Batal.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btn_exit
             // 
@@ -359,7 +323,6 @@
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel upper_panel;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Batal;
         private Bunifu.Framework.UI.BunifuFlatButton btn_exit;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;

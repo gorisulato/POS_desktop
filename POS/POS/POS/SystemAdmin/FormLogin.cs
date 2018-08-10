@@ -50,7 +50,7 @@ namespace POS.SystemAdmin
             try
             {
        
-                string Username = txt_username.text;
+                string Username = txt_username.text.ToUpper();
                 string Password = txt_password.text;
                 Point_Of_SalesEntities = new POS_Entities(util.CheckDatabaseConnection());
                 string ret = "success";
@@ -59,8 +59,10 @@ namespace POS.SystemAdmin
                                 from Role in Point_Of_SalesEntities.TRoles.Where(r => r.Role_id == User.Role_id)
                                 select new
                                 { User = User, Role = Role })
-                                .Where(s => s.User.Username == Username)
+                                .Where(s => s.User.Username.ToUpper().Contains(Username))
                                 .FirstOrDefault();
+
+                var dataUser1 = Point_Of_SalesEntities.TUsers.Where(x => x.Username.ToUpper().Contains(Username)).ToList();
 
                 //cek Password & Delete user
                 string Password_hash = string.Join("", MD5.Create().ComputeHash(

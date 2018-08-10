@@ -50,7 +50,7 @@ namespace POS.Master.Customer
         private void FormAddCustomer_Load(object sender, EventArgs e)
         {
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
-            ts._primaryButton(btn_Batal);
+           // ts._primaryButton(btn_Batal);
             ts._primaryButton(btn_exit);
             ts._primaryButton(btn_save);
             if (type == "ADD")

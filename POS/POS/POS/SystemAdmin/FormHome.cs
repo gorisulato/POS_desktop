@@ -29,6 +29,7 @@ namespace POS.SystemAdmin
         ReportViewer rv;
         InventoryList inven;
         SupplierListData supp;
+        UserList usr;
         COlourList colour;
         Notification_Form n = null;
         POS_Entities Point_Of_SalesEntities;
@@ -62,7 +63,7 @@ namespace POS.SystemAdmin
             var sesion = Properties.Settings.Default._userRolename;
             if (sesion == "Admin")
             {
-                //panel_sub_submenu_kasir.Visible = false;
+      
             }
             else if(sesion== "Kasir")
             {
@@ -777,6 +778,25 @@ namespace POS.SystemAdmin
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+        void ResetUsr()
+        {
+            usr = null;
+            Load_Image();
+        }
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            if (usr == null)
+            {
+                usr = new UserList();
+                usr.RefreshDgv += new UserList.DoEvent(ResetUsr);
+                usr.Show();
+            }
+            else
+            {
+                usr.WindowState = FormWindowState.Normal;
+                usr.Focus();
+            }
         }
     }
 }

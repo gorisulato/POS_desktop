@@ -1903,6 +1903,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Money_48px {
+            get {
+                object obj = ResourceManager.GetObject("Money_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap New_Product_Gray {
             get {
                 object obj = ResourceManager.GetObject("New_Product_Gray", resourceCulture);

@@ -33,23 +33,13 @@
             this.Detail = new System.Windows.Forms.Panel();
             this.dg_detail = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_delete = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_edit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_discount = new AltoControls.AltoNMUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_qty = new AltoControls.AltoNMUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_items_show = new AltoControls.AltoTextBox();
-            this.btn_search_LOV = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_addItems = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_items_id = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.upper_panel = new System.Windows.Forms.Panel();
-            this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ds_salesdetail = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.lbl_sales_Number = new System.Windows.Forms.Label();
             this.txt_salesNumber = new AltoControls.AltoTextBox();
@@ -57,11 +47,9 @@
             this.dt_salesdate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.lbl_total = new System.Windows.Forms.Label();
             this.total_sales = new AltoControls.AltoTextBox();
-            this.btn_addDetails = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_customer_id = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txt_customer_show = new AltoControls.AltoTextBox();
             this.lbl_customer = new System.Windows.Forms.Label();
-            this.btn_LovCustomer = new Bunifu.Framework.UI.BunifuImageButton();
             this.txt_sales_discount = new AltoControls.AltoNMUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.Main = new System.Windows.Forms.Panel();
@@ -70,30 +58,42 @@
             this.txt_approvalcode = new AltoControls.AltoTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_cardno = new AltoControls.AltoTextBox();
-            this.btn_clear = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_update_master = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cb_idpayment = new Bunifu.Framework.UI.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
             this.cb_paymentType = new Bunifu.Framework.UI.BunifuDropdown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_change = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btn_pay = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_change = new AltoControls.AltoTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_payment = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_paymentamount = new AltoControls.AltoTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btn_addDetails = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_clear = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_LovCustomer = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_pay = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_update_master = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_delete = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_edit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_search_LOV = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_addItems = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.upper_panel = new System.Windows.Forms.Panel();
+            this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ds_salesdetail = new System.Windows.Forms.BindingSource(this.components);
             this.Detail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_detail)).BeginInit();
             this.panel1.SuspendLayout();
-            this.upper_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_salesdetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_LovCustomer)).BeginInit();
             this.Main.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_LovCustomer)).BeginInit();
+            this.upper_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_salesdetail)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -144,6 +144,606 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 74);
             this.panel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label4.Location = new System.Drawing.Point(473, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 17);
+            this.label4.TabIndex = 211;
+            this.label4.Text = "Discount";
+            // 
+            // txt_discount
+            // 
+            this.txt_discount.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txt_discount.Location = new System.Drawing.Point(467, 25);
+            this.txt_discount.Name = "txt_discount";
+            this.txt_discount.SignColor = System.Drawing.Color.White;
+            this.txt_discount.Size = new System.Drawing.Size(89, 33);
+            this.txt_discount.TabIndex = 210;
+            this.txt_discount.Text = "altoNMUpDown2";
+            this.txt_discount.Value = 0D;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label3.Location = new System.Drawing.Point(378, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 17);
+            this.label3.TabIndex = 209;
+            this.label3.Text = "Qty";
+            // 
+            // txt_qty
+            // 
+            this.txt_qty.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txt_qty.Location = new System.Drawing.Point(372, 25);
+            this.txt_qty.Name = "txt_qty";
+            this.txt_qty.SignColor = System.Drawing.Color.White;
+            this.txt_qty.Size = new System.Drawing.Size(89, 33);
+            this.txt_qty.TabIndex = 208;
+            this.txt_qty.Text = "altoNMUpDown1";
+            this.txt_qty.Value = 0D;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label2.Location = new System.Drawing.Point(17, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 17);
+            this.label2.TabIndex = 207;
+            this.label2.Text = "Item Yang Akan Ditambah";
+            // 
+            // txt_items_show
+            // 
+            this.txt_items_show.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_items_show.BackColor = System.Drawing.Color.Transparent;
+            this.txt_items_show.Br = System.Drawing.Color.White;
+            this.txt_items_show.Enabled = false;
+            this.txt_items_show.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txt_items_show.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_items_show.Location = new System.Drawing.Point(11, 25);
+            this.txt_items_show.Name = "txt_items_show";
+            this.txt_items_show.Radius = 6;
+            this.txt_items_show.Size = new System.Drawing.Size(210, 33);
+            this.txt_items_show.TabIndex = 205;
+            // 
+            // txt_items_id
+            // 
+            this.txt_items_id.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txt_items_id.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_items_id.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txt_items_id.BorderThickness = 3;
+            this.txt_items_id.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_items_id.Enabled = false;
+            this.txt_items_id.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txt_items_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_items_id.isPassword = false;
+            this.txt_items_id.Location = new System.Drawing.Point(226, 27);
+            this.txt_items_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_items_id.Name = "txt_items_id";
+            this.txt_items_id.Size = new System.Drawing.Size(10, 31);
+            this.txt_items_id.TabIndex = 204;
+            this.txt_items_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_items_id.Visible = false;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.upper_panel;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // lbl_sales_Number
+            // 
+            this.lbl_sales_Number.AutoSize = true;
+            this.lbl_sales_Number.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lbl_sales_Number.Location = new System.Drawing.Point(12, 28);
+            this.lbl_sales_Number.Name = "lbl_sales_Number";
+            this.lbl_sales_Number.Size = new System.Drawing.Size(109, 17);
+            this.lbl_sales_Number.TabIndex = 0;
+            this.lbl_sales_Number.Text = "Nomor Penjualan";
+            // 
+            // txt_salesNumber
+            // 
+            this.txt_salesNumber.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_salesNumber.BackColor = System.Drawing.Color.Transparent;
+            this.txt_salesNumber.Br = System.Drawing.Color.White;
+            this.txt_salesNumber.Enabled = false;
+            this.txt_salesNumber.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_salesNumber.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_salesNumber.Location = new System.Drawing.Point(6, 50);
+            this.txt_salesNumber.Name = "txt_salesNumber";
+            this.txt_salesNumber.Radius = 6;
+            this.txt_salesNumber.Size = new System.Drawing.Size(196, 33);
+            this.txt_salesNumber.TabIndex = 1;
+            // 
+            // lbl_Sales_Date
+            // 
+            this.lbl_Sales_Date.AutoSize = true;
+            this.lbl_Sales_Date.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lbl_Sales_Date.Location = new System.Drawing.Point(12, 104);
+            this.lbl_Sales_Date.Name = "lbl_Sales_Date";
+            this.lbl_Sales_Date.Size = new System.Drawing.Size(113, 17);
+            this.lbl_Sales_Date.TabIndex = 2;
+            this.lbl_Sales_Date.Text = "Tanggal Penjualan";
+            // 
+            // dt_salesdate
+            // 
+            this.dt_salesdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dt_salesdate.BorderRadius = 0;
+            this.dt_salesdate.ForeColor = System.Drawing.Color.White;
+            this.dt_salesdate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dt_salesdate.FormatCustom = null;
+            this.dt_salesdate.Location = new System.Drawing.Point(4, 132);
+            this.dt_salesdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dt_salesdate.Name = "dt_salesdate";
+            this.dt_salesdate.Size = new System.Drawing.Size(196, 33);
+            this.dt_salesdate.TabIndex = 3;
+            this.dt_salesdate.Value = new System.DateTime(2018, 5, 29, 1, 20, 4, 627);
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lbl_total.Location = new System.Drawing.Point(303, 186);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(95, 17);
+            this.lbl_total.TabIndex = 4;
+            this.lbl_total.Text = "Total Penjualan";
+            // 
+            // total_sales
+            // 
+            this.total_sales.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.total_sales.BackColor = System.Drawing.Color.Transparent;
+            this.total_sales.Br = System.Drawing.Color.White;
+            this.total_sales.Enabled = false;
+            this.total_sales.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.total_sales.ForeColor = System.Drawing.Color.DimGray;
+            this.total_sales.Location = new System.Drawing.Point(297, 214);
+            this.total_sales.Name = "total_sales";
+            this.total_sales.Radius = 6;
+            this.total_sales.Size = new System.Drawing.Size(164, 33);
+            this.total_sales.TabIndex = 5;
+            this.total_sales.Click += new System.EventHandler(this.total_sales_Click);
+            // 
+            // txt_customer_id
+            // 
+            this.txt_customer_id.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txt_customer_id.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_customer_id.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txt_customer_id.BorderThickness = 3;
+            this.txt_customer_id.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_customer_id.Enabled = false;
+            this.txt_customer_id.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txt_customer_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_customer_id.isPassword = false;
+            this.txt_customer_id.Location = new System.Drawing.Point(200, 195);
+            this.txt_customer_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_customer_id.Name = "txt_customer_id";
+            this.txt_customer_id.Size = new System.Drawing.Size(10, 31);
+            this.txt_customer_id.TabIndex = 208;
+            this.txt_customer_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_customer_id.Visible = false;
+            // 
+            // txt_customer_show
+            // 
+            this.txt_customer_show.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_customer_show.BackColor = System.Drawing.Color.Transparent;
+            this.txt_customer_show.Br = System.Drawing.Color.White;
+            this.txt_customer_show.Enabled = false;
+            this.txt_customer_show.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txt_customer_show.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_customer_show.Location = new System.Drawing.Point(4, 195);
+            this.txt_customer_show.Name = "txt_customer_show";
+            this.txt_customer_show.Radius = 6;
+            this.txt_customer_show.Size = new System.Drawing.Size(198, 33);
+            this.txt_customer_show.TabIndex = 209;
+            // 
+            // lbl_customer
+            // 
+            this.lbl_customer.AutoSize = true;
+            this.lbl_customer.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lbl_customer.Location = new System.Drawing.Point(12, 172);
+            this.lbl_customer.Name = "lbl_customer";
+            this.lbl_customer.Size = new System.Drawing.Size(64, 17);
+            this.lbl_customer.TabIndex = 210;
+            this.lbl_customer.Text = "Customer";
+            // 
+            // txt_sales_discount
+            // 
+            this.txt_sales_discount.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txt_sales_discount.Location = new System.Drawing.Point(297, 132);
+            this.txt_sales_discount.Name = "txt_sales_discount";
+            this.txt_sales_discount.SignColor = System.Drawing.Color.White;
+            this.txt_sales_discount.Size = new System.Drawing.Size(164, 33);
+            this.txt_sales_discount.TabIndex = 212;
+            this.txt_sales_discount.Text = "altoNMUpDown2";
+            this.txt_sales_discount.Value = 0D;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label5.Location = new System.Drawing.Point(303, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 17);
+            this.label5.TabIndex = 213;
+            this.label5.Text = "Discount Penjualan (%)";
+            // 
+            // Main
+            // 
+            this.Main.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Main.Controls.Add(this.btn_addDetails);
+            this.Main.Controls.Add(this.groupBox2);
+            this.Main.Controls.Add(this.groupBox1);
+            this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Main.Location = new System.Drawing.Point(0, 66);
+            this.Main.Name = "Main";
+            this.Main.Size = new System.Drawing.Size(902, 425);
+            this.Main.TabIndex = 2;
+            this.Main.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txt_approvalcode);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txt_cardno);
+            this.groupBox2.Controls.Add(this.btn_clear);
+            this.groupBox2.Controls.Add(this.cb_idpayment);
+            this.groupBox2.Controls.Add(this.txt_customer_id);
+            this.groupBox2.Controls.Add(this.txt_salesNumber);
+            this.groupBox2.Controls.Add(this.txt_customer_show);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.lbl_customer);
+            this.groupBox2.Controls.Add(this.lbl_sales_Number);
+            this.groupBox2.Controls.Add(this.total_sales);
+            this.groupBox2.Controls.Add(this.cb_paymentType);
+            this.groupBox2.Controls.Add(this.btn_LovCustomer);
+            this.groupBox2.Controls.Add(this.lbl_Sales_Date);
+            this.groupBox2.Controls.Add(this.lbl_total);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txt_sales_discount);
+            this.groupBox2.Controls.Add(this.dt_salesdate);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.groupBox2.Location = new System.Drawing.Point(10, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(470, 373);
+            this.groupBox2.TabIndex = 217;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Penjualan";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label11.Location = new System.Drawing.Point(305, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 17);
+            this.label11.TabIndex = 222;
+            this.label11.Text = "Approval Code";
+            // 
+            // txt_approvalcode
+            // 
+            this.txt_approvalcode.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_approvalcode.BackColor = System.Drawing.Color.Transparent;
+            this.txt_approvalcode.Br = System.Drawing.Color.White;
+            this.txt_approvalcode.Enabled = false;
+            this.txt_approvalcode.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txt_approvalcode.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_approvalcode.Location = new System.Drawing.Point(297, 50);
+            this.txt_approvalcode.Name = "txt_approvalcode";
+            this.txt_approvalcode.Radius = 6;
+            this.txt_approvalcode.Size = new System.Drawing.Size(164, 33);
+            this.txt_approvalcode.TabIndex = 221;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label10.Location = new System.Drawing.Point(12, 308);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 17);
+            this.label10.TabIndex = 220;
+            this.label10.Text = "Nomor Kartu";
+            // 
+            // txt_cardno
+            // 
+            this.txt_cardno.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_cardno.BackColor = System.Drawing.Color.Transparent;
+            this.txt_cardno.Br = System.Drawing.Color.White;
+            this.txt_cardno.Enabled = false;
+            this.txt_cardno.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txt_cardno.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_cardno.Location = new System.Drawing.Point(4, 332);
+            this.txt_cardno.Name = "txt_cardno";
+            this.txt_cardno.Radius = 6;
+            this.txt_cardno.Size = new System.Drawing.Size(198, 33);
+            this.txt_cardno.TabIndex = 219;
+            // 
+            // cb_idpayment
+            // 
+            this.cb_idpayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cb_idpayment.BorderRadius = 3;
+            this.cb_idpayment.DisabledColor = System.Drawing.Color.Gray;
+            this.cb_idpayment.ForeColor = System.Drawing.Color.White;
+            this.cb_idpayment.Items = new string[0];
+            this.cb_idpayment.Location = new System.Drawing.Point(208, 292);
+            this.cb_idpayment.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cb_idpayment.Name = "cb_idpayment";
+            this.cb_idpayment.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cb_idpayment.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cb_idpayment.selectedIndex = -1;
+            this.cb_idpayment.Size = new System.Drawing.Size(10, 10);
+            this.cb_idpayment.TabIndex = 216;
+            this.cb_idpayment.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label6.Location = new System.Drawing.Point(12, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 17);
+            this.label6.TabIndex = 215;
+            this.label6.Text = "Metode Pembayaran";
+            // 
+            // cb_paymentType
+            // 
+            this.cb_paymentType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cb_paymentType.BorderRadius = 3;
+            this.cb_paymentType.DisabledColor = System.Drawing.Color.Gray;
+            this.cb_paymentType.ForeColor = System.Drawing.Color.White;
+            this.cb_paymentType.Items = new string[0];
+            this.cb_paymentType.Location = new System.Drawing.Point(4, 269);
+            this.cb_paymentType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cb_paymentType.Name = "cb_paymentType";
+            this.cb_paymentType.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cb_paymentType.onHoverColor = System.Drawing.Color.Teal;
+            this.cb_paymentType.selectedIndex = -1;
+            this.cb_paymentType.Size = new System.Drawing.Size(198, 33);
+            this.cb_paymentType.TabIndex = 214;
+            this.cb_paymentType.onItemSelected += new System.EventHandler(this.cb_paymentType_onItemSelected);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbl_change);
+            this.groupBox1.Controls.Add(this.btn_pay);
+            this.groupBox1.Controls.Add(this.txt_change);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btn_update_master);
+            this.groupBox1.Controls.Add(this.lbl_payment);
+            this.groupBox1.Controls.Add(this.txt_paymentamount);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.groupBox1.Location = new System.Drawing.Point(497, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(395, 374);
+            this.groupBox1.TabIndex = 216;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pembayaran";
+            // 
+            // lbl_change
+            // 
+            this.lbl_change.AutoSize = true;
+            this.lbl_change.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_change.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_change.Location = new System.Drawing.Point(17, 195);
+            this.lbl_change.Name = "lbl_change";
+            this.lbl_change.Size = new System.Drawing.Size(244, 54);
+            this.lbl_change.TabIndex = 13;
+            this.lbl_change.Text = "lorem ipsum";
+            // 
+            // txt_change
+            // 
+            this.txt_change.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_change.BackColor = System.Drawing.Color.Transparent;
+            this.txt_change.Br = System.Drawing.Color.White;
+            this.txt_change.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_change.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_change.Location = new System.Drawing.Point(353, 172);
+            this.txt_change.Name = "txt_change";
+            this.txt_change.Radius = 6;
+            this.txt_change.Size = new System.Drawing.Size(16, 47);
+            this.txt_change.TabIndex = 11;
+            this.txt_change.TabStop = false;
+            this.txt_change.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label9.Location = new System.Drawing.Point(21, 172);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 17);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Kembalian";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label8.Location = new System.Drawing.Point(12, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(175, 17);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Total Yang Harus Dibayarkan";
+            // 
+            // lbl_payment
+            // 
+            this.lbl_payment.AutoSize = true;
+            this.lbl_payment.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_payment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_payment.Location = new System.Drawing.Point(6, 45);
+            this.lbl_payment.Name = "lbl_payment";
+            this.lbl_payment.Size = new System.Drawing.Size(244, 54);
+            this.lbl_payment.TabIndex = 8;
+            this.lbl_payment.Text = "lorem ipsum";
+            // 
+            // txt_paymentamount
+            // 
+            this.txt_paymentamount.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_paymentamount.BackColor = System.Drawing.Color.Transparent;
+            this.txt_paymentamount.Br = System.Drawing.Color.White;
+            this.txt_paymentamount.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_paymentamount.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_paymentamount.Location = new System.Drawing.Point(15, 132);
+            this.txt_paymentamount.Name = "txt_paymentamount";
+            this.txt_paymentamount.Radius = 6;
+            this.txt_paymentamount.Size = new System.Drawing.Size(164, 33);
+            this.txt_paymentamount.TabIndex = 7;
+            this.txt_paymentamount.TextChanged += new System.EventHandler(this.txt_paymentamount_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label7.Location = new System.Drawing.Point(21, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Jumlah Pembayaran";
+            // 
+            // btn_addDetails
+            // 
+            this.btn_addDetails.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_addDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_addDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_addDetails.BorderRadius = 0;
+            this.btn_addDetails.ButtonText = "Tambah Detail";
+            this.btn_addDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_addDetails.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_addDetails.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_addDetails.Iconimage = global::POS.Properties.Resources.Add_white;
+            this.btn_addDetails.Iconimage_right = null;
+            this.btn_addDetails.Iconimage_right_Selected = null;
+            this.btn_addDetails.Iconimage_Selected = null;
+            this.btn_addDetails.IconMarginLeft = 0;
+            this.btn_addDetails.IconMarginRight = 0;
+            this.btn_addDetails.IconRightVisible = true;
+            this.btn_addDetails.IconRightZoom = 0D;
+            this.btn_addDetails.IconVisible = true;
+            this.btn_addDetails.IconZoom = 90D;
+            this.btn_addDetails.IsTab = false;
+            this.btn_addDetails.Location = new System.Drawing.Point(10, 384);
+            this.btn_addDetails.Name = "btn_addDetails";
+            this.btn_addDetails.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_addDetails.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_addDetails.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_addDetails.selected = false;
+            this.btn_addDetails.Size = new System.Drawing.Size(142, 33);
+            this.btn_addDetails.TabIndex = 204;
+            this.btn_addDetails.Text = "Tambah Detail";
+            this.btn_addDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_addDetails.Textcolor = System.Drawing.Color.White;
+            this.btn_addDetails.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addDetails.Click += new System.EventHandler(this.btn_addDetails_Click);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_clear.Image = global::POS.Properties.Resources.Cancel_white;
+            this.btn_clear.ImageActive = null;
+            this.btn_clear.Location = new System.Drawing.Point(252, 195);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(28, 31);
+            this.btn_clear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_clear.TabIndex = 218;
+            this.btn_clear.TabStop = false;
+            this.btn_clear.Zoom = 10;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // btn_LovCustomer
+            // 
+            this.btn_LovCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_LovCustomer.Image = global::POS.Properties.Resources.guest_list_white;
+            this.btn_LovCustomer.ImageActive = null;
+            this.btn_LovCustomer.Location = new System.Drawing.Point(207, 195);
+            this.btn_LovCustomer.Name = "btn_LovCustomer";
+            this.btn_LovCustomer.Size = new System.Drawing.Size(49, 31);
+            this.btn_LovCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_LovCustomer.TabIndex = 211;
+            this.btn_LovCustomer.TabStop = false;
+            this.btn_LovCustomer.Zoom = 10;
+            this.btn_LovCustomer.Click += new System.EventHandler(this.btn_LovCustomer_Click);
+            // 
+            // btn_pay
+            // 
+            this.btn_pay.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_pay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_pay.BorderRadius = 0;
+            this.btn_pay.ButtonText = "Bayar";
+            this.btn_pay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pay.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_pay.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_pay.Iconimage = global::POS.Properties.Resources.checkout_white;
+            this.btn_pay.Iconimage_right = null;
+            this.btn_pay.Iconimage_right_Selected = null;
+            this.btn_pay.Iconimage_Selected = null;
+            this.btn_pay.IconMarginLeft = 0;
+            this.btn_pay.IconMarginRight = 0;
+            this.btn_pay.IconRightVisible = true;
+            this.btn_pay.IconRightZoom = 0D;
+            this.btn_pay.IconVisible = true;
+            this.btn_pay.IconZoom = 90D;
+            this.btn_pay.IsTab = false;
+            this.btn_pay.Location = new System.Drawing.Point(267, 269);
+            this.btn_pay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_pay.Name = "btn_pay";
+            this.btn_pay.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_pay.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_pay.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_pay.selected = false;
+            this.btn_pay.Size = new System.Drawing.Size(113, 45);
+            this.btn_pay.TabIndex = 12;
+            this.btn_pay.Text = "Bayar";
+            this.btn_pay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pay.Textcolor = System.Drawing.Color.White;
+            this.btn_pay.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
+            // 
+            // btn_update_master
+            // 
+            this.btn_update_master.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_update_master.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_update_master.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_update_master.BorderRadius = 0;
+            this.btn_update_master.ButtonText = "Perbarui Data Penjualan";
+            this.btn_update_master.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_update_master.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_update_master.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_master.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_update_master.Iconimage = global::POS.Properties.Resources.edit_white;
+            this.btn_update_master.Iconimage_right = null;
+            this.btn_update_master.Iconimage_right_Selected = null;
+            this.btn_update_master.Iconimage_Selected = null;
+            this.btn_update_master.IconMarginLeft = 0;
+            this.btn_update_master.IconMarginRight = 0;
+            this.btn_update_master.IconRightVisible = true;
+            this.btn_update_master.IconRightZoom = 0D;
+            this.btn_update_master.IconVisible = true;
+            this.btn_update_master.IconZoom = 60D;
+            this.btn_update_master.IsTab = false;
+            this.btn_update_master.Location = new System.Drawing.Point(48, 270);
+            this.btn_update_master.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btn_update_master.Name = "btn_update_master";
+            this.btn_update_master.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_update_master.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_update_master.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_update_master.selected = false;
+            this.btn_update_master.Size = new System.Drawing.Size(202, 44);
+            this.btn_update_master.TabIndex = 217;
+            this.btn_update_master.Text = "Perbarui Data Penjualan";
+            this.btn_update_master.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_update_master.Textcolor = System.Drawing.Color.White;
+            this.btn_update_master.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_master.Click += new System.EventHandler(this.btn_update_master_Click);
             // 
             // btn_delete
             // 
@@ -215,72 +815,6 @@
             this.btn_edit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label4.Location = new System.Drawing.Point(473, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
-            this.label4.TabIndex = 211;
-            this.label4.Text = "Discount";
-            // 
-            // txt_discount
-            // 
-            this.txt_discount.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txt_discount.Location = new System.Drawing.Point(467, 25);
-            this.txt_discount.Name = "txt_discount";
-            this.txt_discount.SignColor = System.Drawing.Color.White;
-            this.txt_discount.Size = new System.Drawing.Size(89, 33);
-            this.txt_discount.TabIndex = 210;
-            this.txt_discount.Text = "altoNMUpDown2";
-            this.txt_discount.Value = 0D;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label3.Location = new System.Drawing.Point(378, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 17);
-            this.label3.TabIndex = 209;
-            this.label3.Text = "Qty";
-            // 
-            // txt_qty
-            // 
-            this.txt_qty.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txt_qty.Location = new System.Drawing.Point(372, 25);
-            this.txt_qty.Name = "txt_qty";
-            this.txt_qty.SignColor = System.Drawing.Color.White;
-            this.txt_qty.Size = new System.Drawing.Size(89, 33);
-            this.txt_qty.TabIndex = 208;
-            this.txt_qty.Text = "altoNMUpDown1";
-            this.txt_qty.Value = 0D;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label2.Location = new System.Drawing.Point(17, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 17);
-            this.label2.TabIndex = 207;
-            this.label2.Text = "Item Yang Akan Ditambah";
-            // 
-            // txt_items_show
-            // 
-            this.txt_items_show.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_items_show.BackColor = System.Drawing.Color.Transparent;
-            this.txt_items_show.Br = System.Drawing.Color.White;
-            this.txt_items_show.Enabled = false;
-            this.txt_items_show.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.txt_items_show.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_items_show.Location = new System.Drawing.Point(11, 25);
-            this.txt_items_show.Name = "txt_items_show";
-            this.txt_items_show.Radius = 6;
-            this.txt_items_show.Size = new System.Drawing.Size(210, 33);
-            this.txt_items_show.TabIndex = 205;
-            // 
             // btn_search_LOV
             // 
             this.btn_search_LOV.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -350,25 +884,6 @@
             this.btn_addItems.Textcolor = System.Drawing.Color.White;
             this.btn_addItems.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addItems.Click += new System.EventHandler(this.btn_addItems_Click);
-            // 
-            // txt_items_id
-            // 
-            this.txt_items_id.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txt_items_id.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_items_id.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txt_items_id.BorderThickness = 3;
-            this.txt_items_id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_items_id.Enabled = false;
-            this.txt_items_id.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_items_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_items_id.isPassword = false;
-            this.txt_items_id.Location = new System.Drawing.Point(226, 27);
-            this.txt_items_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txt_items_id.Name = "txt_items_id";
-            this.txt_items_id.Size = new System.Drawing.Size(10, 31);
-            this.txt_items_id.TabIndex = 204;
-            this.txt_items_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_items_id.Visible = false;
             // 
             // upper_panel
             // 
@@ -500,519 +1015,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Penjualan";
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.upper_panel;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // lbl_sales_Number
-            // 
-            this.lbl_sales_Number.AutoSize = true;
-            this.lbl_sales_Number.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_sales_Number.Location = new System.Drawing.Point(12, 28);
-            this.lbl_sales_Number.Name = "lbl_sales_Number";
-            this.lbl_sales_Number.Size = new System.Drawing.Size(109, 17);
-            this.lbl_sales_Number.TabIndex = 0;
-            this.lbl_sales_Number.Text = "Nomor Penjualan";
-            // 
-            // txt_salesNumber
-            // 
-            this.txt_salesNumber.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_salesNumber.BackColor = System.Drawing.Color.Transparent;
-            this.txt_salesNumber.Br = System.Drawing.Color.White;
-            this.txt_salesNumber.Enabled = false;
-            this.txt_salesNumber.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_salesNumber.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_salesNumber.Location = new System.Drawing.Point(6, 50);
-            this.txt_salesNumber.Name = "txt_salesNumber";
-            this.txt_salesNumber.Radius = 6;
-            this.txt_salesNumber.Size = new System.Drawing.Size(196, 33);
-            this.txt_salesNumber.TabIndex = 1;
-            // 
-            // lbl_Sales_Date
-            // 
-            this.lbl_Sales_Date.AutoSize = true;
-            this.lbl_Sales_Date.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_Sales_Date.Location = new System.Drawing.Point(12, 104);
-            this.lbl_Sales_Date.Name = "lbl_Sales_Date";
-            this.lbl_Sales_Date.Size = new System.Drawing.Size(113, 17);
-            this.lbl_Sales_Date.TabIndex = 2;
-            this.lbl_Sales_Date.Text = "Tanggal Penjualan";
-            // 
-            // dt_salesdate
-            // 
-            this.dt_salesdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dt_salesdate.BorderRadius = 0;
-            this.dt_salesdate.ForeColor = System.Drawing.Color.White;
-            this.dt_salesdate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dt_salesdate.FormatCustom = null;
-            this.dt_salesdate.Location = new System.Drawing.Point(4, 132);
-            this.dt_salesdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dt_salesdate.Name = "dt_salesdate";
-            this.dt_salesdate.Size = new System.Drawing.Size(196, 33);
-            this.dt_salesdate.TabIndex = 3;
-            this.dt_salesdate.Value = new System.DateTime(2018, 5, 29, 1, 20, 4, 627);
-            // 
-            // lbl_total
-            // 
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_total.Location = new System.Drawing.Point(303, 186);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(95, 17);
-            this.lbl_total.TabIndex = 4;
-            this.lbl_total.Text = "Total Penjualan";
-            // 
-            // total_sales
-            // 
-            this.total_sales.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.total_sales.BackColor = System.Drawing.Color.Transparent;
-            this.total_sales.Br = System.Drawing.Color.White;
-            this.total_sales.Enabled = false;
-            this.total_sales.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.total_sales.ForeColor = System.Drawing.Color.DimGray;
-            this.total_sales.Location = new System.Drawing.Point(297, 214);
-            this.total_sales.Name = "total_sales";
-            this.total_sales.Radius = 6;
-            this.total_sales.Size = new System.Drawing.Size(164, 33);
-            this.total_sales.TabIndex = 5;
-            // 
-            // btn_addDetails
-            // 
-            this.btn_addDetails.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_addDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_addDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_addDetails.BorderRadius = 0;
-            this.btn_addDetails.ButtonText = "Tambah Detail";
-            this.btn_addDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_addDetails.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_addDetails.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_addDetails.Iconimage = global::POS.Properties.Resources.Add_white;
-            this.btn_addDetails.Iconimage_right = null;
-            this.btn_addDetails.Iconimage_right_Selected = null;
-            this.btn_addDetails.Iconimage_Selected = null;
-            this.btn_addDetails.IconMarginLeft = 0;
-            this.btn_addDetails.IconMarginRight = 0;
-            this.btn_addDetails.IconRightVisible = true;
-            this.btn_addDetails.IconRightZoom = 0D;
-            this.btn_addDetails.IconVisible = true;
-            this.btn_addDetails.IconZoom = 90D;
-            this.btn_addDetails.IsTab = false;
-            this.btn_addDetails.Location = new System.Drawing.Point(10, 384);
-            this.btn_addDetails.Name = "btn_addDetails";
-            this.btn_addDetails.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_addDetails.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_addDetails.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_addDetails.selected = false;
-            this.btn_addDetails.Size = new System.Drawing.Size(142, 33);
-            this.btn_addDetails.TabIndex = 204;
-            this.btn_addDetails.Text = "Tambah Detail";
-            this.btn_addDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_addDetails.Textcolor = System.Drawing.Color.White;
-            this.btn_addDetails.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addDetails.Click += new System.EventHandler(this.btn_addDetails_Click);
-            // 
-            // txt_customer_id
-            // 
-            this.txt_customer_id.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txt_customer_id.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_customer_id.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txt_customer_id.BorderThickness = 3;
-            this.txt_customer_id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_customer_id.Enabled = false;
-            this.txt_customer_id.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_customer_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_customer_id.isPassword = false;
-            this.txt_customer_id.Location = new System.Drawing.Point(200, 195);
-            this.txt_customer_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txt_customer_id.Name = "txt_customer_id";
-            this.txt_customer_id.Size = new System.Drawing.Size(10, 31);
-            this.txt_customer_id.TabIndex = 208;
-            this.txt_customer_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_customer_id.Visible = false;
-            // 
-            // txt_customer_show
-            // 
-            this.txt_customer_show.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_customer_show.BackColor = System.Drawing.Color.Transparent;
-            this.txt_customer_show.Br = System.Drawing.Color.White;
-            this.txt_customer_show.Enabled = false;
-            this.txt_customer_show.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.txt_customer_show.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_customer_show.Location = new System.Drawing.Point(4, 195);
-            this.txt_customer_show.Name = "txt_customer_show";
-            this.txt_customer_show.Radius = 6;
-            this.txt_customer_show.Size = new System.Drawing.Size(198, 33);
-            this.txt_customer_show.TabIndex = 209;
-            // 
-            // lbl_customer
-            // 
-            this.lbl_customer.AutoSize = true;
-            this.lbl_customer.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_customer.Location = new System.Drawing.Point(12, 172);
-            this.lbl_customer.Name = "lbl_customer";
-            this.lbl_customer.Size = new System.Drawing.Size(64, 17);
-            this.lbl_customer.TabIndex = 210;
-            this.lbl_customer.Text = "Customer";
-            // 
-            // btn_LovCustomer
-            // 
-            this.btn_LovCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_LovCustomer.Image = global::POS.Properties.Resources.guest_list_white;
-            this.btn_LovCustomer.ImageActive = null;
-            this.btn_LovCustomer.Location = new System.Drawing.Point(207, 195);
-            this.btn_LovCustomer.Name = "btn_LovCustomer";
-            this.btn_LovCustomer.Size = new System.Drawing.Size(49, 31);
-            this.btn_LovCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_LovCustomer.TabIndex = 211;
-            this.btn_LovCustomer.TabStop = false;
-            this.btn_LovCustomer.Zoom = 10;
-            this.btn_LovCustomer.Click += new System.EventHandler(this.btn_LovCustomer_Click);
-            // 
-            // txt_sales_discount
-            // 
-            this.txt_sales_discount.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txt_sales_discount.Location = new System.Drawing.Point(297, 132);
-            this.txt_sales_discount.Name = "txt_sales_discount";
-            this.txt_sales_discount.SignColor = System.Drawing.Color.White;
-            this.txt_sales_discount.Size = new System.Drawing.Size(164, 33);
-            this.txt_sales_discount.TabIndex = 212;
-            this.txt_sales_discount.Text = "altoNMUpDown2";
-            this.txt_sales_discount.Value = 0D;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label5.Location = new System.Drawing.Point(303, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 17);
-            this.label5.TabIndex = 213;
-            this.label5.Text = "Discount Penjualan (%)";
-            // 
-            // Main
-            // 
-            this.Main.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Main.Controls.Add(this.btn_addDetails);
-            this.Main.Controls.Add(this.groupBox2);
-            this.Main.Controls.Add(this.groupBox1);
-            this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main.Location = new System.Drawing.Point(0, 66);
-            this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(902, 425);
-            this.Main.TabIndex = 2;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txt_approvalcode);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txt_cardno);
-            this.groupBox2.Controls.Add(this.btn_clear);
-            this.groupBox2.Controls.Add(this.cb_idpayment);
-            this.groupBox2.Controls.Add(this.txt_customer_id);
-            this.groupBox2.Controls.Add(this.txt_salesNumber);
-            this.groupBox2.Controls.Add(this.txt_customer_show);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.lbl_customer);
-            this.groupBox2.Controls.Add(this.lbl_sales_Number);
-            this.groupBox2.Controls.Add(this.total_sales);
-            this.groupBox2.Controls.Add(this.cb_paymentType);
-            this.groupBox2.Controls.Add(this.btn_LovCustomer);
-            this.groupBox2.Controls.Add(this.lbl_Sales_Date);
-            this.groupBox2.Controls.Add(this.lbl_total);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_sales_discount);
-            this.groupBox2.Controls.Add(this.dt_salesdate);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.groupBox2.Location = new System.Drawing.Point(10, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(470, 373);
-            this.groupBox2.TabIndex = 217;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Penjualan";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label11.Location = new System.Drawing.Point(305, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 17);
-            this.label11.TabIndex = 222;
-            this.label11.Text = "Approval Code";
-            // 
-            // txt_approvalcode
-            // 
-            this.txt_approvalcode.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_approvalcode.BackColor = System.Drawing.Color.Transparent;
-            this.txt_approvalcode.Br = System.Drawing.Color.White;
-            this.txt_approvalcode.Enabled = false;
-            this.txt_approvalcode.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.txt_approvalcode.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_approvalcode.Location = new System.Drawing.Point(297, 50);
-            this.txt_approvalcode.Name = "txt_approvalcode";
-            this.txt_approvalcode.Radius = 6;
-            this.txt_approvalcode.Size = new System.Drawing.Size(164, 33);
-            this.txt_approvalcode.TabIndex = 221;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label10.Location = new System.Drawing.Point(12, 308);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 17);
-            this.label10.TabIndex = 220;
-            this.label10.Text = "Nomor Kartu";
-            // 
-            // txt_cardno
-            // 
-            this.txt_cardno.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_cardno.BackColor = System.Drawing.Color.Transparent;
-            this.txt_cardno.Br = System.Drawing.Color.White;
-            this.txt_cardno.Enabled = false;
-            this.txt_cardno.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.txt_cardno.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_cardno.Location = new System.Drawing.Point(4, 332);
-            this.txt_cardno.Name = "txt_cardno";
-            this.txt_cardno.Radius = 6;
-            this.txt_cardno.Size = new System.Drawing.Size(198, 33);
-            this.txt_cardno.TabIndex = 219;
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_clear.Image = global::POS.Properties.Resources.Cancel_white;
-            this.btn_clear.ImageActive = null;
-            this.btn_clear.Location = new System.Drawing.Point(252, 195);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(28, 31);
-            this.btn_clear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_clear.TabIndex = 218;
-            this.btn_clear.TabStop = false;
-            this.btn_clear.Zoom = 10;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // btn_update_master
-            // 
-            this.btn_update_master.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_update_master.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_update_master.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_update_master.BorderRadius = 0;
-            this.btn_update_master.ButtonText = "Perbarui Data Penjualan";
-            this.btn_update_master.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_update_master.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_update_master.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_master.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_update_master.Iconimage = global::POS.Properties.Resources.edit_white;
-            this.btn_update_master.Iconimage_right = null;
-            this.btn_update_master.Iconimage_right_Selected = null;
-            this.btn_update_master.Iconimage_Selected = null;
-            this.btn_update_master.IconMarginLeft = 0;
-            this.btn_update_master.IconMarginRight = 0;
-            this.btn_update_master.IconRightVisible = true;
-            this.btn_update_master.IconRightZoom = 0D;
-            this.btn_update_master.IconVisible = true;
-            this.btn_update_master.IconZoom = 60D;
-            this.btn_update_master.IsTab = false;
-            this.btn_update_master.Location = new System.Drawing.Point(100, 269);
-            this.btn_update_master.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btn_update_master.Name = "btn_update_master";
-            this.btn_update_master.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_update_master.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_update_master.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_update_master.selected = false;
-            this.btn_update_master.Size = new System.Drawing.Size(150, 44);
-            this.btn_update_master.TabIndex = 217;
-            this.btn_update_master.Text = "Perbarui Data Penjualan";
-            this.btn_update_master.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update_master.Textcolor = System.Drawing.Color.White;
-            this.btn_update_master.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_master.Click += new System.EventHandler(this.btn_update_master_Click);
-            // 
-            // cb_idpayment
-            // 
-            this.cb_idpayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cb_idpayment.BorderRadius = 3;
-            this.cb_idpayment.DisabledColor = System.Drawing.Color.Gray;
-            this.cb_idpayment.ForeColor = System.Drawing.Color.White;
-            this.cb_idpayment.Items = new string[0];
-            this.cb_idpayment.Location = new System.Drawing.Point(208, 292);
-            this.cb_idpayment.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cb_idpayment.Name = "cb_idpayment";
-            this.cb_idpayment.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cb_idpayment.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cb_idpayment.selectedIndex = -1;
-            this.cb_idpayment.Size = new System.Drawing.Size(10, 10);
-            this.cb_idpayment.TabIndex = 216;
-            this.cb_idpayment.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label6.Location = new System.Drawing.Point(12, 244);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 17);
-            this.label6.TabIndex = 215;
-            this.label6.Text = "Metode Pembayaran";
-            // 
-            // cb_paymentType
-            // 
-            this.cb_paymentType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cb_paymentType.BorderRadius = 3;
-            this.cb_paymentType.DisabledColor = System.Drawing.Color.Gray;
-            this.cb_paymentType.ForeColor = System.Drawing.Color.White;
-            this.cb_paymentType.Items = new string[0];
-            this.cb_paymentType.Location = new System.Drawing.Point(4, 269);
-            this.cb_paymentType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cb_paymentType.Name = "cb_paymentType";
-            this.cb_paymentType.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cb_paymentType.onHoverColor = System.Drawing.Color.Teal;
-            this.cb_paymentType.selectedIndex = -1;
-            this.cb_paymentType.Size = new System.Drawing.Size(198, 33);
-            this.cb_paymentType.TabIndex = 214;
-            this.cb_paymentType.onItemSelected += new System.EventHandler(this.cb_paymentType_onItemSelected);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lbl_change);
-            this.groupBox1.Controls.Add(this.btn_pay);
-            this.groupBox1.Controls.Add(this.txt_change);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.btn_update_master);
-            this.groupBox1.Controls.Add(this.lbl_payment);
-            this.groupBox1.Controls.Add(this.txt_paymentamount);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.groupBox1.Location = new System.Drawing.Point(497, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 374);
-            this.groupBox1.TabIndex = 216;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pembayaran";
-            // 
-            // lbl_change
-            // 
-            this.lbl_change.AutoSize = true;
-            this.lbl_change.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_change.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_change.Location = new System.Drawing.Point(17, 195);
-            this.lbl_change.Name = "lbl_change";
-            this.lbl_change.Size = new System.Drawing.Size(244, 54);
-            this.lbl_change.TabIndex = 13;
-            this.lbl_change.Text = "lorem ipsum";
-            // 
-            // btn_pay
-            // 
-            this.btn_pay.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_pay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_pay.BorderRadius = 0;
-            this.btn_pay.ButtonText = "Bayar";
-            this.btn_pay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pay.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_pay.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_pay.Iconimage = global::POS.Properties.Resources.checkout_white;
-            this.btn_pay.Iconimage_right = null;
-            this.btn_pay.Iconimage_right_Selected = null;
-            this.btn_pay.Iconimage_Selected = null;
-            this.btn_pay.IconMarginLeft = 0;
-            this.btn_pay.IconMarginRight = 0;
-            this.btn_pay.IconRightVisible = true;
-            this.btn_pay.IconRightZoom = 0D;
-            this.btn_pay.IconVisible = true;
-            this.btn_pay.IconZoom = 90D;
-            this.btn_pay.IsTab = false;
-            this.btn_pay.Location = new System.Drawing.Point(267, 269);
-            this.btn_pay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_pay.Name = "btn_pay";
-            this.btn_pay.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_pay.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_pay.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_pay.selected = false;
-            this.btn_pay.Size = new System.Drawing.Size(113, 45);
-            this.btn_pay.TabIndex = 12;
-            this.btn_pay.Text = "Bayar";
-            this.btn_pay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pay.Textcolor = System.Drawing.Color.White;
-            this.btn_pay.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
-            // 
-            // txt_change
-            // 
-            this.txt_change.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_change.BackColor = System.Drawing.Color.Transparent;
-            this.txt_change.Br = System.Drawing.Color.White;
-            this.txt_change.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_change.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_change.Location = new System.Drawing.Point(353, 172);
-            this.txt_change.Name = "txt_change";
-            this.txt_change.Radius = 6;
-            this.txt_change.Size = new System.Drawing.Size(16, 47);
-            this.txt_change.TabIndex = 11;
-            this.txt_change.TabStop = false;
-            this.txt_change.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label9.Location = new System.Drawing.Point(21, 172);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 17);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Kembalian";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label8.Location = new System.Drawing.Point(12, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 17);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Total Yang Harus Dibayarkan";
-            // 
-            // lbl_payment
-            // 
-            this.lbl_payment.AutoSize = true;
-            this.lbl_payment.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_payment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_payment.Location = new System.Drawing.Point(6, 45);
-            this.lbl_payment.Name = "lbl_payment";
-            this.lbl_payment.Size = new System.Drawing.Size(244, 54);
-            this.lbl_payment.TabIndex = 8;
-            this.lbl_payment.Text = "lorem ipsum";
-            // 
-            // txt_paymentamount
-            // 
-            this.txt_paymentamount.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_paymentamount.BackColor = System.Drawing.Color.Transparent;
-            this.txt_paymentamount.Br = System.Drawing.Color.White;
-            this.txt_paymentamount.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_paymentamount.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_paymentamount.Location = new System.Drawing.Point(15, 132);
-            this.txt_paymentamount.Name = "txt_paymentamount";
-            this.txt_paymentamount.Radius = 6;
-            this.txt_paymentamount.Size = new System.Drawing.Size(164, 33);
-            this.txt_paymentamount.TabIndex = 7;
-            this.txt_paymentamount.TextChanged += new System.EventHandler(this.txt_paymentamount_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label7.Location = new System.Drawing.Point(21, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Jumlah Pembayaran";
-            // 
             // FormADDSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1032,16 +1034,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_detail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.upper_panel.ResumeLayout(false);
-            this.upper_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_salesdetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_LovCustomer)).EndInit();
             this.Main.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_LovCustomer)).EndInit();
+            this.upper_panel.ResumeLayout(false);
+            this.upper_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_salesdetail)).EndInit();
             this.ResumeLayout(false);
 
         }

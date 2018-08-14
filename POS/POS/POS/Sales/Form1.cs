@@ -1,4 +1,5 @@
 ﻿using POS.DB;
+using POS.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,8 +53,8 @@ namespace POS
 
         private void btn_add_sales_Click(object sender, EventArgs e)
         {
-            FormADDSales add = new FormADDSales("add");
-            add.RefreshDgv += new FormADDSales.DoEvent(Load_Data_Sales);
+            FormCashier add = new FormCashier("add");
+            add.RefreshDgv += new FormCashier.DoEvent(Load_Data_Sales);
             //dataGridView1.Columns[0].Visible = false;
             add.ShowDialog();
         }

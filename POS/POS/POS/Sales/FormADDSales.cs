@@ -773,8 +773,17 @@ namespace POS
             cetakfaktur();
         }
 
+
         #endregion
 
+        private void Main_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void total_sales_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -260,6 +260,12 @@
     <Compile Include="Reports\RPT_LossProfitViewer.Designer.cs">
       <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales\FormCashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\FormCashier.Designer.cs">
+      <DependentUpon>FormCashier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales\InvoiceViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,12 @@
       <DependentUpon>rEPORTiNVOICE.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Sales\tesform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\tesform.Designer.cs">
+      <DependentUpon>tesform.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SystemAdmin\FormAddUsers.cs">
@@ -391,6 +403,9 @@
     <EmbeddedResource Include="Reports\RPT_LossProfitViewer.resx">
       <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sales\FormCashier.resx">
+      <DependentUpon>FormCashier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales\InvoiceViewer.resx">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,11 +414,15 @@
     <None Include="Resources\Paint Palette_48px.png" />
     <None Include="Resources\Sales Performance_48px.png" />
     <None Include="Resources\Add User Male_48px.png" />
+    <None Include="Resources\Money_48px.png" />
     <Content Include="Sales\rEPORTiNVOICE.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rEPORTiNVOICE.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Sales\tesform.resx">
+      <DependentUpon>tesform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SystemAdmin\FormAddUsers.resx">
       <DependentUpon>FormAddUsers.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,6 +6,7 @@ using POS.Master.Supplier;
 using POS.Purchasing;
 using POS.Receiving;
 using POS.Reports;
+using POS.Sales;
 using POS.Tools;
 using System;
 using System.Collections.Generic;
@@ -199,7 +200,7 @@ namespace POS.SystemAdmin
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-            FormADDSales sl = new FormADDSales("cashier");
+            FormCashier sl = new FormCashier("cashier");
             sl.ShowDialog();
         }
 

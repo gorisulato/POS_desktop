@@ -81,3 +81,5 @@ E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPTSalesPeriodic.cs
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Reports.ReportViewer.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.SystemAdmin.UserList.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.SystemAdmin.FormAddUsers.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Sales.tesform.resources
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Sales.FormCashier.resources

@@ -50,6 +50,7 @@ namespace POS.Sales
             style._primaryButton(btn_save);
             txt_sales_discount.Text = "0";
             dg_detail.MultiSelect = false;
+            dt_salesdate.Value = DateTime.Now;
             if (type1 == "add" || type1 == "cashier")
             {
                 dg_detail.Columns.Add("id", "idbarang");

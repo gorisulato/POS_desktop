@@ -57,6 +57,7 @@
             this.editPenjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ds_sales = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelsearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.searchbox.SuspendLayout();
@@ -72,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_sales)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelsearch
@@ -318,9 +320,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dg_sales);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 96);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 504);
@@ -449,7 +451,7 @@
             this.dg_sales.Location = new System.Drawing.Point(0, 0);
             this.dg_sales.Name = "dg_sales";
             this.dg_sales.ReadOnly = true;
-            this.dg_sales.Size = new System.Drawing.Size(900, 504);
+            this.dg_sales.Size = new System.Drawing.Size(900, 457);
             this.dg_sales.TabIndex = 2;
             this.dg_sales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_sales_CellClick);
             this.dg_sales.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg_sales_CellMouseUp);
@@ -477,6 +479,15 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panelsearch;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dg_sales);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(900, 457);
+            this.panel3.TabIndex = 13;
             // 
             // sales_list
             // 
@@ -511,6 +522,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_sales)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -545,6 +557,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_last;
         private Bunifu.Framework.UI.BunifuFlatButton btnresetsearch;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

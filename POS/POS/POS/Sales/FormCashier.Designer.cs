@@ -44,6 +44,7 @@
             this.lbl_Sales_Date = new System.Windows.Forms.Label();
             this.dt_salesdate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_payment_afterdiscount = new AltoControls.AltoTextBox();
             this.txt_sales_discount = new AltoControls.AltoTextBox();
             this.total_sales = new AltoControls.AltoTextBox();
             this.btn_pay = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -71,7 +72,6 @@
             this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_payment_afterdiscount = new AltoControls.AltoTextBox();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -304,12 +304,27 @@
             this.groupBox2.Controls.Add(this.cb_idpayment);
             this.groupBox2.Controls.Add(this.txt_cardno);
             this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(372, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(504, 307);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Payment";
+            // 
+            // txt_payment_afterdiscount
+            // 
+            this.txt_payment_afterdiscount.ALG = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_payment_afterdiscount.BackColor = System.Drawing.Color.Transparent;
+            this.txt_payment_afterdiscount.Br = System.Drawing.Color.White;
+            this.txt_payment_afterdiscount.Enabled = false;
+            this.txt_payment_afterdiscount.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txt_payment_afterdiscount.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_payment_afterdiscount.Location = new System.Drawing.Point(194, 260);
+            this.txt_payment_afterdiscount.Name = "txt_payment_afterdiscount";
+            this.txt_payment_afterdiscount.Radius = 6;
+            this.txt_payment_afterdiscount.Size = new System.Drawing.Size(10, 29);
+            this.txt_payment_afterdiscount.TabIndex = 237;
             // 
             // txt_sales_discount
             // 
@@ -350,6 +365,7 @@
             this.btn_pay.ButtonText = "Bayar";
             this.btn_pay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pay.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btn_pay.Iconcolor = System.Drawing.Color.Transparent;
             this.btn_pay.Iconimage = global::POS.Properties.Resources.Money_48px;
             this.btn_pay.Iconimage_right = null;
@@ -563,12 +579,13 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dg_detail);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(3, 316);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(873, 170);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Data Items";
             // 
             // dg_detail
             // 
@@ -577,10 +594,10 @@
             this.dg_detail.AllowUserToOrderColumns = true;
             this.dg_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_detail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dg_detail.Location = new System.Drawing.Point(3, 16);
+            this.dg_detail.Location = new System.Drawing.Point(3, 25);
             this.dg_detail.Name = "dg_detail";
             this.dg_detail.ReadOnly = true;
-            this.dg_detail.Size = new System.Drawing.Size(867, 151);
+            this.dg_detail.Size = new System.Drawing.Size(867, 142);
             this.dg_detail.TabIndex = 3;
             // 
             // upper_panel
@@ -602,9 +619,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_Batal);
             this.flowLayoutPanel1.Controls.Add(this.btn_exit);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(456, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(432, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 66);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(462, 66);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btn_save
@@ -640,6 +657,7 @@
             this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_save.Textcolor = System.Drawing.Color.White;
             this.btn_save.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_print
             // 
@@ -674,6 +692,7 @@
             this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_print.Textcolor = System.Drawing.Color.White;
             this.btn_print.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_Batal
             // 
@@ -708,6 +727,8 @@
             this.btn_Batal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Batal.Textcolor = System.Drawing.Color.White;
             this.btn_Batal.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Batal.Visible = false;
+            this.btn_Batal.Click += new System.EventHandler(this.btn_Batal_Click);
             // 
             // btn_exit
             // 
@@ -755,20 +776,6 @@
             this.label1.Size = new System.Drawing.Size(88, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kasir";
-            // 
-            // txt_payment_afterdiscount
-            // 
-            this.txt_payment_afterdiscount.ALG = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_payment_afterdiscount.BackColor = System.Drawing.Color.Transparent;
-            this.txt_payment_afterdiscount.Br = System.Drawing.Color.White;
-            this.txt_payment_afterdiscount.Enabled = false;
-            this.txt_payment_afterdiscount.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_payment_afterdiscount.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_payment_afterdiscount.Location = new System.Drawing.Point(194, 260);
-            this.txt_payment_afterdiscount.Name = "txt_payment_afterdiscount";
-            this.txt_payment_afterdiscount.Radius = 6;
-            this.txt_payment_afterdiscount.Size = new System.Drawing.Size(10, 29);
-            this.txt_payment_afterdiscount.TabIndex = 237;
             // 
             // FormCashier
             // 

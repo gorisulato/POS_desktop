@@ -216,6 +216,12 @@
     <Compile Include="Purchasing\FormAddPO.Designer.cs">
       <DependentUpon>FormAddPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchasing\POPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\POPrint.Designer.cs">
+      <DependentUpon>POPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchasing\PurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,13 @@
     </Compile>
     <Compile Include="Reports\RPT_LossProfitViewer.Designer.cs">
       <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RPT_PO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_PO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Sales\FormCashier.cs">
       <SubType>Form</SubType>
@@ -378,6 +391,9 @@
     <EmbeddedResource Include="Purchasing\FormAddPO.resx">
       <DependentUpon>FormAddPO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\POPrint.resx">
+      <DependentUpon>POPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Purchasing\PurchaseOrder.resx">
       <DependentUpon>PurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +419,11 @@
     <EmbeddedResource Include="Reports\RPT_LossProfitViewer.resx">
       <DependentUpon>RPT_LossProfitViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Reports\RPT_PO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PO.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Sales\FormCashier.resx">
       <DependentUpon>FormCashier.cs</DependentUpon>
     </EmbeddedResource>

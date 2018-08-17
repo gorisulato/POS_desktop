@@ -10,22 +10,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POS.Reports
+namespace POS.Purchasing
 {
-    public partial class RPT_LossProfitViewer : Form
+    public partial class POPrint : Form
     {
+
         ReportDocument rpt = new ReportDocument();
         ParameterFields parameter = new ParameterFields();
         ConnectionInfo info = new ConnectionInfo();
         UtilityClass Util = new UtilityClass();
-        public RPT_LossProfitViewer()
+        string PONumber;
+        public POPrint(string pono)
         {
+            PONumber = pono;
             InitializeComponent();
         }
 
-        private void btn_submit_Click(object sender, EventArgs e)
+        private void POPrint_Load(object sender, EventArgs e)
         {
-            rpt.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Reports\\RPT_LossProfit.rpt");
+            rpt.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Reports\\RPT_PO.rpt");
 
             try
             {
@@ -47,40 +50,30 @@ namespace POS.Reports
 
 
 
-                ParameterField paramMonth = new ParameterField();
-                ParameterDiscreteValue paramMonthindex = new ParameterDiscreteValue();
-                paramMonthindex.Value = cb_month.selectedIndex+1;
-                paramMonth.Name = "@month";
-                paramMonth.CurrentValues.Add(paramMonthindex);
-
-                ParameterField paramYear = new ParameterField();
-                ParameterDiscreteValue paramYearIndex = new ParameterDiscreteValue();
-                paramYearIndex.Value = int.Parse(txt_year.Text);
-                paramYear.Name = "@year";
-                paramYear.CurrentValues.Add(paramYearIndex);
-                parameter.Add(paramYear);
-
-
-
-                parameter.Add(paramMonth);
+                ParameterField paramSales = new ParameterField();
+                ParameterDiscreteValue paramsalesNo = new ParameterDiscreteValue();
+                paramsalesNo.Value = PONumber;
+                paramSales.Name = "@POno";
+                paramSales.CurrentValues.Add(paramsalesNo);
 
 
 
 
-                lossprofitviewer.ParameterFieldInfo = parameter;
-                Util.AssignConnectionInfo(rpt, info, lossprofitviewer);
-                lossprofitviewer.ReportSource = rpt;
+
+                parameter.Add(paramSales);
+
+
+
+
+                POReportViewer.ParameterFieldInfo = parameter;
+                Util.AssignConnectionInfo(rpt, info, POReportViewer);
+                POReportViewer.ReportSource = rpt;
             }
             catch (Exception z)
             {
 
                 MessageBox.Show("Info", z.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void RPT_LossProfitViewer_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

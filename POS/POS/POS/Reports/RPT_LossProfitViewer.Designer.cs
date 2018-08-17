@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lossprofitviewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btn_submit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_year = new AltoControls.AltoTextBox();
             this.cb_month = new Bunifu.Framework.UI.BunifuDropdown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lossprofitviewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,28 +53,25 @@
             this.panel1.Size = new System.Drawing.Size(718, 82);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.Controls.Add(this.lossprofitviewer);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 82);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(718, 298);
-            this.panel2.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label1.Location = new System.Drawing.Point(223, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 219;
+            this.label1.Text = "Periode Tahun";
             // 
-            // lossprofitviewer
+            // label6
             // 
-            this.lossprofitviewer.ActiveViewIndex = -1;
-            this.lossprofitviewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lossprofitviewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lossprofitviewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lossprofitviewer.Location = new System.Drawing.Point(0, 0);
-            this.lossprofitviewer.Name = "lossprofitviewer";
-            this.lossprofitviewer.ShowGroupTreeButton = false;
-            this.lossprofitviewer.ShowParameterPanelButton = false;
-            this.lossprofitviewer.Size = new System.Drawing.Size(718, 298);
-            this.lossprofitviewer.TabIndex = 1;
-            this.lossprofitviewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 17);
+            this.label6.TabIndex = 218;
+            this.label6.Text = "Periode Bulan";
             // 
             // btn_submit
             // 
@@ -152,25 +149,28 @@
             this.cb_month.Size = new System.Drawing.Size(198, 33);
             this.cb_month.TabIndex = 217;
             // 
-            // label6
+            // panel2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label6.Location = new System.Drawing.Point(12, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 17);
-            this.label6.TabIndex = 218;
-            this.label6.Text = "Periode Bulan";
+            this.panel2.Controls.Add(this.lossprofitviewer);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 82);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(718, 298);
+            this.panel2.TabIndex = 1;
             // 
-            // label1
+            // lossprofitviewer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label1.Location = new System.Drawing.Point(223, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 219;
-            this.label1.Text = "Periode Tahun";
+            this.lossprofitviewer.ActiveViewIndex = -1;
+            this.lossprofitviewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lossprofitviewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lossprofitviewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lossprofitviewer.Location = new System.Drawing.Point(0, 0);
+            this.lossprofitviewer.Name = "lossprofitviewer";
+            this.lossprofitviewer.ShowGroupTreeButton = false;
+            this.lossprofitviewer.ShowParameterPanelButton = false;
+            this.lossprofitviewer.Size = new System.Drawing.Size(718, 298);
+            this.lossprofitviewer.TabIndex = 1;
+            this.lossprofitviewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // RPT_LossProfitViewer
             // 
@@ -181,6 +181,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "RPT_LossProfitViewer";
             this.Text = "RPT_LossProfitViewer";
+            this.Load += new System.EventHandler(this.RPT_LossProfitViewer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

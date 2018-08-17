@@ -59,6 +59,9 @@
             this.btn_addItems = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txt_items_id = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).BeginInit();
@@ -68,6 +71,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_po_detail)).BeginInit();
             this.panel4.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -78,8 +82,8 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::POS.Properties.Resources.upper;
-            this.panel1.Controls.Add(this.btn_Batal);
-            this.panel1.Controls.Add(this.btn_exit);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -107,7 +111,7 @@
             this.btn_Batal.IconVisible = true;
             this.btn_Batal.IconZoom = 90D;
             this.btn_Batal.IsTab = false;
-            this.btn_Batal.Location = new System.Drawing.Point(633, 6);
+            this.btn_Batal.Location = new System.Drawing.Point(137, 3);
             this.btn_Batal.Name = "btn_Batal";
             this.btn_Batal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Batal.OnHovercolor = System.Drawing.Color.Teal;
@@ -142,7 +146,7 @@
             this.btn_exit.IconVisible = true;
             this.btn_exit.IconZoom = 90D;
             this.btn_exit.IsTab = false;
-            this.btn_exit.Location = new System.Drawing.Point(767, 6);
+            this.btn_exit.Location = new System.Drawing.Point(271, 3);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exit.OnHovercolor = System.Drawing.Color.Teal;
@@ -283,6 +287,7 @@
             this.txt_PurchaseNumber.Radius = 6;
             this.txt_PurchaseNumber.Size = new System.Drawing.Size(196, 33);
             this.txt_PurchaseNumber.TabIndex = 3;
+            this.txt_PurchaseNumber.TextChanged += new System.EventHandler(this.txt_PurchaseNumber_TextChanged);
             // 
             // lbl_sales_Number
             // 
@@ -629,6 +634,65 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
+            // btn_print
+            // 
+            this.btn_print.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_print.BorderRadius = 0;
+            this.btn_print.ButtonText = "Cetak PO";
+            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_print.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_print.Iconimage = global::POS.Properties.Resources.Print_100px;
+            this.btn_print.Iconimage_right = null;
+            this.btn_print.Iconimage_right_Selected = null;
+            this.btn_print.Iconimage_Selected = null;
+            this.btn_print.IconMarginLeft = 0;
+            this.btn_print.IconMarginRight = 0;
+            this.btn_print.IconRightVisible = true;
+            this.btn_print.IconRightZoom = 0D;
+            this.btn_print.IconVisible = true;
+            this.btn_print.IconZoom = 90D;
+            this.btn_print.IsTab = false;
+            this.btn_print.Location = new System.Drawing.Point(3, 3);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_print.OnHovercolor = System.Drawing.Color.Teal;
+            this.btn_print.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_print.selected = false;
+            this.btn_print.Size = new System.Drawing.Size(128, 42);
+            this.btn_print.TabIndex = 8;
+            this.btn_print.Text = "Cetak PO";
+            this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print.Textcolor = System.Drawing.Color.White;
+            this.btn_print.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.btn_print);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Batal);
+            this.flowLayoutPanel1.Controls.Add(this.btn_exit);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(496, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(410, 54);
+            this.flowLayoutPanel1.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 45);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Pembelian";
+            // 
             // FormAddPO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,6 +710,7 @@
             this.Load += new System.EventHandler(this.FormAddPO_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormAddPO_KeyDown);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).EndInit();
@@ -656,6 +721,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_po_detail)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -692,5 +758,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_addItems;
         public Bunifu.Framework.UI.BunifuMetroTextbox txt_items_id;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_print;
+        private System.Windows.Forms.Label label1;
     }
 }

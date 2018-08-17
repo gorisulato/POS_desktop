@@ -403,7 +403,11 @@ namespace POS.Sales
                         {
                             
                             txt_salesNumber.Text = generated;
-                            insertdetail();
+                            if (dg_detail.RowCount > 0)
+                            {
+                                insertdetail();
+                            }
+                            
 
 
                         }
@@ -528,6 +532,91 @@ namespace POS.Sales
         {
             txt_change.Text = (float.Parse(txt_paymentamount.Text == "" ? "0" : txt_paymentamount.Text) - float.Parse(txt_payment_afterdiscount.Text)).ToString();
             lbl_change.Text = "Rp" + " " + string.Format("{0:n}", float.Parse(txt_change.Text));
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            payment();
+        }
+
+        private void btn_Batal_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Anda Yakin Membatalkan Penjualan", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+              
+              
+                btn_Batal.Visible = false;
+               
+
+                deleteall();
+
+                this.Close();
+                this.RefreshDgv();
+
+
+            }
+        }
+
+        public void deleteall()
+        {
+            try
+            {
+                var sales = Point_Of_SalesEntities.TSales.Where(s => s.Sales_Number == txt_salesNumber.Text).First();
+                sales.is_deleted = true;
+                sales.deleted_date = DateTime.Now;
+                sales.deleted_by = Properties.Settings.Default._userID;
+
+                Point_Of_SalesEntities.SaveChanges();
+
+                //AffectedRows = Point_Of_SalesEntities.SaveChanges();
+
+
+                if (dg_detail.RowCount > 0)
+                {
+                    var detail = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Number == sales.TSales_id).ToList();
+                    var detail2 = detail.Select(x => new {
+
+                        x.Sales_Detail_id
+                    }).ToArray();
+
+                    for (int i = 0; i < detail2.Length; i++)
+                    {
+                        var detailid = Convert.ToInt32(detail2[i].Sales_Detail_id);
+                        var detaildeleted = Point_Of_SalesEntities.TSalesDetails.Where(s => s.Sales_Detail_id == detailid).First();
+                        detaildeleted.is_deleted = true;
+                        detaildeleted.deleted_by = Properties.Settings.Default._userID;
+                        detaildeleted.deleted_date = DateTime.Now;
+                        Point_Of_SalesEntities.SaveChanges();
+                    }
+
+                    Point_Of_SalesEntities.SaveChanges();
+                }
+
+
+                AffectedRows = Point_Of_SalesEntities.SaveChanges();
+                if (AffectedRows > 0)
+                {
+                    MessageBox.Show("Penjualan Dibatalkan", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                }
+
+            }
+            catch (Exception d)
+            {
+
+                MessageBox.Show(d.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            cetakfaktur();
         }
     }
 }

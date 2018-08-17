@@ -1,4 +1,5 @@
 ﻿using POS.DB;
+using POS.Purchasing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,15 @@ namespace POS.Purchasing
         #region Load Data
         private void FormAddPO_Load(object sender, EventArgs e)
         {
-            this.KeyPreview = true;
+            if (txt_PurchaseNumber.Text!="")
+            {
+                btn_print.Visible = true;
+            }
+            else
+            {
+                btn_print.Visible = false;
+            }
+                this.KeyPreview = true;
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
             dg_po_detail.MultiSelect = false;
             if (Type == "add")
@@ -533,10 +542,27 @@ namespace POS.Purchasing
         }
 
 
+
+
+
         #endregion
 
-     
-       
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            POPrint pr = new POPrint(txt_PurchaseNumber.Text);
+            pr.ShowDialog();
+        }
 
+        private void txt_PurchaseNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_PurchaseNumber.Text == "")
+            {
+                btn_print.Visible = false;
+            }
+            else
+            {
+                btn_print.Visible = true;
+            }
+        }
     }
 }

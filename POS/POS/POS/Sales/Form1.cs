@@ -90,8 +90,8 @@ namespace POS
         {
             if (indexDatagrid != "")
             {
-                FormADDSales add = new FormADDSales(indexDatagrid,"edit");
-                add.RefreshDgv += new FormADDSales.DoEvent(Load_Data_Sales);
+                FormCashier add = new FormCashier(indexDatagrid,"edit");
+                add.RefreshDgv += new FormCashier.DoEvent(Load_Data_Sales);
                 //dataGridView1.Columns[0].Visible = false;
                 add.ShowDialog();
             }
@@ -134,7 +134,7 @@ namespace POS
 
             if (stat == 0)
             {
-                total_records = Point_Of_SalesEntities.TReceiveingStocks.Where(x => x.is_deleted == false).Count();
+                total_records = Point_Of_SalesEntities.TSales.Where(x => x.is_deleted == false).Count();
             }
             else
             {

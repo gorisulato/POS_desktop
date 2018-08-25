@@ -504,6 +504,7 @@
             this.Controls.Add(this.panelsearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReceivingList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receiving";
             this.Load += new System.EventHandler(this.Receiving_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ds_sales)).EndInit();

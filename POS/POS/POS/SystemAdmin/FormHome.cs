@@ -72,7 +72,7 @@ namespace POS.SystemAdmin
                 panel_sub_submenu_modifysales.Visible = true;
                 panel_label_pembelian.Visible = false;
                 panel_pembelian.Visible = false;
-                panel_submenu_customer.Visible = true;
+                //panel_submenu_customer.Visible = true;
                 panel_sub_menu_supplier.Visible = false;
                 panel_sub_Menu_warna.Visible = false;
                 panel_submenu_beban.Visible = false;
@@ -87,7 +87,7 @@ namespace POS.SystemAdmin
                 panel_label_sales.Visible = false;
                 panel_label_pembelian.Visible = true;
                 panel_pembelian.Visible = true;
-                panel_submenu_customer.Visible = false;
+                //panel_submenu_customer.Visible = false;
                 panel_sub_menu_supplier.Visible = true;
                 panel_sub_Menu_warna.Visible = false;
                 panel_submenu_beban.Visible = false;
@@ -104,7 +104,7 @@ namespace POS.SystemAdmin
                 panelmastermenu.Visible = false;
                 panelexpandablemaster.Visible = false;
                 panel_pembelian.Visible = false;
-                panel_submenu_customer.Visible = false;
+                //panel_submenu_customer.Visible = false;
                 panel_sub_menu_supplier.Visible = false;
                 panel_sub_Menu_warna.Visible = false;
                 panel_submenu_beban.Visible = false;
@@ -118,7 +118,7 @@ namespace POS.SystemAdmin
                 panel_label_pembelian.Visible = false;
                 panel_sales.Visible = false;
                 panel_label_sales.Visible = false;
-                panel_submenu_customer.Visible = false;
+                //panel_submenu_customer.Visible = false;
                 panel_sub_menu_supplier.Visible = false;
                 panel_submenu_inventory.Visible = false;
                 panel_sub_Menu_warna.Visible = false;

@@ -42,17 +42,29 @@ namespace POS.Sales
         private void FormCashier_Load(object sender, EventArgs e)
         {
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
+            dg_detail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dg_detail.MultiSelect = false;
+            dt_salesdate.Value = DateTime.Now;
             style._primaryButton(btn_print);
             style._primaryButton(btn_addItems);
             style._primaryButton(btn_Batal);
             style._primaryButton(btn_exit);
             style._primaryButton(btn_pay);
             style._primaryButton(btn_save);
+            style._primaryButton(btn_New);
             txt_sales_discount.Text = "0";
-            dg_detail.MultiSelect = false;
-            dt_salesdate.Value = DateTime.Now;
+            LoadDatagrid();
+        }
+        private void LoadDatagrid()
+        {
+            
+
+         
             if (type1 == "add" || type1 == "cashier")
             {
+                dg_detail.DataSource = null;
+                dg_detail.Rows.Clear();
+                dg_detail.Columns.Clear();
                 dg_detail.Columns.Add("id", "idbarang");
                 dg_detail.Columns.Add("KodeBrg", "Kode Barang");
                 dg_detail.Columns.Add("Nama", "Nama Barang");
@@ -61,11 +73,20 @@ namespace POS.Sales
                 dg_detail.Columns.Add("Subtotal", "Subtotal");
                 lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", 0);
                 lbl_change.Text = "Rp" + " " + string.Format("{0:n}", 0);
-                btn_Batal.Visible = false;
+               panel_cancel.Visible = false;
                 dg_detail.AllowUserToDeleteRows = true;
+                // Util.ClearTextBoxes(this.Controls);
+                txt_items_show.Text = "";
+                txt_items_id.Text = "";
+                txt_qty.Value = 0;
+                txt_sales_discount.Text = "0";
+                total_sales.Text = "0";
+                txt_paymentamount.Text = "0";
+                txt_payment_afterdiscount.Text = "0";
+                txt_salesNumber.Text = "";
                 dg_detail.Columns[0].Visible = false;
-               
-                
+
+
                 LoadPaymentType();
             }
             else
@@ -92,7 +113,7 @@ namespace POS.Sales
                 }
                 txt_salesNumber.Text = loadsales.Sales_Number;
                 dt_salesdate.Value = loadsales.SalesDate;
-              
+
                 cb_idpayment.selectedIndex = pt;
                 cb_paymentType.selectedIndex = pt;
                 txt_approvalcode.Text = loadsales.Approval_No;
@@ -104,8 +125,8 @@ namespace POS.Sales
                 var z = loadsales.PaymentAmount != 0 ? loadsales.PaymentAmount : 0;
                 txt_paymentamount.Text = z.ToString();
                 txt_change.Text = loadsales.Change.ToString();
-                btn_Batal.Visible = true;
-               
+                panel_cancel.Visible = true;
+
                 Load_datadetail();
             }
         }
@@ -307,9 +328,14 @@ namespace POS.Sales
 
         private void total_sales_TextChanged(object sender, EventArgs e)
         {
-            var diskon =  (Convert.ToInt32(Convert.ToInt32(total_sales.Text)) * Convert.ToInt32(txt_sales_discount.Text) / 100);
-            lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", Convert.ToInt32(total_sales.Text)-diskon);
-            txt_payment_afterdiscount.Text = (Convert.ToInt32(total_sales.Text) - diskon).ToString();
+            if (total_sales.Text != "" && txt_sales_discount.Text!="")
+            {
+                var diskon = (Convert.ToInt32(Convert.ToInt32(total_sales.Text)) * Convert.ToInt32(txt_sales_discount.Text) / 100);
+                lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", Convert.ToInt32(total_sales.Text) - diskon);
+                txt_payment_afterdiscount.Text = (Convert.ToInt32(total_sales.Text) - diskon).ToString();
+            }
+            
+       
         }
 
         private void txt_sales_discount_KeyPress(object sender, KeyPressEventArgs e)
@@ -324,16 +350,34 @@ namespace POS.Sales
         {
             if (total_sales.Text != "")
             {
-                var diskon = (Convert.ToInt32(Convert.ToInt32(total_sales.Text)) * Convert.ToInt32(txt_sales_discount.Text) / 100);
-                lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", Convert.ToInt32(total_sales.Text) - diskon);
-                txt_payment_afterdiscount.Text = (Convert.ToInt32(total_sales.Text) - diskon).ToString();
+                if (txt_sales_discount.Text != "")
+                {
+                    var diskon = (Convert.ToInt32(Convert.ToInt32(total_sales.Text)) * Convert.ToInt32(txt_sales_discount.Text) / 100);
+                    lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", Convert.ToInt32(total_sales.Text) - diskon);
+                    txt_payment_afterdiscount.Text = (Convert.ToInt32(total_sales.Text) - diskon).ToString();
+                    if (cb_paymentType.selectedValue != "Cash")
+                    {
+                        txt_paymentamount.Text = (Convert.ToInt32(total_sales.Text) - diskon).ToString();
+                    }
+                }
+               
+               
             }
         }
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            payment();
-            cetakfaktur();
+            if (Convert.ToInt32(txt_change.Text) >= 0)
+            {
+                payment();
+                cetakfaktur();
+            }
+            else
+            {
+                MessageBox.Show("Pembayaran Kurang Dari Jumlah Belanja!!!", "Pembayaran Kurang", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+
         }
         public void cetakfaktur()
         {
@@ -526,10 +570,34 @@ namespace POS.Sales
         private void cb_paymentType_onItemSelected(object sender, EventArgs e)
         {
             cb_idpayment.selectedIndex = cb_paymentType.selectedIndex;
+            if (cb_paymentType.selectedValue != "Cash")
+            {
+                txt_cardno.Enabled = true;
+                txt_approvalcode.Enabled = true;
+                if (total_sales.Text != "")
+                {
+                    if (txt_sales_discount.Text != "")
+                    {
+                        var diskon = (Convert.ToInt32(Convert.ToInt32(total_sales.Text)) * Convert.ToInt32(txt_sales_discount.Text) / 100);
+                       // lbl_payment.Text = "Rp" + " " + string.Format("{0:n}", Convert.ToInt32(total_sales.Text) - diskon);
+                        txt_paymentamount.Text = (Convert.ToInt32(total_sales.Text) - diskon).ToString();
+                    }
+
+                }
+            }
+            else
+            {
+                txt_cardno.Enabled = false;
+                txt_approvalcode.Enabled = false;
+                txt_cardno.Text = "";
+                txt_approvalcode.Text = "";
+            }
+        
         }
 
         private void txt_paymentamount_TextChanged(object sender, EventArgs e)
         {
+   
             txt_change.Text = (float.Parse(txt_paymentamount.Text == "" ? "0" : txt_paymentamount.Text) - float.Parse(txt_payment_afterdiscount.Text)).ToString();
             lbl_change.Text = "Rp" + " " + string.Format("{0:n}", float.Parse(txt_change.Text));
         }
@@ -545,9 +613,9 @@ namespace POS.Sales
 
             if (dr == DialogResult.Yes)
             {
-              
-              
-                btn_Batal.Visible = false;
+
+
+                panel_cancel.Visible = false;
                
 
                 deleteall();
@@ -617,6 +685,22 @@ namespace POS.Sales
         private void btn_print_Click(object sender, EventArgs e)
         {
             cetakfaktur();
+        }
+
+        private void dg_detail_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dg_detail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void txt_sales_discount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_New_Click(object sender, EventArgs e)
+        {
+            type1 = "cashier";
+            LoadDatagrid();
         }
     }
 }

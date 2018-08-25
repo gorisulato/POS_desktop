@@ -279,10 +279,18 @@ namespace POS.Receiving
                     }
                     dg_Rc.DataSource = dt;
                     dg_Rc.Refresh();
-                    //dg_Rc.Columns[0].Visible = false;
-
+                    dg_Rc.Columns[0].Visible = false;
+                    dg_Rc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     Util.dtreader.Close();
                     Util.connection.Close();
+                    foreach (DataGridViewRow row in dg_Rc.Rows)
+                    {
+                        row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                        row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+
+
+
+                    }
                 }
             }
             catch (Exception z)

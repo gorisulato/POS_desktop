@@ -203,10 +203,18 @@ namespace POS.Purchasing
                     }
                     dg_Po.DataSource = dt;
                     dg_Po.Refresh();
-                    //dg_Po.Columns[0].Visible = false;
-
+                    dg_Po.Columns[0].Visible = false;
+                    dg_Po.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     Util.dtreader.Close();
                     Util.connection.Close();
+                    foreach (DataGridViewRow row in dg_Po.Rows)
+                    {
+                        row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                        row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+
+
+
+                    }
                 }
             }
             catch (Exception z)

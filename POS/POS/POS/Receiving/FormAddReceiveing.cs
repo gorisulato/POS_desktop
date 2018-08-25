@@ -14,6 +14,9 @@ namespace POS.Receiving
 {
     public partial class FormAddReceiveing : Form
     {
+        int insert = 0;
+        int changeable = 0;
+        int checkeds=0;
         int status = 0;
         int indexdetail = 0;
         int AffectedRows = 0;
@@ -41,21 +44,31 @@ namespace POS.Receiving
         {
             this.KeyPreview = true;
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
+            btn_lov_po.Enabled = true;
+            btn_clearPo.Enabled = true;
             dg_rc_detail.MultiSelect = false;
+            dt_Rcdate.Value = DateTime.Now;
             if (Type == "add")
             {
-                btn_Batal.Visible = false;
-                panel_detail.Visible = false;
-                this.Height = 401;
+                status = 1;
+                //btn_Batal.Visible = false;
+                //panel_detail.Visible = false;
+                //this.Height = 401;
             }
             else
             {
-                btn_Batal.Visible = true;
-                panel_detail.Visible = true;
-                btn_addDetails.Visible = false;
-                this.Height = 616;
+                status = 0;
+                //btn_Batal.Visible = true;
+                //panel_detail.Visible = true;
+                //btn_addDetails.Visible = false;
+                //this.Height = 616;
+                btn_clearPo.Enabled = false;
+                btn_lov_po.Enabled = false;
+                btn_LovSupp.Enabled = false;
+                btn_simpan.Enabled = false;
+                btn_clear.Enabled = false;
                 LoadRc();
-                //LoadDetailPO();
+                Load_Detail_Po();
             }
         }
 
@@ -70,6 +83,7 @@ namespace POS.Receiving
             txt_supplier_show.Text = supp.supplier_name;
             txt_po_id.Text = Rc.PurchaseOrder.ToString();
             txt_Po_show.Text = po.PO_Number;
+            
 
         }
 
@@ -129,7 +143,7 @@ namespace POS.Receiving
                         txt_RcNo.Text = generated;
                         if (txt_po_id.Text != "")
                         {
-                            Load_Detail_Po();
+                           
                         }
 
                     }
@@ -173,7 +187,7 @@ namespace POS.Receiving
                         dt.Columns.Add("Qty Diterima", typeof(int));
                         dt.Columns.Add("Harga Beli", typeof(float));
                         dt.Columns.Add("status_hide", typeof(int));
-                        dt.Columns.Add("Status", typeof(bool));
+                        
                     }
 
                     else
@@ -189,7 +203,7 @@ namespace POS.Receiving
                         dt.Columns.Add("Qty Diterima", typeof(int));
                         dt.Columns.Add("Harga Beli", typeof(float));
                         dt.Columns.Add("status_hide", typeof(int));
-                        dt.Columns.Add("Status", typeof(bool));
+                       
                     }
 
                     Util.command.Parameters.Clear();
@@ -216,8 +230,8 @@ namespace POS.Receiving
                             Util.dtreader[6].ToString(),
                             Util.dtreader[7].ToString(),
                             Util.dtreader[8].ToString(),
-                            Util.dtreader[9].ToString(),
-                           false
+                            Util.dtreader[9]
+                           
 
 
                             );
@@ -241,12 +255,12 @@ namespace POS.Receiving
         private void btn_addDetails_Click(object sender, EventArgs e)
         {
             status = 1;
-            btn_Batal.Visible = true;
+            //btn_Batal.Visible = true;
             Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
             t.add(this, "Height", 616);
             t.run();
             panel_detail.Visible = true;
-            btn_Batal.Visible = true;
+          //  btn_Batal.Visible = true;
             InsertRC();
             Load_Detail_Po();
             btn_addDetails.Visible = false;
@@ -308,21 +322,32 @@ namespace POS.Receiving
         }
         private void dg_rc_detail_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            dg_rc_detail.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            //if (checkeds == 0)
+            //{
             //MessageBox.Show(this, dg_rc_detail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-            string a = dg_rc_detail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            int items=int.Parse( dg_rc_detail.Rows[e.RowIndex].Cells[1].Value.ToString());
-            int qtyorder= int.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[6].Value.ToString());
-            int qtyreceive= int.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[7].Value.ToString());
-            double price= double.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[8].Value.ToString());
-            if ( a== "True")
-            {
-               
-                insertdetail(items,qtyorder,price,qtyreceive);
-            }
-            else
-            {
+            //string a = dg_rc_detail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            //int items = int.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[1].Value.ToString());
+            //int qtyorder = int.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[6].Value.ToString());
+            //int qtyreceive = int.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[7].Value.ToString());
+            //double price = double.Parse(dg_rc_detail.Rows[e.RowIndex].Cells[8].Value.ToString());
+            //    if (a == "True")
+            //    {
+            //        checkeds = 1;
+            //        InsertRC();
+            //        insertdetail(items, qtyorder, price, qtyreceive);
+            //        DataGridViewCell cell = dg_rc_detail.Rows[e.RowIndex].Cells[10];
+            //        DataGridViewCheckBoxCell chkCell = cell as DataGridViewCheckBoxCell;
+            //        chkCell.Value = true;
+            //        dg_rc_detail.Rows[e.RowIndex].Cells[10].ReadOnly = true;
+            //    }
+            //    else
+            //    {
 
-            }
+            //    }
+            //}
+            //checkeds = 0;
+
 
         }
 
@@ -334,6 +359,127 @@ namespace POS.Receiving
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_Po_show_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_clearPo_Click(object sender, EventArgs e)
+        {
+            txt_po_id.Text = "";
+            txt_Po_show.Text="";
+        }
+
+        private void txt_supplier_show_TextChanged(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void txt_po_id_OnValueChanged(object sender, EventArgs e)
+        {
+           // status = 1;
+            ////btn_Batal.Visible = true;
+            //Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+            //t.add(this, "Height", 616);
+            //t.run();
+            //panel_detail.Visible = true;
+            //  btn_Batal.Visible = true;
+            //InsertRC();
+            Load_Detail_Po();
+            //btn_addDetails.Visible = false;
+        }
+
+        private void dg_rc_detail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_simpan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] tes= new string[dg_rc_detail.RowCount];
+                dg_rc_detail.CommitEdit(DataGridViewDataErrorContexts.Commit);
+               
+                int sum = 0;
+
+                for (int i = 0; i < dg_rc_detail.Rows.Count; ++i)
+                {
+                    sum += Convert.ToInt32(dg_rc_detail.Rows[i].Cells[7].Value);
+                }
+
+                if (sum > 0)
+                {
+                    InsertRC();
+                    for (int i = 0; i < dg_rc_detail.RowCount; i++)
+                    {
+                        string itemsname = dg_rc_detail.Rows[i].Cells[2].Value.ToString();
+                        int items = int.Parse(dg_rc_detail.Rows[i].Cells[1].Value.ToString());
+                        int qtyorder = int.Parse(dg_rc_detail.Rows[i].Cells[6].Value.ToString());
+                        int qtyreceive = int.Parse(dg_rc_detail.Rows[i].Cells[7].Value.ToString());
+                        double price = double.Parse(dg_rc_detail.Rows[i].Cells[8].Value.ToString());
+                        if (qtyreceive > 0)
+                        {
+                            if (price > 0)
+                            {
+                                insertdetail(items, qtyorder, price, qtyreceive);
+                                insert = i;
+                            }
+                            else
+                            {
+                                tes[i] = itemsname;
+                               
+                            }
+
+                        }
+
+                    }
+                    if (insert == dg_rc_detail.RowCount - 1)
+                    {
+                        MessageBox.Show("Penerimaan Barang Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string toDisplay = string.Join(Environment.NewLine, tes);
+                     
+                        MessageBox.Show("Harga Untuk Item :" + Environment.NewLine + " " + toDisplay+ "," + Environment.NewLine + " belum ditentukan silahkan menentukan harga beli untuk item yang bersangkutan", "Gagal Menentukan Harga Beli", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        deleteRC();
+
+                        txt_RcNo.Text = "";
+                    }
+                    btn_lov_po.Enabled = false;
+                    btn_clearPo.Enabled = false;
+                }
+
+                else
+                {
+                    MessageBox.Show("Harap Menentukan Kuantitas Item yang akan diterima untuk salah satu item atau seluruh item", "Gagal Menghitung penerimaan item", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 
+                    txt_RcNo.Text = "";
+                }
+            }
+            catch (Exception z)
+            {
+
+                MessageBox.Show(z.Message.ToString(), "Sesuatu Kesalahan Terjadi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+           
+
+
+           
+            
+            
+           
+            
+        }
+        public void deleteRC()
+        {
+            var delete = Point_Of_SalesEntities.TReceiveingStocks.Where(x => x.ReceiveNumber == txt_RcNo.Text).First();
+            Point_Of_SalesEntities.TReceiveingStocks.Remove(delete);
+            Point_Of_SalesEntities.SaveChanges();
         }
     }
 }

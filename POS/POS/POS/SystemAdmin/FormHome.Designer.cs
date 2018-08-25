@@ -73,10 +73,6 @@
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_beban = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panel_submenu_customer = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelmastermenu = new System.Windows.Forms.Panel();
             this.lbl_mastermenu = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -160,9 +156,6 @@
             this.panel_submenu_beban.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_beban)).BeginInit();
-            this.panel_submenu_customer.SuspendLayout();
-            this.flowLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.panelmastermenu.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_expandmaster)).BeginInit();
@@ -513,7 +506,6 @@
             this.panelexpandablemaster.Controls.Add(this.panel_sub_menu_supplier);
             this.panelexpandablemaster.Controls.Add(this.panel_submenu_inventory);
             this.panelexpandablemaster.Controls.Add(this.panel_submenu_beban);
-            this.panelexpandablemaster.Controls.Add(this.panel_submenu_customer);
             this.bunifuTransition1.SetDecoration(this.panelexpandablemaster, BunifuAnimatorNS.DecorationType.None);
             this.panelexpandablemaster.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelexpandablemaster.Location = new System.Drawing.Point(0, 390);
@@ -527,7 +519,7 @@
             this.panel_sub_Menu_warna.Controls.Add(this.bunifuImageButton6);
             this.bunifuTransition1.SetDecoration(this.panel_sub_Menu_warna, BunifuAnimatorNS.DecorationType.None);
             this.panel_sub_Menu_warna.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_sub_Menu_warna.Location = new System.Drawing.Point(604, 0);
+            this.panel_sub_Menu_warna.Location = new System.Drawing.Point(453, 0);
             this.panel_sub_Menu_warna.Name = "panel_sub_Menu_warna";
             this.panel_sub_Menu_warna.Size = new System.Drawing.Size(151, 131);
             this.panel_sub_Menu_warna.TabIndex = 19;
@@ -576,7 +568,7 @@
             this.panel_sub_menu_supplier.Controls.Add(this.supplier_button);
             this.bunifuTransition1.SetDecoration(this.panel_sub_menu_supplier, BunifuAnimatorNS.DecorationType.None);
             this.panel_sub_menu_supplier.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_sub_menu_supplier.Location = new System.Drawing.Point(453, 0);
+            this.panel_sub_menu_supplier.Location = new System.Drawing.Point(302, 0);
             this.panel_sub_menu_supplier.Name = "panel_sub_menu_supplier";
             this.panel_sub_menu_supplier.Size = new System.Drawing.Size(151, 131);
             this.panel_sub_menu_supplier.TabIndex = 18;
@@ -625,7 +617,7 @@
             this.panel_submenu_inventory.Controls.Add(this.bunifuImageButton5);
             this.bunifuTransition1.SetDecoration(this.panel_submenu_inventory, BunifuAnimatorNS.DecorationType.None);
             this.panel_submenu_inventory.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_submenu_inventory.Location = new System.Drawing.Point(302, 0);
+            this.panel_submenu_inventory.Location = new System.Drawing.Point(151, 0);
             this.panel_submenu_inventory.Name = "panel_submenu_inventory";
             this.panel_submenu_inventory.Size = new System.Drawing.Size(151, 131);
             this.panel_submenu_inventory.TabIndex = 17;
@@ -674,7 +666,7 @@
             this.panel_submenu_beban.Controls.Add(this.btn_beban);
             this.bunifuTransition1.SetDecoration(this.panel_submenu_beban, BunifuAnimatorNS.DecorationType.None);
             this.panel_submenu_beban.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_submenu_beban.Location = new System.Drawing.Point(151, 0);
+            this.panel_submenu_beban.Location = new System.Drawing.Point(0, 0);
             this.panel_submenu_beban.Name = "panel_submenu_beban";
             this.panel_submenu_beban.Size = new System.Drawing.Size(151, 131);
             this.panel_submenu_beban.TabIndex = 16;
@@ -716,55 +708,6 @@
             this.btn_beban.TabStop = false;
             this.btn_beban.Zoom = 10;
             this.btn_beban.Click += new System.EventHandler(this.btn_beban_Click);
-            // 
-            // panel_submenu_customer
-            // 
-            this.panel_submenu_customer.Controls.Add(this.flowLayoutPanel9);
-            this.panel_submenu_customer.Controls.Add(this.bunifuImageButton3);
-            this.bunifuTransition1.SetDecoration(this.panel_submenu_customer, BunifuAnimatorNS.DecorationType.None);
-            this.panel_submenu_customer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_submenu_customer.Location = new System.Drawing.Point(0, 0);
-            this.panel_submenu_customer.Name = "panel_submenu_customer";
-            this.panel_submenu_customer.Size = new System.Drawing.Size(151, 131);
-            this.panel_submenu_customer.TabIndex = 15;
-            // 
-            // flowLayoutPanel9
-            // 
-            this.flowLayoutPanel9.Controls.Add(this.label7);
-            this.bunifuTransition1.SetDecoration(this.flowLayoutPanel9, BunifuAnimatorNS.DecorationType.None);
-            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(151, 34);
-            this.flowLayoutPanel9.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 25);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Customer";
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = global::POS.Properties.Resources.Business_Building_50px;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(21, 40);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(108, 72);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 5;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
             // 
             // panelmastermenu
             // 
@@ -1474,10 +1417,6 @@
             this.flowLayoutPanel10.ResumeLayout(false);
             this.flowLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_beban)).EndInit();
-            this.panel_submenu_customer.ResumeLayout(false);
-            this.flowLayoutPanel9.ResumeLayout(false);
-            this.flowLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.panelmastermenu.ResumeLayout(false);
             this.panelmastermenu.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -1572,8 +1511,6 @@
         private System.Windows.Forms.Label lbl_mastermenu;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private Bunifu.Framework.UI.BunifuImageButton btn_expandmaster;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuImageButton btn_beban;
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
@@ -1607,8 +1544,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.Panel panel_submenu_beban;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
-        private System.Windows.Forms.Panel panel_submenu_customer;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.Panel panel_submenu_lossprofit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel15;
         private System.Windows.Forms.Panel panel_submenu_lapjual;

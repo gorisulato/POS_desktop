@@ -62,7 +62,12 @@
             this.txt_RcNo = new AltoControls.AltoTextBox();
             this.lbl_rc_no = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_simpan = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel_detail.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_LovSupp)).BeginInit();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -102,7 +109,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(163, 312);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(503, 192);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Teal;
@@ -114,15 +121,16 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Visible = false;
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // panel_detail
             // 
             this.panel_detail.Controls.Add(this.groupBox2);
             this.panel_detail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_detail.Location = new System.Drawing.Point(0, 349);
+            this.panel_detail.Location = new System.Drawing.Point(0, 299);
             this.panel_detail.Name = "panel_detail";
-            this.panel_detail.Size = new System.Drawing.Size(902, 265);
+            this.panel_detail.Size = new System.Drawing.Size(902, 315);
             this.panel_detail.TabIndex = 211;
             // 
             // groupBox2
@@ -130,9 +138,9 @@
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 14);
+            this.groupBox2.Location = new System.Drawing.Point(0, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(902, 251);
+            this.groupBox2.Size = new System.Drawing.Size(902, 308);
             this.groupBox2.TabIndex = 207;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail Penerimaan";
@@ -141,9 +149,9 @@
             // 
             this.panel3.Controls.Add(this.dg_rc_detail);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 83);
+            this.panel3.Location = new System.Drawing.Point(3, 26);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(896, 165);
+            this.panel3.Size = new System.Drawing.Size(896, 279);
             this.panel3.TabIndex = 1;
             // 
             // dg_rc_detail
@@ -155,8 +163,9 @@
             this.dg_rc_detail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_rc_detail.Location = new System.Drawing.Point(0, 0);
             this.dg_rc_detail.Name = "dg_rc_detail";
-            this.dg_rc_detail.Size = new System.Drawing.Size(896, 165);
+            this.dg_rc_detail.Size = new System.Drawing.Size(896, 279);
             this.dg_rc_detail.TabIndex = 0;
+            this.dg_rc_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_rc_detail_CellClick);
             this.dg_rc_detail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_rc_detail_CellContentClick);
             this.dg_rc_detail.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_rc_detail_CellValueChanged);
             // 
@@ -174,8 +183,9 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 16);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(896, 67);
+            this.panel4.Size = new System.Drawing.Size(896, 10);
             this.panel4.TabIndex = 0;
+            this.panel4.Visible = false;
             // 
             // btn_delete
             // 
@@ -399,7 +409,7 @@
             this.btn_addDetails.IconVisible = true;
             this.btn_addDetails.IconZoom = 90D;
             this.btn_addDetails.IsTab = false;
-            this.btn_addDetails.Location = new System.Drawing.Point(12, 312);
+            this.btn_addDetails.Location = new System.Drawing.Point(352, 192);
             this.btn_addDetails.Name = "btn_addDetails";
             this.btn_addDetails.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_addDetails.OnHovercolor = System.Drawing.Color.Teal;
@@ -411,12 +421,15 @@
             this.btn_addDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_addDetails.Textcolor = System.Drawing.Color.White;
             this.btn_addDetails.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addDetails.Visible = false;
             this.btn_addDetails.Click += new System.EventHandler(this.btn_addDetails_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bunifuFlatButton1);
             this.groupBox1.Controls.Add(this.btn_clearPo);
             this.groupBox1.Controls.Add(this.txt_po_id);
+            this.groupBox1.Controls.Add(this.btn_addDetails);
             this.groupBox1.Controls.Add(this.txt_Po_show);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btn_lov_po);
@@ -432,7 +445,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(902, 252);
+            this.groupBox1.Size = new System.Drawing.Size(902, 246);
             this.groupBox1.TabIndex = 209;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Penerimaan";
@@ -449,6 +462,7 @@
             this.btn_clearPo.TabIndex = 228;
             this.btn_clearPo.TabStop = false;
             this.btn_clearPo.Zoom = 10;
+            this.btn_clearPo.Click += new System.EventHandler(this.btn_clearPo_Click);
             // 
             // txt_po_id
             // 
@@ -461,13 +475,14 @@
             this.txt_po_id.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txt_po_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_po_id.isPassword = false;
-            this.txt_po_id.Location = new System.Drawing.Point(520, 55);
+            this.txt_po_id.Location = new System.Drawing.Point(527, 55);
             this.txt_po_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_po_id.Name = "txt_po_id";
             this.txt_po_id.Size = new System.Drawing.Size(10, 31);
             this.txt_po_id.TabIndex = 224;
             this.txt_po_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_po_id.Visible = false;
+            this.txt_po_id.OnValueChanged += new System.EventHandler(this.txt_po_id_OnValueChanged);
             // 
             // txt_Po_show
             // 
@@ -482,6 +497,7 @@
             this.txt_Po_show.Radius = 6;
             this.txt_Po_show.Size = new System.Drawing.Size(198, 33);
             this.txt_Po_show.TabIndex = 225;
+            this.txt_Po_show.TextChanged += new System.EventHandler(this.txt_Po_show_TextChanged);
             // 
             // label1
             // 
@@ -552,6 +568,7 @@
             this.txt_supplier_show.Radius = 6;
             this.txt_supplier_show.Size = new System.Drawing.Size(198, 33);
             this.txt_supplier_show.TabIndex = 220;
+            this.txt_supplier_show.TextChanged += new System.EventHandler(this.txt_supplier_show_TextChanged);
             // 
             // lbl_customer
             // 
@@ -628,12 +645,81 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::POS.Properties.Resources.upper;
-            this.panel1.Controls.Add(this.btn_exit);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.flowLayoutPanel2);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(902, 54);
             this.panel1.TabIndex = 208;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 24F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(293, 45);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Penerimaan Barang";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.btn_simpan);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(620, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(141, 54);
+            this.flowLayoutPanel2.TabIndex = 9;
+            // 
+            // btn_simpan
+            // 
+            this.btn_simpan.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_simpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_simpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_simpan.BorderRadius = 0;
+            this.btn_simpan.ButtonText = "Simpan";
+            this.btn_simpan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_simpan.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_simpan.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_simpan.Iconimage = global::POS.Properties.Resources.save_white;
+            this.btn_simpan.Iconimage_right = null;
+            this.btn_simpan.Iconimage_right_Selected = null;
+            this.btn_simpan.Iconimage_Selected = null;
+            this.btn_simpan.IconMarginLeft = 0;
+            this.btn_simpan.IconMarginRight = 0;
+            this.btn_simpan.IconRightVisible = true;
+            this.btn_simpan.IconRightZoom = 0D;
+            this.btn_simpan.IconVisible = true;
+            this.btn_simpan.IconZoom = 90D;
+            this.btn_simpan.IsTab = false;
+            this.btn_simpan.Location = new System.Drawing.Point(3, 3);
+            this.btn_simpan.Name = "btn_simpan";
+            this.btn_simpan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_simpan.OnHovercolor = System.Drawing.Color.Teal;
+            this.btn_simpan.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_simpan.selected = false;
+            this.btn_simpan.Size = new System.Drawing.Size(128, 42);
+            this.btn_simpan.TabIndex = 7;
+            this.btn_simpan.Text = "Simpan";
+            this.btn_simpan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_simpan.Textcolor = System.Drawing.Color.White;
+            this.btn_simpan.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_simpan.Click += new System.EventHandler(this.btn_simpan_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.btn_exit);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(761, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(141, 54);
+            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // btn_exit
             // 
@@ -656,7 +742,7 @@
             this.btn_exit.IconVisible = true;
             this.btn_exit.IconZoom = 90D;
             this.btn_exit.IsTab = false;
-            this.btn_exit.Location = new System.Drawing.Point(767, 6);
+            this.btn_exit.Location = new System.Drawing.Point(3, 3);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exit.OnHovercolor = System.Drawing.Color.Teal;
@@ -670,19 +756,25 @@
             this.btn_exit.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // FormAddReceiveing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(902, 614);
-            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.panel_detail);
-            this.Controls.Add(this.btn_addDetails);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAddReceiveing";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddReceiveing";
             this.Load += new System.EventHandler(this.FormAddReceiveing_Load);
             this.panel_detail.ResumeLayout(false);
@@ -698,6 +790,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_LovSupp)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -738,5 +833,10 @@
         private AltoControls.AltoTextBox txt_Po_show;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton btn_lov_po;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_simpan;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

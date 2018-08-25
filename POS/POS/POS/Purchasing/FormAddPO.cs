@@ -40,6 +40,7 @@ namespace POS.Purchasing
         #region Load Data
         private void FormAddPO_Load(object sender, EventArgs e)
         {
+            dt_purchasedate.Value = DateTime.Now;
             if (txt_PurchaseNumber.Text!="")
             {
                 btn_print.Visible = true;

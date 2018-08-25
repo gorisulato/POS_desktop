@@ -311,6 +311,18 @@ namespace POS
                 else
                     ClearTextBoxes(ctrl.Controls);
             }
+            foreach (Control ctrl in cc)
+            {
+                AltoControls.AltoNMUpDown tb = ctrl as AltoControls.AltoNMUpDown;
+                if (tb != null)
+                {
+                    tb.Value = 0;
+                    tb.Text = "0";
+                }
+                   
+                else
+                    ClearTextBoxes(ctrl.Controls);
+            }
         }
 
 

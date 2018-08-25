@@ -66,12 +66,19 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dg_detail = new System.Windows.Forms.DataGridView();
             this.upper_panel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_New = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_save = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_print = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel_cancel = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -79,6 +86,10 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_detail)).BeginInit();
             this.upper_panel.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.panel_cancel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -325,6 +336,7 @@
             this.txt_payment_afterdiscount.Radius = 6;
             this.txt_payment_afterdiscount.Size = new System.Drawing.Size(10, 29);
             this.txt_payment_afterdiscount.TabIndex = 237;
+            this.txt_payment_afterdiscount.Visible = false;
             // 
             // txt_sales_discount
             // 
@@ -339,6 +351,7 @@
             this.txt_sales_discount.Size = new System.Drawing.Size(196, 25);
             this.txt_sales_discount.TabIndex = 236;
             this.txt_sales_discount.TextChanged += new System.EventHandler(this.txt_sales_discount_TextChanged);
+            this.txt_sales_discount.Click += new System.EventHandler(this.txt_sales_discount_Click);
             this.txt_sales_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sales_discount_KeyPress);
             // 
             // total_sales
@@ -354,6 +367,7 @@
             this.total_sales.Radius = 6;
             this.total_sales.Size = new System.Drawing.Size(164, 33);
             this.total_sales.TabIndex = 235;
+            this.total_sales.Visible = false;
             this.total_sales.TextChanged += new System.EventHandler(this.total_sales_TextChanged);
             // 
             // btn_pay
@@ -579,7 +593,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dg_detail);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 316);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(873, 170);
@@ -594,15 +608,20 @@
             this.dg_detail.AllowUserToOrderColumns = true;
             this.dg_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_detail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dg_detail.Location = new System.Drawing.Point(3, 25);
+            this.dg_detail.Location = new System.Drawing.Point(3, 19);
             this.dg_detail.Name = "dg_detail";
             this.dg_detail.ReadOnly = true;
-            this.dg_detail.Size = new System.Drawing.Size(867, 142);
+            this.dg_detail.Size = new System.Drawing.Size(867, 148);
             this.dg_detail.TabIndex = 3;
+            this.dg_detail.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_detail_DataBindingComplete);
             // 
             // upper_panel
             // 
             this.upper_panel.BackgroundImage = global::POS.Properties.Resources.upper;
+            this.upper_panel.Controls.Add(this.flowLayoutPanel3);
+            this.upper_panel.Controls.Add(this.flowLayoutPanel5);
+            this.upper_panel.Controls.Add(this.flowLayoutPanel4);
+            this.upper_panel.Controls.Add(this.panel_cancel);
             this.upper_panel.Controls.Add(this.flowLayoutPanel1);
             this.upper_panel.Controls.Add(this.label1);
             this.upper_panel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -611,18 +630,60 @@
             this.upper_panel.Size = new System.Drawing.Size(894, 66);
             this.upper_panel.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel3
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.btn_save);
-            this.flowLayoutPanel1.Controls.Add(this.btn_print);
-            this.flowLayoutPanel1.Controls.Add(this.btn_Batal);
-            this.flowLayoutPanel1.Controls.Add(this.btn_exit);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(432, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(462, 66);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel3.Controls.Add(this.btn_New);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(342, 0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(117, 66);
+            this.flowLayoutPanel3.TabIndex = 12;
+            // 
+            // btn_New
+            // 
+            this.btn_New.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_New.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_New.BorderRadius = 0;
+            this.btn_New.ButtonText = "Penjualan Baru";
+            this.btn_New.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_New.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_New.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_New.Iconimage = global::POS.Properties.Resources.Add_white;
+            this.btn_New.Iconimage_right = null;
+            this.btn_New.Iconimage_right_Selected = null;
+            this.btn_New.Iconimage_Selected = null;
+            this.btn_New.IconMarginLeft = 0;
+            this.btn_New.IconMarginRight = 0;
+            this.btn_New.IconRightVisible = true;
+            this.btn_New.IconRightZoom = 0D;
+            this.btn_New.IconVisible = true;
+            this.btn_New.IconZoom = 90D;
+            this.btn_New.IsTab = false;
+            this.btn_New.Location = new System.Drawing.Point(3, 3);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_New.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_New.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_New.selected = false;
+            this.btn_New.Size = new System.Drawing.Size(116, 42);
+            this.btn_New.TabIndex = 7;
+            this.btn_New.Text = "Penjualan Baru";
+            this.btn_New.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_New.Textcolor = System.Drawing.Color.White;
+            this.btn_New.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel5.Controls.Add(this.btn_save);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(459, 0);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(108, 66);
+            this.flowLayoutPanel5.TabIndex = 11;
             // 
             // btn_save
             // 
@@ -659,6 +720,16 @@
             this.btn_save.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel4.Controls.Add(this.btn_print);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(567, 0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(108, 66);
+            this.flowLayoutPanel4.TabIndex = 10;
+            // 
             // btn_print
             // 
             this.btn_print.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -680,7 +751,7 @@
             this.btn_print.IconVisible = true;
             this.btn_print.IconZoom = 90D;
             this.btn_print.IsTab = false;
-            this.btn_print.Location = new System.Drawing.Point(111, 3);
+            this.btn_print.Location = new System.Drawing.Point(3, 3);
             this.btn_print.Name = "btn_print";
             this.btn_print.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_print.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -693,6 +764,16 @@
             this.btn_print.Textcolor = System.Drawing.Color.White;
             this.btn_print.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
+            // panel_cancel
+            // 
+            this.panel_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.panel_cancel.Controls.Add(this.btn_Batal);
+            this.panel_cancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_cancel.Location = new System.Drawing.Point(675, 0);
+            this.panel_cancel.Name = "panel_cancel";
+            this.panel_cancel.Size = new System.Drawing.Size(108, 66);
+            this.panel_cancel.TabIndex = 9;
             // 
             // btn_Batal
             // 
@@ -715,7 +796,7 @@
             this.btn_Batal.IconVisible = true;
             this.btn_Batal.IconZoom = 90D;
             this.btn_Batal.IsTab = false;
-            this.btn_Batal.Location = new System.Drawing.Point(219, 3);
+            this.btn_Batal.Location = new System.Drawing.Point(3, 3);
             this.btn_Batal.Name = "btn_Batal";
             this.btn_Batal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Batal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -729,6 +810,16 @@
             this.btn_Batal.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Batal.Visible = false;
             this.btn_Batal.Click += new System.EventHandler(this.btn_Batal_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.btn_exit);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(783, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(111, 66);
+            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // btn_exit
             // 
@@ -751,7 +842,7 @@
             this.btn_exit.IconVisible = true;
             this.btn_exit.IconZoom = 90D;
             this.btn_exit.IsTab = false;
-            this.btn_exit.Location = new System.Drawing.Point(327, 3);
+            this.btn_exit.Location = new System.Drawing.Point(3, 3);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -777,6 +868,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kasir";
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.upper_panel;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.label1;
+            this.bunifuDragControl2.Vertical = true;
+            // 
             // FormCashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -787,6 +892,7 @@
             this.Controls.Add(this.upper_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCashier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCashier";
             this.Load += new System.EventHandler(this.FormCashier_Load);
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -799,6 +905,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_detail)).EndInit();
             this.upper_panel.ResumeLayout(false);
             this.upper_panel.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.panel_cancel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -827,7 +937,6 @@
         private Bunifu.Framework.UI.BunifuDropdown cb_idpayment;
         private AltoControls.AltoTextBox txt_cardno;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private AltoControls.AltoTextBox txt_items_show;
         public Bunifu.Framework.UI.BunifuMetroTextbox txt_items_id;
@@ -849,5 +958,13 @@
         private AltoControls.AltoTextBox total_sales;
         private AltoControls.AltoTextBox txt_sales_discount;
         private AltoControls.AltoTextBox txt_payment_afterdiscount;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel panel_cancel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_New;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
     }
 }

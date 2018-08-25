@@ -165,9 +165,8 @@ namespace POS
                     dt.Columns.Add("ID", typeof(int));
                     dt.Columns.Add("Nomor Penjualan", typeof(string));
                     dt.Columns.Add("Tanggal Penjualan", typeof(DateTime));
-                    dt.Columns.Add("Customer", typeof(string));
-                    dt.Columns.Add("Alamat Customer", typeof(string));
-                    dt.Columns.Add("Kode Member", typeof(string));
+                    dt.Columns.Add("Total Belanja", typeof(int));
+        
 
 
 
@@ -190,9 +189,8 @@ namespace POS
                             Util.dtreader[0].ToString(),
                             Util.dtreader[1].ToString(),
                             Util.dtreader[2].ToString(),
-                            Util.dtreader[3].ToString(),
-                            Util.dtreader[4].ToString(),
-                            Util.dtreader[5].ToString()
+                            Util.dtreader[3]
+                  
 
 
 
@@ -201,7 +199,7 @@ namespace POS
                     dg_sales.DataSource = dt;
                     dg_sales.Refresh();
                     dg_sales.Columns[0].Visible = false;
-
+                    dg_sales.Columns[3].DefaultCellStyle.Format = "N2";
                     Util.dtreader.Close();
                     Util.connection.Close();
                     foreach (DataGridViewRow row in dg_sales.Rows)
@@ -212,11 +210,8 @@ namespace POS
                      
                         
                     }
-                    
-                    foreach(DataGridViewColumn col in dg_sales.Columns)
-                    {
-                        col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    }
+
+                    dg_sales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     
                 }
             }

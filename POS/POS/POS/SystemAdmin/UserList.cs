@@ -34,6 +34,11 @@ namespace POS.SystemAdmin
         {
             Point_Of_SalesEntities = new POS_Entities(Util.CheckDatabaseConnection());
             dg_user.MultiSelect = false;
+            var user = Properties.Settings.Default._userRolename;
+            if (user != "Admin")
+            {
+                btn_add_sales.Visible = false;
+            }
             
             Load_DataUser();
            
@@ -84,8 +89,8 @@ namespace POS.SystemAdmin
                             );
                     }
                     dg_user.DataSource = dt;
-                    
-                    //dg_Rc.Columns[0].Visible = false;
+
+                    dg_user.Columns[0].Visible = false;
 
                     Util.dtreader.Close();
                     Util.connection.Close();

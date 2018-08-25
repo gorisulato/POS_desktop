@@ -62,7 +62,6 @@
             this.txt_RcNo = new AltoControls.AltoTextBox();
             this.lbl_rc_no = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Batal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_detail.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -629,48 +628,12 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::POS.Properties.Resources.upper;
-            this.panel1.Controls.Add(this.btn_Batal);
             this.panel1.Controls.Add(this.btn_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(902, 54);
             this.panel1.TabIndex = 208;
-            // 
-            // btn_Batal
-            // 
-            this.btn_Batal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Batal.BorderRadius = 0;
-            this.btn_Batal.ButtonText = "Batal";
-            this.btn_Batal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Batal.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Batal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Batal.Iconimage = global::POS.Properties.Resources.Cancel_white;
-            this.btn_Batal.Iconimage_right = null;
-            this.btn_Batal.Iconimage_right_Selected = null;
-            this.btn_Batal.Iconimage_Selected = null;
-            this.btn_Batal.IconMarginLeft = 0;
-            this.btn_Batal.IconMarginRight = 0;
-            this.btn_Batal.IconRightVisible = true;
-            this.btn_Batal.IconRightZoom = 0D;
-            this.btn_Batal.IconVisible = true;
-            this.btn_Batal.IconZoom = 90D;
-            this.btn_Batal.IsTab = false;
-            this.btn_Batal.Location = new System.Drawing.Point(633, 6);
-            this.btn_Batal.Name = "btn_Batal";
-            this.btn_Batal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Batal.OnHovercolor = System.Drawing.Color.Teal;
-            this.btn_Batal.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Batal.selected = false;
-            this.btn_Batal.Size = new System.Drawing.Size(128, 42);
-            this.btn_Batal.TabIndex = 6;
-            this.btn_Batal.Text = "Batal";
-            this.btn_Batal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Batal.Textcolor = System.Drawing.Color.White;
-            this.btn_Batal.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Batal.Click += new System.EventHandler(this.btn_Batal_Click);
             // 
             // btn_exit
             // 
@@ -769,7 +732,6 @@
         private AltoControls.AltoTextBox txt_RcNo;
         private System.Windows.Forms.Label lbl_rc_no;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Batal;
         private Bunifu.Framework.UI.BunifuFlatButton btn_exit;
         private Bunifu.Framework.UI.BunifuImageButton btn_clearPo;
         public Bunifu.Framework.UI.BunifuMetroTextbox txt_po_id;

@@ -1,4 +1,5 @@
 ﻿using POS.DB;
+using POS.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace POS.Sales
         string snumberparam = "";
         POS_Entities Point_Of_SalesEntities;
         UtilityClass Util = new UtilityClass();
-        FLOV FormLov;
+        LOVForm FormLov;
         public FormCashier(string type)
         {
             type1 = type;
@@ -312,8 +313,14 @@ namespace POS.Sales
         }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            FormLov = new FLOV(this, "TInventory", txt_items_show, txt_items_id, "Items_number", new string[] { "Items_number", "Items_Name", "Items_Id" }, "Items_Name");
+            var sql = "select a.Items_Id,a.Items_number,a.Items_Name,a.Stock " +
+                         "FROM dbo.TInventory AS a " +
+
+                    " where 1=1 ";
+                   
+            FormLov = new LOVForm(sql,this,txt_items_show,txt_items_id, "a.Items_Name",new string []{"ID","Kode Item","Nama Item","stock" }, "a.Items_Id");
             FormLov.ShowDialog();
+
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

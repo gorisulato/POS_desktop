@@ -1,4 +1,5 @@
 ﻿using POS.DB;
+using POS.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace POS.Receiving
         int indexdetail = 0;
         int AffectedRows = 0;
         int ID_RC = 0;
-        FLOV FormLov;
+        LOVForm FormLov;
         public delegate void DoEvent();
         public event DoEvent RefreshDgv;
         string Type = "";
@@ -95,13 +96,20 @@ namespace POS.Receiving
 
         private void btn_LovSupp_Click(object sender, EventArgs e)
         {
-            FormLov = new FLOV(this, "PSupplier", txt_supplier_show, txt_supplier_id, "supplier_name", new string[] { "supplier_address", "supplier_name", "Supplier_id" }, "supplier_name");
+            var sql = "select  a.Supplier_id,a.contact_Person,a.supplier_name,a.supplier_address " +
+                                "FROM dbo.PSupplier AS a " +
+
+                           " where 1=1  ";
+
+            FormLov = new LOVForm(sql, this, txt_supplier_show, txt_supplier_id, "a.supplier_name", new string[] { "ID", "Kontak Person", "Nama Supplier", "Alamat" }, "a.Supplier_id");
             FormLov.ShowDialog();
         }
 
         private void btn_lov_po_Click(object sender, EventArgs e)
         {
-            FormLov = new FLOV(this, "TPurchaseOrder", txt_Po_show, txt_po_id, "PO_Number", new string[] { "PO_date", "PO_Number", "PO_id" }, "PO_Number", txt_supplier_id.Text);
+            var sql = "select a.PO_id,a.PO_date,a.PO_Number,case when a.status = 1 then 'Close' else 'Open' end from TPurchaseOrder as a where a.PSupplierId ="+txt_supplier_id.Text+" and a.status=0";
+
+            FormLov = new LOVForm(sql, this, txt_Po_show, txt_po_id, "a.PO_Number", new string[] { "ID", "Tanggal PO", "Nomor PO", "Status" }, "a.PO_id");
             FormLov.ShowDialog();
         }
         public void InsertRC()

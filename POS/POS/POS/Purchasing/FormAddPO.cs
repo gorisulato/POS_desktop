@@ -1,5 +1,6 @@
 ﻿using POS.DB;
 using POS.Purchasing;
+using POS.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace POS.Purchasing
         int indexdetail = 0;
         int AffectedRows = 0;
         int ID_Po = 0;
-        FLOV FormLov;
+        LOVForm FormLov;
         public delegate void DoEvent();
         public event DoEvent RefreshDgv;
         string Type = "";
@@ -162,14 +163,19 @@ namespace POS.Purchasing
 
         private void btn_LovSupp_Click(object sender, EventArgs e)
         {
-            FormLov = new FLOV(this, "PSupplier", txt_supplier_show, txt_supplier_id, "supplier_name", new string[] { "supplier_address", "supplier_name", "Supplier_id" }, "supplier_name");
+            var sql = "select  a.Supplier_id,a.contact_Person,a.supplier_name,a.supplier_address " +
+                                "FROM dbo.PSupplier AS a " +
+
+                           " where 1=1 ";
+
+            FormLov = new LOVForm(sql, this, txt_supplier_show, txt_supplier_id, "a.supplier_name", new string[] { "ID", "Kontak Person", "Nama Supplier", "Alamat" }, "a.Supplier_id");
             FormLov.ShowDialog();
         }
 
         private void btn_search_LOV_Click(object sender, EventArgs e)
         {
-            FormLov = new FLOV(this, "TInventory", txt_items_show, txt_items_id, "Items_number", new string[] { "Items_number", "Items_Name", "Items_Id" }, "Items_Name");
-            FormLov.ShowDialog();
+            //FormLov = new FLOV(this, "TInventory", txt_items_show, txt_items_id, "Items_number", new string[] { "Items_number", "Items_Name", "Items_Id" }, "Items_Name");
+            //FormLov.ShowDialog();
         }
         private void btn_addDetails_Click(object sender, EventArgs e)
         {
@@ -188,7 +194,12 @@ namespace POS.Purchasing
 
         private void btn_search_LOV_Click_1(object sender, EventArgs e)
         {
-            FormLov = new FLOV(this, "TInventory", txt_items_show, txt_items_id, "Items_number", new string[] { "Items_number", "Items_Name", "Items_Id" }, "Items_Name");
+            var sql = "select a.Items_Id,a.Items_number,a.Items_Name,a.Stock " +
+                                "FROM dbo.TInventory AS a " +
+
+                           " where 1=1 ";
+
+            FormLov = new LOVForm(sql, this, txt_items_show, txt_items_id, "a.Items_Name", new string[] { "ID", "Kode Item", "Nama Item", "stock" }, "a.Items_Id");
             FormLov.ShowDialog();
         }
 

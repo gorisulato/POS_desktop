@@ -227,6 +227,7 @@ namespace POS
                 if (Util.dtreader.HasRows)
                 {
                     TLOV.DataSource = Util.dtreader;
+                    
                 }
                 Util.dtreader.Close();
                 foreach (DataGridViewColumn C in TLOV.DataGridView.Columns)
@@ -235,8 +236,8 @@ namespace POS
                 }
                 Util.dtreader.Close();
                 Util.connection.Close();
-               
 
+                
             }
         }
 

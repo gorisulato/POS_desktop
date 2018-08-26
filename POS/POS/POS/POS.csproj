@@ -363,6 +363,12 @@
     <Compile Include="Tools\FormInputBeban.Designer.cs">
       <DependentUpon>FormInputBeban.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\LOVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\LOVForm.Designer.cs">
+      <DependentUpon>LOVForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UtilityClass.cs" />
     <EmbeddedResource Include="Master\Colour\COlourList.resx">
       <DependentUpon>COlourList.cs</DependentUpon>
@@ -429,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\InvoiceViewer.resx">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\LOVForm.resx">
+      <DependentUpon>LOVForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Product_50px.png" />
     <None Include="Resources\Supplier_48px.png" />

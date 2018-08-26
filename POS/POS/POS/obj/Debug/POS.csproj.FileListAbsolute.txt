@@ -86,3 +86,4 @@ E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Sales.FormCashier.resources
 E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Purchasing.POPrint.resources
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPT_PO.rpt
 E:\Latihan\POS_desktop\POS\POS\POS\bin\Debug\Reports\RPT_PO.cs
+E:\Latihan\POS_desktop\POS\POS\POS\obj\Debug\POS.Tools.LOVForm.resources

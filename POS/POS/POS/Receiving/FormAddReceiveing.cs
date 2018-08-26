@@ -425,7 +425,7 @@ namespace POS.Receiving
                             if (price > 0)
                             {
                                 insertdetail(items, qtyorder, price, qtyreceive);
-                                insert = i;
+                                insert = i+1;
                             }
                             else
                             {
@@ -436,7 +436,7 @@ namespace POS.Receiving
                         }
 
                     }
-                    if (insert == dg_rc_detail.RowCount - 1)
+                    if (insert == dg_rc_detail.RowCount )
                     {
                         MessageBox.Show("Penerimaan Barang Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
